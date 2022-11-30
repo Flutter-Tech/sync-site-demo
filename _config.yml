@@ -1,0 +1,51 @@
+remote_theme: Flutter-Tech/fsc-documentation-theme
+
+# Site title and description
+title: Flutter Inner Source
+description: Guides and documentation from the Flutter inner source community.
+lang: en-UK
+
+# ensure URL-type links work
+permalink: /:title/
+
+# Theme customizations
+internal: false # Set to true to use the internal site customizations
+logo: "/assets/img/flutter-logo.png" # Path to the logo image
+logo_message: "inner source" # Message to display below in the logo
+logo_invert: false # Set to true to invert the logo
+
+# Breadcrumb base url,title and separator
+breadcrumbs:
+  home_url: "/catalogue"
+  home_title: "Service Catalogue"
+  separator: ">" # Separator between breadcrumbs
+header_support_button:
+  text: "support" # Text to display in the support button
+  url: "/community/" # URL to redirect to when the support button is clicked
+site_search: false # Set to false to disable the site search
+
+# Jekyll plugins
+plugins:
+  - jekyll-remote-theme
+include:
+  - cli.json
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - CONTRIBUTING.md
+  - postcss.config.js
+  - tailwind.config.js
+  - LICENSE.txt
+
+# Code syntax highlighting
+markdown: kramdown
+input: GFM
+
+# Generate IDs to all headings in the document automatically
+kramdown:
+  auto_ids: true
+
+# Google analytics code, get your code here https://www.google.com/analytics/
+google_analytics: G-PWJ62K2KJL

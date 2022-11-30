@@ -1,0 +1,74 @@
+{% capture current_step %}
+<div class="flex flex-col border-l-4 border-theme-color py-2 pl-4 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-theme-color">
+{% endcapture %}
+
+{% capture completed_step %}
+<div class="group flex flex-col border-l-4 border-green-600 py-2 pl-4 hover:border-green-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-green-600 group-hover:text-green-800">
+{% endcapture %}
+
+{% capture future_step %}
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+{% endcapture %}
+
+<nav class="not-prose">
+<ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+
+<!-- step 1 -->
+<li class="md:flex-1"><a href="#1-v1-to-v2-converter">
+{% if include.step == 1 %}
+  {{ current_step }}
+{% elsif include.step > 1 %}
+  {{ completed_step }}
+{% else %}
+  {{ future_step }}
+{% endif %}
+  1. v1 to v2 Converter</span>
+  <span class="text-sm font-medium">Run a workflow to create a pull request.</span>
+</div></a>
+</li>
+
+<!-- step 2 -->
+<li class="md:flex-1"><a href="#2-merge-pr">
+  {% if include.step == 2 %}
+    {{ current_step }}
+  {% elsif include.step > 2 %}
+    {{ completed_step }}
+  {% else %}
+    {{ future_step }}
+  {% endif %}
+  2. Merge PR</span>
+  <span class="text-sm font-medium">Review and merge config pull request.</span>
+</div></a>
+</li>
+
+<!-- step 3 -->
+<li class="md:flex-1"><a href="#3-cleanup">
+  {% if include.step == 3 %}
+    {{ current_step }}
+  {% elsif include.step > 3 %}
+    {{ completed_step }}
+  {% else %}
+    {{ future_step }}
+  {% endif %}
+  3. Cleanup</span>
+  <span class="text-sm font-medium">Cleanup your capability repository.</span>
+</div></a>
+</li>
+
+<!-- step 4 -->
+<li class="md:flex-1"><a href="#4-inform-admins">
+  {% if include.step == 4 %}
+    {{ current_step }}
+  {% else %}
+    {{ future_step }}
+  {% endif %}
+  4. Inform Admins</span>
+  <span class="text-sm font-medium">Tell your maintainers about the migration.</span>
+</div></a>
+</li>
+
+</ol>
+</nav>

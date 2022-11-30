@@ -1,0 +1,19 @@
+<div class="w-full max-w-2xl">
+  <!-- ... not too big ... -->
+  <video playsinline autoplay muted loop>
+    <source src="/git-flutter/service-demo.webm" type="video/webm" />
+  </video>
+</div>
+<script>
+  var promise = document.querySelector("video").play();
+  if (promise !== undefined) {
+    promise
+      .then((_) => {
+        // Autoplay started OK!
+      })
+      .catch((error) => {
+        // Autoplay was prevented: show a play button
+        document.querySelector("video").setAttribute("controls", true);
+      });
+  }
+</script>

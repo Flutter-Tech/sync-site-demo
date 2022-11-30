@@ -1,0 +1,16 @@
+.DS_Store
+.cache.*
+.devcontainer/**
+.vscode/**
+
+# allow local variations
+Gemfile.lock
+package-lock.json
+
+# ignore generated content
+_site/**
+.sass-cache/**
+.jekyll-cache/**
+.jekyll-metadata
+node_modules
+_script/node_modules

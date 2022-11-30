@@ -1,0 +1,109 @@
+main:
+  - url: /start/
+    title: Quick Start
+    identifier: start
+    children:
+  - url: /docs/
+    title: Using GitHub
+    identifier: docs
+    children:
+      - url: /docs/using-a-repo/
+        title: Using a Repo
+        identifier: using-a-repo
+      - url: /docs/create-repo/
+        title: Create a Repo
+        identifier: create-repo
+      - url: /docs/maintainer/
+        title: Maintain a Repo
+        identifier: maintainer
+      - url: /docs/cbg/
+        title: Codebase Governor
+        identifier: cbg
+      - url: /docs/pr-boards/
+        title: Capability PR Boards
+        identifier: pr-boards
+      - url: /docs/branch-protection/
+        title: Branch Protection
+        identifier: branch-protection
+      - url: /docs/automated-access/
+        title: Automated Access
+        identifier: automated-access
+      - url: /docs/secrets/
+        title: GitHub Secrets
+        identifier: secrets
+  - url: /how/
+    title: Inner Source
+    identifier: how
+    children:
+      - url: /how/choose/
+        title: Choosing Inner Source
+        identifier: choose
+      - url: /how/readable-source/
+        title: Readable Source
+        identifier: readable-source
+      - url: /how/guest-contributions/
+        title: Guest Contributions
+        identifier: guest-contributions
+      - url: /how/multiple-teams/
+        title: Maintainers in Multiple Teams
+        identifier: multiple-teams
+      - url: /how/owner/
+        title: Capability Owners
+        identifier: owner
+      - url: /how/independence/
+        title: Divisional Independence
+        identifier: independence
+      - url: /how/consensus/
+        title: Strategic Consensus
+        identifier: consensus
+      - url: /how/work-types/
+        title: Work Type Analysis
+        identifier: work-types
+  - url: /sdlc/
+    title: Standard SDLCs
+    identifier: sdlc
+    children:
+      - url: /sdlc/source/
+        title: Source
+        identifier: source
+      - url: /sdlc/multiple-teams/
+        title: Multiple Teams
+        identifier: multiple-teams
+      - url: /sdlc/validate/
+        title: Validate
+        identifier: validate
+      - url: /sdlc/package/
+        title: Package & Publish
+        identifier: package
+      - url: /sdlc/test/
+        title: Test
+        identifier: test
+  - url: /catalogue/
+    title: Service Catalogue
+    identifier: catalogue
+    children:
+      - url: /catalogue/community/
+        title: Community
+        identifier: community
+      - url: /catalogue/activity-level/
+        title: Activity Level
+        identifier: activity-level
+      - url: /catalogue/health/
+        title: PR Health
+        identifier: health
+  - url: /security/
+    title: Security
+    identifier: security
+    children:
+      - url: /security/dependabot/
+        title: Dependabot
+        identifier: dependabot
+      - url: /security/admin/
+        title: Repo Admin
+        identifier: admin
+      - url: /security/default-branch/
+        title: Default Branch
+        identifier: default-branch
+  - url: /community/
+    title: Community
+    identifier: community

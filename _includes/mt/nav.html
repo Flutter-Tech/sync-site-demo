@@ -1,0 +1,17 @@
+{% assign urls = "/sdlc/multiple-teams/,/sdlc/multiple-teams/setup/,/sdlc/multiple-teams/branching/,/sdlc/multiple-teams/cli/,/sdlc/multiple-teams/examples/" | split: ',' %}
+<div class="not-prose">
+    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        {% for url in urls %}
+        <li class="mr-2">
+            <a href="{{ url }}"
+            {% if url == page.url  %}
+              class="inline-block py-3 px-4 text-white bg-theme-color rounded-lg active">
+            {% else %}
+              class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            {% endif %}
+            {% cycle "Overview", "Setup Configuration", "Branching Model", "git flutter CLI", "Migration Example" %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

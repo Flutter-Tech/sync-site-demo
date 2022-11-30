@@ -1,0 +1,10 @@
+{
+    "name": "docs-scripts",
+    "version": "2.0.0",
+    "type": "module",
+    "dependencies": {
+      "@octokit/core": "^4.0.5",
+      "@octokit/rest": "^19.0.4"
+    }
+  }
+  

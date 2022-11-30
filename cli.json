@@ -1,0 +1,5 @@
+---
+---
+{
+  "latest-version": {{ site.data.cli.version | jsonify }}
+}

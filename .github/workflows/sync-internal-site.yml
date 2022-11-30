@@ -1,0 +1,77 @@
+name: Update Internal Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  internal-site-sync:
+    # skip this job if running in the target Flutter-Tech repo...
+    if: ${{ github.repository_owner != 'Flutter-Tech' }}
+    runs-on: ubuntu-latest
+    environment: prod
+
+    steps:
+      - name: Retrieve Flutter Global app token
+        id: flutter_global_app_token
+        uses: Flutter-Tech/github-app-token@v1
+        with:
+          APP_PEM: ${{ secrets.FLUTTER_GLOBAL_PEM }}
+          APP_ID: 115213
+          APP_INSTALLATION_ID: 16908128
+
+      - name: Checkout External docs site
+        uses: actions/checkout@v2
+        with:
+          path: fsc-docs-site
+
+      - name: Checkout Internal docs site
+        uses: actions/checkout@v2
+        with:
+          repository: Flutter-Global/fsc-docs-site-internal
+          ref: "main"
+          token: ${{ steps.flutter_global_app_token.outputs.app_token }}
+          path: fsc-docs-site-internal
+
+      - name: Remove files not meant to sync
+        run: |
+          set -ex
+
+          while read -r line; do
+              [[ -z "$line" || "$line" =~ ^#.*$ ]] && continue
+              find ./fsc-docs-site -path "*$line" -exec rm -rf {} +
+          done <<< "$(cat fsc-docs-site/.gitignore fsc-docs-site/.internalsyncignore)"
+
+      - name: Sync external site to internal site
+        run: |
+          cp -Rf fsc-docs-site/* fsc-docs-site-internal
+
+      - name: Set the env variables for Slack message URLS
+        if: ${{ failure() }}
+        run: |
+          echo "action_run_url=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" >> $GITHUB_ENV
+          echo "action_message_url=<$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/|$GITHUB_REPOSITORY>" >> $GITHUB_ENV
+
+      - name: Send Slack message to channel if merge fails
+        if: ${{ failure() }}
+        uses: Flutter-Tech/slack-actions-notifier@v1
+        env:
+          SLACK_MESSAGE: "_*${{ github.workflow }}*_ failed in ${{ env.action_message_url }}"
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          ACTION_STATUS: ${{ job.status }}
+          ACTION_TEXT: Open workflow run
+          ACTION_URL: ${{ env.action_run_url }}
+
+      - name: Push changes to internal site
+        run: |
+          cd ./fsc-docs-site-internal
+          if [ ! -z "$(git status --porcelain=v1 2>/dev/null)" ]
+          then
+            git config --global user.email "innersource-bot@flutter.com"
+            git config --global user.name "Inner source bot"
+            git add .
+            git commit -m "Update from external docs site"
+            git push
+          fi

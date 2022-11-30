@@ -1,0 +1,20 @@
+# Navbar left menu navigation links
+
+left:
+  - title: Start
+    url: /start/
+  - title: GitHub
+    url: /docs/
+  - title: How
+    url: /how/
+  - title: CLI
+    url: /git-flutter/
+  - title: SDLC
+    url: /sdlc/
+
+# Navbar right menu navigation links
+
+right:
+  - title: support
+    url: /community/
+    button: success
