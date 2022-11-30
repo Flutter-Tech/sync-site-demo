@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Validate | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <script defer type="text/javascript" src="/assets/js/custom.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+</head>
+  <body class="relative">
+    
+    <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
+  <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+    <div class="absolute top-0 right-0 pt-2 -mr-12">
+      <button type="button" class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-mobile-nav-close>
+        <span class="sr-only">Close sidebar</span>
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 h-0 pb-4 overflow-y-auto">
+      <div class="flex items-center flex-shrink-0 p-4 bg-theme-header-bg">
+        
+          <img class="w-auto " src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+          
+            <div class="text-sm text-white">inner source</div>
+          
+        
+      </div>
+      <nav aria-label="Sidebar" class="mt-5">
+        <div class="pr-3 space-y-2 sidebar-docs">
+          
+             
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/start/" title="Go to Quick Start" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Quick Start</a
+    >
+  </li>  
+  
+  
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Using GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Using GitHub</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Create a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintain a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/docs/automated-access/" title="Go to Automated Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Automated Access</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/how/" title="Go to Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Inner Source</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-5 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/catalogue/activity-level/" title="Go to Activity Level" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-6 ml-3 relative pt-2">
+    <a href="/security/" title="Go to Security" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Security</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Dependabot</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+  </div>
+</div>
+<div class="fixed top-0 bottom-0 right-0 z-40 flex w-full h-full transition-transform duration-300 ease-in-out -translate-x-full bg-gray-600 opacity-75" data-mobile-nav-overlay></div>
+    <div class="sticky top-0 z-10 w-full min-h-[100px]">
+  
+  <!-- HEADER NAVBAR -->
+  <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg min-h-[100px]">
+    <!-- SITE LOGO -->
+    <div class="relative">
+      <a href="/" class="flex" title="Back to Flutter Inner Source homepage">
+        
+          <img class="w-auto h-auto  mt-2" src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+        
+      </a>
+      
+        <div class="text-sm text-theme-header-logo-message">inner source</div>
+      
+    </div>
+    <!-- SITE LOGO -->
+    <!-- SEARCH -->
+    <!-- SITE HORIZONTAL NAVBAR -->
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+      <nav class="flex">
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/start/"  title="Start">Start</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/docs/"  title="GitHub">GitHub</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/how/"  title="How">How</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/git-flutter/"  title="CLI">CLI</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/sdlc/"  title="SDLC">SDLC</a></li>
+            
+          
+        
+      </nav>
+    </div>
+    <!-- SITE HORIZONTAL NAVBAR -->      
+    <div class="flex items-center md:ml-12">
+      
+      
+      <!-- HEADER BUTTON -->
+      <a href="/community/" class="hidden md:block items-center justify-center px-3 py-1.5 ml-8 text-base font-medium transition-all duration-1000 border border-transparent shadow-sm rounded-2xl text-theme-header-support-button bg-theme-header-support-button-bg  hover:bg-theme-header-support-button-bg-hover hover:text-theme-header-support-button-hover">
+        support
+      </a>
+      <!-- HEADER BUTTON -->
+      
+      <div class="lg:hidden" data-burger-menu>
+        <button type="button" class="inline-flex items-center justify-center w-12 h-12 -mr-3 rounded-md text-theme-mobile-menu-icon hover:text-theme-mobile-menu-icon-hover">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER NAVBAR -->
+</div>
+    <div class="sticky z-0 grid grid-cols-12 gap-2">
+  <div class="hidden py-5 pl-2 pr-5 lg:col-span-2 lg:block sidebar-docs">
+    <div class="sticky z-10 pb-4 overflow-auto text-lg max-h-[40rem] top-32">
+    
+       
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/start/" title="Go to Quick Start" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Quick Start</a
+    >
+  </li>  
+  
+  
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Using GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Using GitHub</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Create a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintain a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/docs/automated-access/" title="Go to Automated Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Automated Access</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/how/" title="Go to Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Inner Source</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-5 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/catalogue/activity-level/" title="Go to Activity Level" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-6 ml-3 relative pt-2">
+    <a href="/security/" title="Go to Security" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Security</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Dependabot</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+    
+    </div>
+  </div>
+  
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="validate">Validate</h1>
+
+<p>A proposed code change is validated by a series of automated checks to provide fast feedback to the contributor.</p>
+
+<ul>
+  <li>These checks are triggered as status checks on any pull request. This provides clear UI feedback to both contributor and reviewer. Draft pull requests can be raised for feedback on pre-review work.</li>
+  <li>Most checks will be defined in the repository itself as <a href="https://docs.github.com/en/actions/using-workflows">GitHub Action workflows</a>. This allows them to be updated via the same process as source code changes. A high level of customisation is possible, alongside a extensive library of open source and/or 3rd party actions.</li>
+  <li>Checks that require access to an internal service or environment can use our self-hosted workflow runners that are connected to the inter-divisional network (IDN).</li>
+  <li>In addition to custom workflows, 3rd party tools like <a href="https://sonarcloud.io/">sonarcloud</a> are integrated and available for all organisational members to use.</li>
+</ul>
+
+<h2 id="github-action-workflows">GitHub Action Workflows</h2>
+
+<p><a href="https://docs.github.com/en/actions/using-workflows">Docs on how to use workflows are available from GitHub</a>. Training courses are also available – contact the <a href="/community/">Inner Source Team</a> for availability. They provide a flexible way to run linters, compile checks, unit tests and so on on <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners">Linux, macOS or Windows job runners</a>.</p>
+
+<p>Each validation workflow should trigger via the <code class="language-plaintext highlighter-rouge">pull_request</code> event. For example to run some unit tests:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /.github/workflows/unit-tests.yml
+name: Example Test Runner
+permissions:
+  contents: read
+on: [ pull_request ]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run unit tests
+        run: mvn test
+</code></pre></div></div>
+
+<p>There are a few security best practices to note:</p>
+
+<ul>
+  <li>if using a 3rd party action in your workflow, <a href="https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions">pin the version to a commit SHA</a> to ensure it is immutable.</li>
+  <li><a href="https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs">restrict the workflow job permissions</a> to only what is necessary (ideally read-only).</li>
+  <li>if secrets are required, <a href="/docs/secrets/">consider the use of environments to restrict access to selected protected branches</a>.</li>
+  <li>if authenticating to AWS (or any major cloud provider), use <a href="https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services">OpenID Connect to manage the workflow auth within AWS IAM directly</a>.</li>
+</ul>
+
+<h2 id="self-hosted-runners">Self-Hosted Runners</h2>
+
+<p>GitHub Action workflows run by default on GitHub managed <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners">infrastructure and operating system images</a> which is suitable for most use-cases. If you have internal network access requirements or need more control over the runner infrastructure you can use the Flutter self-hosted runners. These run on AWS infrastructure and with some internal network routing available through the inter-divisional network (IDN).</p>
+
+<p>Consider using self-hosted runners if:</p>
+
+<ul>
+  <li>you need to access internal services like test environments or an internal Artifactory instance.</li>
+  <li>your jobs are exceptionally demanding of compute, memory or other specific requirements.</li>
+</ul>
+
+<h3 id="enabling-self-hosted-runners">Enabling Self-Hosted Runners</h3>
+
+<p>Access to the self-hosted runners are not available to your repository by default. To request access contact the <a href="/community/">Inner Source Team</a> or <a href="https://github.com/Flutter-Global/product-inner-source/edit/master/runners.csv">raise a PR directly</a> on the <code class="language-plaintext highlighter-rouge">runners.csv</code> file in the root of the <code class="language-plaintext highlighter-rouge">product-inner-source</code> repository.</p>
+
+<h3 id="using-self-hosted-runners">Using Self-Hosted Runners</h3>
+
+<p>To use the self hosted runners simply adjust the <code class="language-plaintext highlighter-rouge">runs-on</code> key in your workflow to:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runs-on: self-hosted
+</code></pre></div></div>
+
+<p>Note that at present the base images used for self-hosted runners is different from that provided by GitHub for their managed runners so you will need to adjust your workflows e.g. to install tools like maven. These differences are due to be resolved by June 2022 when the self-hosted runners will use the same image as the Linux GitHub managed runners.</p>
+
+<h2 id="coming-soon-sonarcloud">(COMING SOON) SonarCloud</h2>
+
+<p>A shared instance of <a href="https://sonarcloud.io/">sonarcloud</a> is expected to be available to all users in Q4 2022, details will follow at that point. At present this tool is used via divisional licencing.</p>
+
+<h2 id="other-3rd-party-tools">Other 3rd Party Tools</h2>
+
+<p>One of the advantages of using a managed GitHub platform is the variety of quality 3rd-party tools that can be integrated. If you have a specific need to work with a 3rd party tool that wotks with GitHub please <a href="https://github.com/Flutter-Global/product-inner-source#proposals">raise a proposal</a> to discuss integrating it.</p>
+
+
+    
+    <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5>Source</h5>
+    <div>
+      <a href="/sdlc/source/"
+        >&larr; Previous</a
+      >
+    </div>
+    
+  </div>
+  <div class="pt-4 border-t border-gray-500 border-solid">
+    
+    <h5 class="text-right">Package</h5>
+    <div class="text-right">
+      <a href="/sdlc/package/"
+        >Next
+        &rarr;</a
+      >
+    </div>
+    
+  </div>
+</div>
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#github-action-workflows" class="hover:text-theme-color">GitHub Action Workflows</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#self-hosted-runners" class="hover:text-theme-color">Self-Hosted Runners</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#enabling-self-hosted-runners" class="hover:text-theme-color">Enabling Self-Hosted Runners</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#using-self-hosted-runners" class="hover:text-theme-color">Using Self-Hosted Runners</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon-sonarcloud" class="hover:text-theme-color">(COMING SOON) SonarCloud</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#other-3rd-party-tools" class="hover:text-theme-color">Other 3rd Party Tools</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
+  </div>
+  
+</div>
+
+    <script defer type="text/javascript" src="/assets/js/clipboard-copy.js"></script>
+  </body>
+</html>

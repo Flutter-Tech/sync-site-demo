@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>v1 to v2 | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <script defer type="text/javascript" src="/assets/js/custom.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+</head>
+  <body class="relative">
+    
+    <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
+  <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+    <div class="absolute top-0 right-0 pt-2 -mr-12">
+      <button type="button" class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-mobile-nav-close>
+        <span class="sr-only">Close sidebar</span>
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 h-0 pb-4 overflow-y-auto">
+      <div class="flex items-center flex-shrink-0 p-4 bg-theme-header-bg">
+        
+          <img class="w-auto " src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+          
+            <div class="text-sm text-white">inner source</div>
+          
+        
+      </div>
+      <nav aria-label="Sidebar" class="mt-5">
+        <div class="pr-3 space-y-2 sidebar-docs">
+          
+             
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/start/" title="Go to Quick Start" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Quick Start</a
+    >
+  </li>  
+  
+  
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Using GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Using GitHub</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Create a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintain a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/docs/automated-access/" title="Go to Automated Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Automated Access</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/how/" title="Go to Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Inner Source</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-5 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/catalogue/activity-level/" title="Go to Activity Level" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-6 ml-3 relative pt-2">
+    <a href="/security/" title="Go to Security" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Security</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Dependabot</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+  </div>
+</div>
+<div class="fixed top-0 bottom-0 right-0 z-40 flex w-full h-full transition-transform duration-300 ease-in-out -translate-x-full bg-gray-600 opacity-75" data-mobile-nav-overlay></div>
+    <div class="sticky top-0 z-10 w-full min-h-[100px]">
+  
+  <!-- HEADER NAVBAR -->
+  <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg min-h-[100px]">
+    <!-- SITE LOGO -->
+    <div class="relative">
+      <a href="/" class="flex" title="Back to Flutter Inner Source homepage">
+        
+          <img class="w-auto h-auto  mt-2" src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+        
+      </a>
+      
+        <div class="text-sm text-theme-header-logo-message">inner source</div>
+      
+    </div>
+    <!-- SITE LOGO -->
+    <!-- SEARCH -->
+    <!-- SITE HORIZONTAL NAVBAR -->
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+      <nav class="flex">
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/start/"  title="Start">Start</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/docs/"  title="GitHub">GitHub</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/how/"  title="How">How</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/git-flutter/"  title="CLI">CLI</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/sdlc/"  title="SDLC">SDLC</a></li>
+            
+          
+        
+      </nav>
+    </div>
+    <!-- SITE HORIZONTAL NAVBAR -->      
+    <div class="flex items-center md:ml-12">
+      
+      
+      <!-- HEADER BUTTON -->
+      <a href="/community/" class="hidden md:block items-center justify-center px-3 py-1.5 ml-8 text-base font-medium transition-all duration-1000 border border-transparent shadow-sm rounded-2xl text-theme-header-support-button bg-theme-header-support-button-bg  hover:bg-theme-header-support-button-bg-hover hover:text-theme-header-support-button-hover">
+        support
+      </a>
+      <!-- HEADER BUTTON -->
+      
+      <div class="lg:hidden" data-burger-menu>
+        <button type="button" class="inline-flex items-center justify-center w-12 h-12 -mr-3 rounded-md text-theme-mobile-menu-icon hover:text-theme-mobile-menu-icon-hover">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER NAVBAR -->
+</div>
+    <div class="sticky z-0 grid grid-cols-12 gap-2">
+  <div class="hidden py-5 pl-2 pr-5 lg:col-span-2 lg:block sidebar-docs">
+    <div class="sticky z-10 pb-4 overflow-auto text-lg max-h-[40rem] top-32">
+    
+       
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/start/" title="Go to Quick Start" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Quick Start</a
+    >
+  </li>  
+  
+  
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Using GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Using GitHub</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Create a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintain a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/docs/automated-access/" title="Go to Automated Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Automated Access</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/how/" title="Go to Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Inner Source</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-5 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/catalogue/activity-level/" title="Go to Activity Level" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-6 ml-3 relative pt-2">
+    <a href="/security/" title="Go to Security" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Security</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Dependabot</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+    
+    </div>
+  </div>
+  
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="codebase-governor-v1-to-v2">Codebase Governor v1 to v2</h1>
+
+<div class="not-prose">
+    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        
+        <li class="mr-2">
+            <a href="/docs/cbg/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Overview
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/repo-config/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Repository File
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/capability-defaults/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Capability Defaults
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/cbg-v2-from-v1/" class="inline-block py-3 px-4 text-white bg-theme-color rounded-lg active">
+            
+            Migrate From v1
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/codebases-json/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Legacy codebases.json
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+<p>Codebase Governor v1 is the application that acts on your capability <code class="language-plaintext highlighter-rouge">codebases.json</code> file to:</p>
+
+<ul>
+  <li>define the repositories which are part of your capability.</li>
+  <li>grant owner and maintainer teams admin access to those repositories.</li>
+  <li>apply branch protections to those repositories.</li>
+</ul>
+
+<p>Version 1 (<code class="language-plaintext highlighter-rouge">v1</code>) of Codebase Governor is being deprecated. It is replaced by version 2 (<code class="language-plaintext highlighter-rouge">v2</code>). This is a major update with several improvements. Migration will be low effort due to the <code class="language-plaintext highlighter-rouge">v1 -&gt; v2</code> migration tools provided.</p>
+
+<div class="w-full max-w-2xl mt-8"><!-- ... not too big ... -->
+<div style="position: relative; display: block; max-width: 1280px;"><div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/3468649868001/rJgmHWotkf_default/index.html?videoId=6313644764112" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div></div>
+</div>
+
+<h2 id="major-changes">Major Changes</h2>
+
+<p>The major changes are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>v1</th>
+      <th>v2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Operation</td>
+      <td><strong>Passive:</strong> runs only when config changes.</td>
+      <td><strong>Pro-active:</strong> runs regularly to enforce defined settings.</td>
+    </tr>
+    <tr>
+      <td>Config Files</td>
+      <td><strong>Local:</strong> in your own repository.</td>
+      <td><strong>Centralised:</strong> in a central security-hardened <code class="language-plaintext highlighter-rouge">org-config</code> repository.</td>
+    </tr>
+    <tr>
+      <td>Capability Repository</td>
+      <td><strong>Mandatory:</strong> required you to manage a meta-data <code class="language-plaintext highlighter-rouge">cap-</code> repository.</td>
+      <td><strong>Optional:</strong> a capability is as simple as creating a directory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example:</p>
+
+<ul>
+  <li>A repository admin updates branch protection settings in the GitHub UI different to that configured. In v1, this change would be reverted only when the config was next updated, potentially months later. v2 will detect and revert the change within a few minutes.</li>
+  <li>To create a new capability: in v1 this required you to create and manage a capability repository (a repo prefixed with <code class="language-plaintext highlighter-rouge">cap-</code>). In v2 you update your configuration within the <a href="https://github.com/Flutter-Global/org-config">org-config</a> repository that is managed for you. Creating a capability is simply a matter of file and directory creation.</li>
+</ul>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<nav class="not-prose">
+<ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+
+<!-- step 1 -->
+<li class="md:flex-1"><a href="#1-v1-to-v2-converter">
+
+  
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+
+  1. v1 to v2 Converter</span>
+  <span class="text-sm font-medium">Run a workflow to create a pull request.</span>
+</div></a>
+</li>
+
+<!-- step 2 -->
+<li class="md:flex-1"><a href="#2-merge-pr">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  2. Merge PR</span>
+  <span class="text-sm font-medium">Review and merge config pull request.</span>
+</div></a>
+</li>
+
+<!-- step 3 -->
+<li class="md:flex-1"><a href="#3-cleanup">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  3. Cleanup</span>
+  <span class="text-sm font-medium">Cleanup your capability repository.</span>
+</div></a>
+</li>
+
+<!-- step 4 -->
+<li class="md:flex-1"><a href="#4-inform-admins">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  4. Inform Admins</span>
+  <span class="text-sm font-medium">Tell your maintainers about the migration.</span>
+</div></a>
+</li>
+
+</ol>
+</nav>
+
+<p>There are 4 migration steps:</p>
+
+<ol>
+  <li>Use the v1 to v2 converter to create a pull request on the <code class="language-plaintext highlighter-rouge">org-config</code> repository reflecting your current GitHub capability state. <a href="https://github.com/Flutter-Global/org-config/actions/workflows/cbg-migrator.yml">Use the “Run workflow” button on this GitHub action workflow</a>.</li>
+  <li>Merge your <a href="https://github.com/Flutter-Global/org-config/pulls">org-config pull request</a>. Review and update it as necessary until the capability owner approves it. If you are unsure of the impact of any config refer to the <a href="/docs/cbg/">full codebase governor v2 documentation</a>. You have now adopted codebase governor v2.</li>
+  <li>Your capability repository and <code class="language-plaintext highlighter-rouge">codebases.json</code> are now no longer required. You can either delete the capability repository, or remove the <code class="language-plaintext highlighter-rouge">codebases.json</code> file within it to fully decommission v1.</li>
+  <li>Inform your capability maintainers and any other repository admins of the migration: they will now need to update maintainers, branch protection and repository access via the <a href="https://github.com/Flutter-Global/org-config">org-config</a> YAML config.</li>
+</ol>
+
+<p>The rest of this document describes each of these steps in more detail.</p>
+
+<h2 id="1-v1-to-v2-converter">1. v1 to v2 Converter</h2>
+
+<nav class="not-prose">
+<ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+
+<!-- step 1 -->
+<li class="md:flex-1"><a href="#1-v1-to-v2-converter">
+
+  
+<div class="flex flex-col border-l-4 border-theme-color py-2 pl-4 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-theme-color">
+
+
+  1. v1 to v2 Converter</span>
+  <span class="text-sm font-medium">Run a workflow to create a pull request.</span>
+</div></a>
+</li>
+
+<!-- step 2 -->
+<li class="md:flex-1"><a href="#2-merge-pr">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  2. Merge PR</span>
+  <span class="text-sm font-medium">Review and merge config pull request.</span>
+</div></a>
+</li>
+
+<!-- step 3 -->
+<li class="md:flex-1"><a href="#3-cleanup">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  3. Cleanup</span>
+  <span class="text-sm font-medium">Cleanup your capability repository.</span>
+</div></a>
+</li>
+
+<!-- step 4 -->
+<li class="md:flex-1"><a href="#4-inform-admins">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  4. Inform Admins</span>
+  <span class="text-sm font-medium">Tell your maintainers about the migration.</span>
+</div></a>
+</li>
+
+</ol>
+</nav>
+
+<p>An automated v1 to v2 converter is available. This will:</p>
+
+<ul>
+  <li>Load the configured owner and maintainers from your existing <code class="language-plaintext highlighter-rouge">codebases.json</code>.</li>
+  <li>Load the actual state of each capability repository’s branch protection and user/team access permissions.</li>
+  <li>Create a new branch on <code class="language-plaintext highlighter-rouge">org-config</code> repository</li>
+  <li>Write and commit v2 configuration (<a href="/docs/cbg/">docs</a>) to this branch that matches your current capability state.</li>
+  <li>Raise a pull request on the <code class="language-plaintext highlighter-rouge">org-config</code> repository to merge these changes in your new branch into <code class="language-plaintext highlighter-rouge">main</code>.</li>
+</ul>
+
+<p>Once the converter has finished you will need to review, approve and merge the pull request before it is actioned.</p>
+
+<p>To run the converter <a href="https://github.com/Flutter-Global/org-config/actions/workflows/cbg-migrator.yml">use the “Run workflow” button on this GitHub action workflow</a> specifying the name of your capability repo (your repo with the <code class="language-plaintext highlighter-rouge">cap-</code> prefix).</p>
+
+<p><img src="/docs/cbg/migrate-workflow.png" class="w-full max-w-xl" /></p>
+
+<p>The workflow will start and you can follow its progress in the GitHub UI it may take a few minutes. When completed it will display the URL of the pull request it has created for you. You can either navigate directly to this URL, or find your pull request in the <a href="https://github.com/Flutter-Global/org-config/pulls">list of all open org-config pull requests</a> by search for your capability repo name.</p>
+
+<p><img src="/docs/cbg/workflow-result.png" class="w-full max-w-xl" /></p>
+
+<h2 id="2-merge-pr">2. Merge PR</h2>
+
+<nav class="not-prose">
+<ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+
+<!-- step 1 -->
+<li class="md:flex-1"><a href="#1-v1-to-v2-converter">
+
+  
+<div class="group flex flex-col border-l-4 border-green-600 py-2 pl-4 hover:border-green-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-green-600 group-hover:text-green-800">
+
+
+  1. v1 to v2 Converter</span>
+  <span class="text-sm font-medium">Run a workflow to create a pull request.</span>
+</div></a>
+</li>
+
+<!-- step 2 -->
+<li class="md:flex-1"><a href="#2-merge-pr">
+  
+    
+<div class="flex flex-col border-l-4 border-theme-color py-2 pl-4 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-theme-color">
+
+  
+  2. Merge PR</span>
+  <span class="text-sm font-medium">Review and merge config pull request.</span>
+</div></a>
+</li>
+
+<!-- step 3 -->
+<li class="md:flex-1"><a href="#3-cleanup">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  3. Cleanup</span>
+  <span class="text-sm font-medium">Cleanup your capability repository.</span>
+</div></a>
+</li>
+
+<!-- step 4 -->
+<li class="md:flex-1"><a href="#4-inform-admins">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  4. Inform Admins</span>
+  <span class="text-sm font-medium">Tell your maintainers about the migration.</span>
+</div></a>
+</li>
+
+</ol>
+</nav>
+
+<p>Your pull request will:</p>
+
+<ul>
+  <li>Contain the codebase governor v2 config that reflects the current state of your capability. The <a href="/docs/cbg/">YAML options are documented here</a>.</li>
+  <li>A comment will be added to the pull request to validate the configuration and document any changes merging the pull request will apply to your repositories. This comment may take a few minutes after the pull request creation as the validator runs against GitHub APIs to determine the changes it will apply.</li>
+  <li>Appropriate approvers will be added to your pull request automatically (e.g. the capability owner, maintainers and/or repository administrators). The pull request cannot be merged until the approvals are complete.</li>
+  <li>You can edit your config by pushing more commits to your pull request branch and the updates will be revalidated so you can see their impact before you approve and merge the pull request.</li>
+</ul>
+
+<p>To complete your adoption of codebase governor v2 you need to merge your pull request.</p>
+
+<h2 id="3-cleanup">3. Cleanup</h2>
+
+<nav class="not-prose">
+<ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+
+<!-- step 1 -->
+<li class="md:flex-1"><a href="#1-v1-to-v2-converter">
+
+  
+<div class="group flex flex-col border-l-4 border-green-600 py-2 pl-4 hover:border-green-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-green-600 group-hover:text-green-800">
+
+
+  1. v1 to v2 Converter</span>
+  <span class="text-sm font-medium">Run a workflow to create a pull request.</span>
+</div></a>
+</li>
+
+<!-- step 2 -->
+<li class="md:flex-1"><a href="#2-merge-pr">
+  
+    
+<div class="group flex flex-col border-l-4 border-green-600 py-2 pl-4 hover:border-green-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-green-600 group-hover:text-green-800">
+
+  
+  2. Merge PR</span>
+  <span class="text-sm font-medium">Review and merge config pull request.</span>
+</div></a>
+</li>
+
+<!-- step 3 -->
+<li class="md:flex-1"><a href="#3-cleanup">
+  
+    
+<div class="flex flex-col border-l-4 border-theme-color py-2 pl-4 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-theme-color">
+
+  
+  3. Cleanup</span>
+  <span class="text-sm font-medium">Cleanup your capability repository.</span>
+</div></a>
+</li>
+
+<!-- step 4 -->
+<li class="md:flex-1"><a href="#4-inform-admins">
+  
+    
+<div class="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+
+  
+  4. Inform Admins</span>
+  <span class="text-sm font-medium">Tell your maintainers about the migration.</span>
+</div></a>
+</li>
+
+</ol>
+</nav>
+
+<p>Your capability repository (a repo prefixed with <code class="language-plaintext highlighter-rouge">cap-</code>) contains two files that that no longer required now you have moved to codebase governor v2. These are not removed automatically because you own your capability repository. You can either:</p>
+
+<ol>
+  <li>(Recommended) Delete the capability repository if you do not use it for anything. Codebase governor v2 no longer requires a capability repository so its deletion will not affect your capability config which is now in the <code class="language-plaintext highlighter-rouge">org-config</code> repository.</li>
+  <li>Delete the 2 deprecated files from the repository: <code class="language-plaintext highlighter-rouge">codebases.json</code> and <code class="language-plaintext highlighter-rouge">.github/workflows/codebases-governor.yml</code></li>
+</ol>
+
+<h2 id="4-inform-admins">4. Inform Admins</h2>
+
+<nav class="not-prose">
+<ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+
+<!-- step 1 -->
+<li class="md:flex-1"><a href="#1-v1-to-v2-converter">
+
+  
+<div class="group flex flex-col border-l-4 border-green-600 py-2 pl-4 hover:border-green-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-green-600 group-hover:text-green-800">
+
+
+  1. v1 to v2 Converter</span>
+  <span class="text-sm font-medium">Run a workflow to create a pull request.</span>
+</div></a>
+</li>
+
+<!-- step 2 -->
+<li class="md:flex-1"><a href="#2-merge-pr">
+  
+    
+<div class="group flex flex-col border-l-4 border-green-600 py-2 pl-4 hover:border-green-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-green-600 group-hover:text-green-800">
+
+  
+  2. Merge PR</span>
+  <span class="text-sm font-medium">Review and merge config pull request.</span>
+</div></a>
+</li>
+
+<!-- step 3 -->
+<li class="md:flex-1"><a href="#3-cleanup">
+  
+    
+<div class="group flex flex-col border-l-4 border-green-600 py-2 pl-4 hover:border-green-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-green-600 group-hover:text-green-800">
+
+  
+  3. Cleanup</span>
+  <span class="text-sm font-medium">Cleanup your capability repository.</span>
+</div></a>
+</li>
+
+<!-- step 4 -->
+<li class="md:flex-1"><a href="#4-inform-admins">
+  
+    
+<div class="flex flex-col border-l-4 border-theme-color py-2 pl-4 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0">
+<span class="text-sm font-medium text-theme-color">
+
+  
+  4. Inform Admins</span>
+  <span class="text-sm font-medium">Tell your maintainers about the migration.</span>
+</div></a>
+</li>
+
+</ol>
+</nav>
+
+<p>The switch to codebase governor v2 means changes to repository branch protection and access control must be executed via file config changes in <code class="language-plaintext highlighter-rouge">org-config</code>. Changes in the GitHub UI will be reverted. A suggested update to send to your repository administrators:</p>
+
+<blockquote>
+  <p>I’ve migrated our capability to codebase governor v2. I hope you’ve already seen the emails about this update, this is a quick reminder. Updates to maintainers, branch protection or repository access is now done through changes to the config files in:
+https://github.com/Flutter-Global/org-config/tree/main/codebases</p>
+
+  <p>Just raise a pull request on the config in this repository to propose changes. The docs for the YAML config format is here: https://developers.flutter.com/docs/cbg/</p>
+</blockquote>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>If you have any questions or encounter any problems please reach out to the <a href="/community/">Inner Source Team</a>.</p>
+
+
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#major-changes" class="hover:text-theme-color">Major Changes</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#quick-start" class="hover:text-theme-color">Quick Start</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#1-v1-to-v2-converter" class="hover:text-theme-color">1. v1 to v2 Converter</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#2-merge-pr" class="hover:text-theme-color">2. Merge PR</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#3-cleanup" class="hover:text-theme-color">3. Cleanup</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#4-inform-admins" class="hover:text-theme-color">4. Inform Admins</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#troubleshooting" class="hover:text-theme-color">Troubleshooting</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
+  </div>
+  
+</div>
+
+    <script defer type="text/javascript" src="/assets/js/clipboard-copy.js"></script>
+  </body>
+</html>

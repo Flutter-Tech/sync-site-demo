@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Repository Configuration | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <script defer type="text/javascript" src="/assets/js/custom.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+</head>
+  <body class="relative">
+    
+    <div class="fixed inset-0 top-0 bottom-0 right-0 z-50 flex transition-transform duration-300 ease-in-out delay-100 -translate-x-full" data-mobile-nav>
+  <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+    <div class="absolute top-0 right-0 pt-2 -mr-12">
+      <button type="button" class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-mobile-nav-close>
+        <span class="sr-only">Close sidebar</span>
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 h-0 pb-4 overflow-y-auto">
+      <div class="flex items-center flex-shrink-0 p-4 bg-theme-header-bg">
+        
+          <img class="w-auto " src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+          
+            <div class="text-sm text-white">inner source</div>
+          
+        
+      </div>
+      <nav aria-label="Sidebar" class="mt-5">
+        <div class="pr-3 space-y-2 sidebar-docs">
+          
+             
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/start/" title="Go to Quick Start" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Quick Start</a
+    >
+  </li>  
+  
+  
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Using GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Using GitHub</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Create a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintain a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/docs/automated-access/" title="Go to Automated Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Automated Access</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/how/" title="Go to Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Inner Source</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-5 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/catalogue/activity-level/" title="Go to Activity Level" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-6 ml-3 relative pt-2">
+    <a href="/security/" title="Go to Security" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Security</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Dependabot</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+  </div>
+</div>
+<div class="fixed top-0 bottom-0 right-0 z-40 flex w-full h-full transition-transform duration-300 ease-in-out -translate-x-full bg-gray-600 opacity-75" data-mobile-nav-overlay></div>
+    <div class="sticky top-0 z-10 w-full min-h-[100px]">
+  
+  <!-- HEADER NAVBAR -->
+  <div class="flex items-center justify-between px-4 py-4 sm:px-6 md:justify-start md:space-x-10 bg-theme-header-bg min-h-[100px]">
+    <!-- SITE LOGO -->
+    <div class="relative">
+      <a href="/" class="flex" title="Back to Flutter Inner Source homepage">
+        
+          <img class="w-auto h-auto  mt-2" src=/assets/img/flutter-logo.png alt="Back to Flutter Inner Source homepage">
+        
+      </a>
+      
+        <div class="text-sm text-theme-header-logo-message">inner source</div>
+      
+    </div>
+    <!-- SITE LOGO -->
+    <!-- SEARCH -->
+    <!-- SITE HORIZONTAL NAVBAR -->
+    <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+      <nav class="flex">
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/start/"  title="Start">Start</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/docs/"  title="GitHub">GitHub</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/how/"  title="How">How</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/git-flutter/"  title="CLI">CLI</a></li>
+            
+          
+        
+          
+          
+          
+            
+                <a  class="px-6 -my-10 transition-all duration-500 py-7 lg:p-8 text-theme-header-nav-link bg-theme-header-nav-link-bg hover:bg-theme-header-nav-link-bg-sel hover:text-theme-header-nav-link-sel" href="/sdlc/"  title="SDLC">SDLC</a></li>
+            
+          
+        
+      </nav>
+    </div>
+    <!-- SITE HORIZONTAL NAVBAR -->      
+    <div class="flex items-center md:ml-12">
+      
+      
+      <!-- HEADER BUTTON -->
+      <a href="/community/" class="hidden md:block items-center justify-center px-3 py-1.5 ml-8 text-base font-medium transition-all duration-1000 border border-transparent shadow-sm rounded-2xl text-theme-header-support-button bg-theme-header-support-button-bg  hover:bg-theme-header-support-button-bg-hover hover:text-theme-header-support-button-hover">
+        support
+      </a>
+      <!-- HEADER BUTTON -->
+      
+      <div class="lg:hidden" data-burger-menu>
+        <button type="button" class="inline-flex items-center justify-center w-12 h-12 -mr-3 rounded-md text-theme-mobile-menu-icon hover:text-theme-mobile-menu-icon-hover">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER NAVBAR -->
+</div>
+    <div class="sticky z-0 grid grid-cols-12 gap-2">
+  <div class="hidden py-5 pl-2 pr-5 lg:col-span-2 lg:block sidebar-docs">
+    <div class="sticky z-10 pb-4 overflow-auto text-lg max-h-[40rem] top-32">
+    
+       
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/start/" title="Go to Quick Start" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Quick Start</a
+    >
+  </li>  
+  
+  
+  
+  <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+    <a href="/docs/" title="Go to Using GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Using GitHub</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Using a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Create a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintain a Repo</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Codebase Governor</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability PR Boards</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Branch Protection</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/docs/automated-access/" title="Go to Automated Access" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Automated Access</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/docs/secrets/" title="Go to GitHub Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Secrets</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-3 ml-3 relative pt-2">
+    <a href="/how/" title="Go to Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Inner Source</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Choosing Inner Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Readable Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Guest Contributions</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Maintainers in Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Capability Owners</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Divisional Independence</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Strategic Consensus</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-8 ml-3 pt-2"
+  >
+    <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Work Type Analysis</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-4 ml-3 relative pt-2">
+    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Multiple Teams</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Validate</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-4 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Package & Publish</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-5 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Test</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-5 ml-3 relative pt-2">
+    <a href="/catalogue/" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Service Catalogue</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/catalogue/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/catalogue/activity-level/" title="Go to Activity Level" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Activity Level</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/catalogue/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > PR Health</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li class="nav-parent menu-item-6 ml-3 relative pt-2">
+    <a href="/security/" title="Go to Security" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Security</a>
+    <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
+      <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+      />
+    </div>
+    
+     
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+  
+  
+  <li
+    class="menu-item-1 ml-3 pt-2"
+  >
+    <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Dependabot</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Repo Admin</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
+  >
+    <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Default Branch</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+  </li>
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Community</a
+    >
+  </li>  
+  
+  
+</ul>
+
+
+    
+    </div>
+  </div>
+  
+  <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
+    
+    <h1 id="repository-configuration-file">Repository Configuration File</h1>
+
+<div class="not-prose">
+    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        
+        <li class="mr-2">
+            <a href="/docs/cbg/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Overview
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/repo-config/" class="inline-block py-3 px-4 text-white bg-theme-color rounded-lg active">
+            
+            Repository File
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/capability-defaults/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Capability Defaults
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/cbg-v2-from-v1/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Migrate From v1
+            </a>
+        </li>
+        
+        <li class="mr-2">
+            <a href="/docs/codebases-json/" class="inline-block py-3 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+            
+            Legacy codebases.json
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+<p>This page explains the format of the <a href="/docs/cbg/#repository">Codebase Governor repository configuration</a> YAML file. The codebase governor runner repository itself <a href="https://github.com/Flutter-Global/org-config/blob/main/codebases/codebase-governor/fsc-cbg.yml">has a commented example of this file</a>. All fields are optional so you can add only what you want the codebase governor to enforce – anything you omit you are free to manage manually via the GitHub UI or your own automation.</p>
+
+<p>The file uses YAML syntax, and must have a <code class="language-plaintext highlighter-rouge">.yml</code> file extension. If you’re new to YAML and want to learn more, see “<a href="https://learnxinyminutes.com/docs/yaml/">Learn YAML in Y minutes</a>”.</p>
+
+<h2 id="description"><code class="language-plaintext highlighter-rouge">description</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">description</code> key contains a description of the repository. Ideally this is a single sentence but can be several short sentences if required. It cannot be more than 1 paragraph (i.e. cannot contain any line breaks).</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;</span>
+  <span class="s">Codebase Governor is a tool to manage repository access </span>
+  <span class="s">and branch protections.</span>
+</code></pre></div></div>
+
+<h2 id="branch-protections"><code class="language-plaintext highlighter-rouge">branch-protections</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">branch-protections</code> section specifies the required branch protection rules for the repository. If omitted any default branch protection rules from the <a href="/docs/capability-defaults/">capability defaults file</a> will be applied. If no defaults are specified you are managing branch protections either manually via the GitHub UI or with your own automation.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">branch-protections</code> expects an array of keys, so you can define as many separate rules as you need.</li>
+  <li><a href="#branch-protectionspatterns"><code class="language-plaintext highlighter-rouge">branch-protections[*].patterns</code></a> specifies a list of branch name patterns to apply this rule to.</li>
+  <li><a href="#branch-protectionsparameters"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters</code></a> specifies the constraints that should be applied.</li>
+</ul>
+
+<h3 id="audit-sdlc">Audit SDLC</h3>
+
+<p>The <a href="/sdlc/">Audit SDLC</a> is suitable for documentation, integration test or other non-production deployed supporting repositories. This ensures previous changes are visible and can be audited at any time, but does not require changes to be reviewed before they are made.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">main"</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>The branch protection parameter defaults are already configured for audit, with <code class="language-plaintext highlighter-rouge">allows-force-pushes</code> and <code class="language-plaintext highlighter-rouge">allows-deletions</code> settings defaulting to ensure that the history of the branch cannot be modified or deleted. Since the default values are appropriate, the <code class="language-plaintext highlighter-rouge">parameters</code> key can simply be omitted.</p>
+
+<h3 id="service-sdlc">Service SDLC</h3>
+
+<p>The <a href="/sdlc/">Service SDLC</a> is suitable for production deployed service code repositories where changes MUST be reviewed. Service branching is optimised for <a href="/how/guest-contributions/">Guest Contribution</a> applications where there is a clear owning team.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">main"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">support/*"</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>In this case the default branch (<code class="language-plaintext highlighter-rouge">main</code> or on older repos <code class="language-plaintext highlighter-rouge">master</code>) and any previous version support branches (<code class="language-plaintext highlighter-rouge">support/*</code>) are configured to:</p>
+
+<ul>
+  <li>Ensure pull requests are used with at least 1 approving review (<code class="language-plaintext highlighter-rouge">required-reviews-count: 1</code>).</li>
+  <li>Require a <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">codeowner</a> approval rather than any other user with write permissions (<code class="language-plaintext highlighter-rouge">requires-codeowner-reviews: true</code>).</li>
+  <li>Require automated pull request validation checks to pass before a pull request can be merged (<code class="language-plaintext highlighter-rouge">requires-status-checks: true</code>).</li>
+</ul>
+
+<h3 id="multiple-teams-sdlc">Multiple Teams SDLC</h3>
+
+<p>The <a href="/sdlc/multiple-teams/">Multiple Teams SDLC</a> is suitable for production deployed service code repositories where changes MUST be reviewed. Multiple Teams branching is optimised for <a href="/how/multiple-teams/">Maintainers in Multiple Teams</a> services where there are multiple teams working concurrently on the code.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">main"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">support/*"</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">2</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*/develop"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*/release/*"</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allows-deletions</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>The default and previous version support branches are configured like the service SDLC to ensure all production deployed code has been reviewed:</p>
+
+<ul>
+  <li>Ensure pull requests are used with at least 2 approving review (<code class="language-plaintext highlighter-rouge">required-reviews-count: 2</code>). This encourages cross team review for critical pull requests.</li>
+  <li>Require a <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">codeowner</a> approval rather than any other user with write permissions (<code class="language-plaintext highlighter-rouge">requires-codeowner-reviews: true</code>).</li>
+  <li>Require automated pull request validation checks to pass before a pull request can be merged (<code class="language-plaintext highlighter-rouge">requires-status-checks: true</code>).</li>
+</ul>
+
+<p>Develop and release branches also require branch protection, but the settings can be optimised for development speed:</p>
+
+<ul>
+  <li>maintainers and any other repository admins can push directly to develop and release branches due to enabling <code class="language-plaintext highlighter-rouge">allow-admin-bypass</code>. This allows them to perform maintenance directly without waiting for review.</li>
+  <li>Approving reviews remain valid for a pull request after minor feedback fixes are made (<code class="language-plaintext highlighter-rouge">allow-stale-reviews: true</code>). This means the author spends less time chasing re-reviews after minor edits.</li>
+  <li>A branch which is not up-to-date can still be merged (<code class="language-plaintext highlighter-rouge">allow-stale-branch-merge: true</code>). This reduces the time an author spends updating their branch.</li>
+  <li>develop and release branches change over time: teams are added and removed and release branches are explicitally deleted after a release is completed so deleted is allowed via <code class="language-plaintext highlighter-rouge">allows-deletions: true</code>.</li>
+</ul>
+
+<h3 id="branch-protectionspatterns"><code class="language-plaintext highlighter-rouge">branch-protections[*].patterns</code></h3>
+
+<p>The branch name pattern that the protection rule will apply to. Due to the GitHub implementation this pattern must be specified using <a href="(https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch)">fnmatch</a> syntax. From <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule">GitHub documentation</a>:</p>
+
+<blockquote>
+  <p>You can create a rule for all current and future branches in your repository with the wildcard syntax <code class="language-plaintext highlighter-rouge">*</code>. Because GitHub uses the File::FNM_PATHNAME flag for the File.fnmatch syntax, the wildcard does not match directory separators (/). For example, <code class="language-plaintext highlighter-rouge">qa/*</code> will match all branches beginning with <code class="language-plaintext highlighter-rouge">qa/</code> and containing a single slash. You can include multiple slashes with <code class="language-plaintext highlighter-rouge">qa/**/*</code>, and you can extend the qa string with <code class="language-plaintext highlighter-rouge">qa**/**/*</code> to make the rule more inclusive. For more information about syntax options for branch rules, see the <a href="(https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch)">fnmatch documentation</a>.</p>
+</blockquote>
+
+<p>For example, to specify a rule must apply to the default <code class="language-plaintext highlighter-rouge">main</code> branch:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>For example to specify a rule must apply to default, develop, support and release branches in a <a href="/sdlc/multiple-teams/">multiple team branching model</a>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">main"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*/develop"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">support/*"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*/release/*"</span>
+</code></pre></div></div>
+
+<h3 id="branch-protectionsparameters"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters</code></h3>
+
+<p>The protection parameters that will be applied to the specified patterns.</p>
+
+<h4 id="branch-protectionsparametersrequired-reviews-count"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.required-reviews-count</code></h4>
+
+<p>The number of required pull request reviews before commits can be merged into this branch. The default value of 0 means any user with write access to the repository can push directly to this branch with no review. A value of 1 means users with write access cannot push directly to this branch, instead they need to raise a pull request and get at least 1 review approval from another user with write permission before the branch can be merged.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
+</code></pre></div></div>
+
+<p>The <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging">GitHub docs provide more information about required reviews</a>.</p>
+
+<p>There are several related parameters:</p>
+
+<ul>
+  <li><a href="#branch-protectionsparametersrequires-codeowner-reviews"><code class="language-plaintext highlighter-rouge">requires-codeowner-reviews</code></a> if enabled requires at least one of the approving reviews to be from a <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">GitHub configured “codeowner”</a>.</li>
+  <li><a href="#branch-protectionsparametersallow-stale-reviews"><code class="language-plaintext highlighter-rouge">allow-stale-reviews</code></a> allows any existing pull request approvals to remain valid even after additional changes are pushed.</li>
+  <li><a href="#branch-protectionsparametersallow-admin-bypass"><code class="language-plaintext highlighter-rouge">allow-admin-bypass</code></a> allows repository admins to bypass the protection rule and push directly to the branch.</li>
+</ul>
+
+<h4 id="branch-protectionsparametersrequires-codeowner-reviews"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.requires-codeowner-reviews</code></h4>
+
+<p>Repository “code owners” <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">can be configured in your repository using the <code class="language-plaintext highlighter-rouge">CODEOWNERS</code> file</a>. Typically this will reference the capability maintainer team as it then automatically adds them as reviewers when a pull request is raised.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>The default value for this parameter is <code class="language-plaintext highlighter-rouge">false</code>. If enabled by setting it to <code class="language-plaintext highlighter-rouge">true</code>, a pull request will require an review approval from the specified code owners before it can be merged. Without this setting enabled, the <code class="language-plaintext highlighter-rouge">required-reviews-count</code> can be provided by any user with write access to the repository.</p>
+
+<h4 id="branch-protectionsparametersallow-stale-reviews"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-stale-reviews</code></h4>
+
+<p>By default a pull request approval is dismissed when additional changes are made.</p>
+
+<p>Enabling <code class="language-plaintext highlighter-rouge">allow-stale-reviews</code> means a pull request approval remains valid even when additional changes are pushed to the pull request branch after the review. This is convenient for the pull request author as they act on review feedback to implement minor fixes to the pull request – they don’t need to get the pull request re-reviewed after the have pushed their fixes. However, note how it allows additional <strong>unreviewed code</strong> to be appended to an existing approved pull request so enabling this rule is not recommended for critical branches where all code must be reviewed.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h4 id="branch-protectionsparametersallow-admin-bypass"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-admin-bypass</code></h4>
+
+<p>By default the branch protection rule constraints apply to all users, including repository or organisation administrators.</p>
+
+<p>Enabling <code class="language-plaintext highlighter-rouge">allow-admin-bypass</code> allows repository and organisation admins to override the restrictions of a branch protection rule. For example this would allow maintainers to push directly to a protected branch that required reviews. This is convenient when repository administrators are expected to perform maintenance work on the protected branch as they can bypass the constraints to do so.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h4 id="branch-protectionsparametersrequires-status-checks"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.requires-status-checks</code></h4>
+
+<p>Required status checks ensure that all required GitHub status tests are passing before changes can be merged to a protected branch. GitHub status checks can be GitHub Action workflows or external checks like a divisional Jenkins or SonarCloud.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>The <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-status-checks-before-merging">GitHub docs provide more information about requiring status checks in pull requests</a>.</p>
+
+<h4 id="branch-protectionsparametersallow-stale-branch-merge"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-stale-branch-merge</code></h4>
+
+<p>When status checks are required (<code class="language-plaintext highlighter-rouge">requires-status-checks</code>) by default the pull request branch must be up-to-date with the base branch. This ensures the status checks will have run against the content exactly as it would be merged.</p>
+
+<p>Enabling <code class="language-plaintext highlighter-rouge">allow-stale-branch-merge</code> allows the status checks to remain valid and the pull request remains mergable even when the pull request branch becomes out of date with the base branch. This allows the pull request to continue when changes are made to the base branch, but does compromise status check guarantees.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p><strong>Example</strong>: Nuno and Tiago are each working on separate feature branches. They both raise pull requests to merge their work into <code class="language-plaintext highlighter-rouge">main</code>. Nuno’s feature is reviewed and approved quickly and he merges it into <code class="language-plaintext highlighter-rouge">main</code>. Tiago’s branch is now out of date with <code class="language-plaintext highlighter-rouge">main</code>. Unless <code class="language-plaintext highlighter-rouge">allow-stale-branch-merge</code> is enabled Tiago will need to merge Nuno’s changes up from <code class="language-plaintext highlighter-rouge">main</code> into his feature branch before his pull request can be merged.</p>
+
+<h4 id="advanced-settings">Advanced Settings</h4>
+
+<p>Further branch protection settings <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches">are described in the GitHub docs</a> and can be configured by:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
+
+      <span class="c1"># Requires commits to be signed and verified</span>
+      <span class="na">requires-commit-signatures</span><span class="pi">:</span> <span class="no">true</span>
+
+      <span class="c1"># Requires PR conversations to be marked as resolved</span>
+      <span class="na">requires-conversation-resolution</span><span class="pi">:</span> <span class="no">true</span>
+
+      <span class="c1"># Prevents merge commits being created on the branch</span>
+      <span class="na">requires-linear-history</span><span class="pi">:</span> <span class="no">true</span>
+
+      <span class="c1"># By default force pushes and branch deletions are prevented but this</span>
+      <span class="c1"># can be allowed if desired by switching these settings to 'true':</span>
+      <span class="na">allows-force-pushes</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">allows-deletions</span><span class="pi">:</span> <span class="no">false</span>
+
+      <span class="c1"># If push restriction is enabled then only users, teams, or apps</span>
+      <span class="c1"># that have been given permission can push to the protected branch.</span>
+      <span class="c1">#</span>
+      <span class="c1"># It is not possible for codebase governor to manage the users, teams</span>
+      <span class="c1"># and apps specified so these need to be manually set in the GitHub</span>
+      <span class="c1"># interface.</span>
+      <span class="na">restricts-pushes</span><span class="pi">:</span> <span class="no">false</span>
+
+      <span class="c1"># If review dismissal restriction is enabled then only users, teams,</span>
+      <span class="c1"># or apps specified can dismiss a blocking review.</span>
+      <span class="c1">#</span>
+      <span class="c1"># It is not possible for codebase governor to manage the users, teams</span>
+      <span class="c1"># and apps specified so these need to be manually set in the GitHub</span>
+      <span class="c1"># interface.</span>
+      <span class="na">restricts-review-dismissals</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<p>If you need any advice on using advanced settings, please use <a href="/community/">the available support channels</a>.</p>
+
+<h2 id="contributors"><code class="language-plaintext highlighter-rouge">contributors</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">contributors</code> section specifies who can contribute to your repository. A “contributor” is a user with <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">write permission</a> to the repository. If omitted the default contributors from the <a href="/docs/capability-defaults/">capability defaults file</a> will be applied. If no defaults are specified you are managing contributors manually via the GitHub UI or with your own automation.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">contributors.teams</code> specifies a list of teams to grant <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">write access</a> to. The teams are specified by the team “slug” which is the URL identifier for the team. Only teams within Flutter-Global can be referenced.</li>
+  <li><code class="language-plaintext highlighter-rouge">contributors.users</code> specifies a list of GitHub usernames to grant <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">write access</a> to. Only members within Flutter-Global can be referenced.</li>
+</ul>
+
+<p>Note that if contributing teams and/or users are set the codebase governor will ensure that these are the <em>only</em> teams/users with write access to the repository and any other teams/users with write access will be removed.</p>
+
+<h3 id="inner-source-access">Inner Source Access</h3>
+
+<p>With an inner source access model all members of <code class="language-plaintext highlighter-rouge">Flutter-Global</code> are treated as contributors. Therefore all members of the organisation are given <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">write access</a> to the repository by setting the <code class="language-plaintext highlighter-rouge">all-flutter-global</code> team as contributors.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">contributors</span><span class="pi">:</span>
+  <span class="na">teams</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">all-flutter-global"</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Note how robust branch protection is required to maintain a secure workflow – any of the standard SDLC examples are suitable for this setup.</p>
+
+<h3 id="requested-access">Requested Access</h3>
+
+<p>With a requested access model you manage your own access request process. If your access request process results in a managed team then you can simply configure this team as the contributors:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">contributors</span><span class="pi">:</span>
+  <span class="na">teams</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">your-team-1"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">your-team-2"</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>If the contributor group is small, your access request process could simply use pull requests on the configuration to directly manage a list of contributing users:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">contributors</span><span class="pi">:</span>
+  <span class="na">users</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">example-user-1</span>
+    <span class="pi">-</span> <span class="s">example-user-2</span>
+    <span class="pi">-</span> <span class="s">example-user-3</span>
+</code></pre></div></div>
+
+<h3 id="no-write-access">No Write Access</h3>
+
+<p>An empty list specifies that nobody will be granted <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">write access</a> and anybody with existing write access will be removed.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">contributors</span><span class="pi">:</span>
+  <span class="na">teams</span><span class="pi">:</span> <span class="pi">[]</span>
+</code></pre></div></div>
+
+<h2 id="admins"><code class="language-plaintext highlighter-rouge">admins</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">admins</code> section specifies who can administer your repository. The recommended way to specify <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">repository administrators</a> is to define capability <a href="/docs/capability-defaults/#owner">owner</a> and <a href="/docs/capability-defaults/#maintainers">maintainers</a>. It is often beneficial to enforce no other administrators, and there are valid use-cases where additional administrators are required. If omitted the default admins from the <a href="/docs/capability-defaults/">capability defaults file</a> will be applied. If no defaults are specified you are managing administrators manually via the GitHub UI or with your own automation.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">admins.teams</code> specifies a list of teams to grant <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">admin access</a> to. The teams are specified by the team “slug” which is the URL identifier for the team. Only teams within Flutter-Global can be referenced.</li>
+  <li><code class="language-plaintext highlighter-rouge">admins.users</code> specifies a list of GitHub usernames to grant <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">admin access</a> to. Only members within Flutter-Global can be referenced.</li>
+</ul>
+
+<p>Note that if admins teams and/or users are set the codebase governor will ensure that these along with owner and maintainers are the <em>only</em> teams/users with admin access to the repository. Any other teams/users with admin access will be removed.</p>
+
+<h3 id="no-admin-access">No Admin Access</h3>
+
+<p>The typical use-case is to ensure no-one other than owner or maintainers have admin access. This can be specified using an empty list. Anybody with existing <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">admin access</a> other than owner or maintainers will be removed.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">admins</span><span class="pi">:</span>
+  <span class="na">teams</span><span class="pi">:</span> <span class="pi">[]</span>
+</code></pre></div></div>
+
+<h3 id="core-team-admins">Core Team Admins</h3>
+
+<p>Several inner source products have a Flutter group “core team”. Depending on roles and setup, it can be useful for some members of the core team to manage elements of repository access and security which require admin access despite not being an owner or maintainer:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">admins</span><span class="pi">:</span>
+  <span class="na">teams</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">xyz-core-team-admins"</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>If the admins group is small, your access request process could simply use pull requests on the configuration to directly manage a list of admin users:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">admins</span><span class="pi">:</span>
+  <span class="na">users</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">example-user-1</span>
+    <span class="pi">-</span> <span class="s">example-user-2</span>
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<p>Examples can be viewed in the <a href="https://github.com/Flutter-Global/org-config">org-config</a> repository.</p>
+
+<ul>
+  <li>The <a href="https://github.com/Flutter-Global/org-config/blob/main/codebases/codebase-governor/fsc-cbg.yml">fsc-cbg repository config</a> is an example config which includes branch protection for develop, release and support branches for the <a href="/sdlc/multiple-teams/">multiple teams branching model</a>.</li>
+</ul>
+
+
+    
+  </div>
+  <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
+    <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
+      <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protections" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">branch-protections</code></a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#audit-sdlc" class="hover:text-theme-color">Audit SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#service-sdlc" class="hover:text-theme-color">Service SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-teams-sdlc" class="hover:text-theme-color">Multiple Teams SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionspatterns" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">branch-protections[*].patterns</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionsparameters" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters</code></a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#contributors" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">contributors</code></a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#inner-source-access" class="hover:text-theme-color">Inner Source Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-access" class="hover:text-theme-color">Requested Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#no-write-access" class="hover:text-theme-color">No Write Access</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#admins" class="hover:text-theme-color"><code class="language-plaintext highlighter-rouge">admins</code></a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#no-admin-access" class="hover:text-theme-color">No Admin Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#core-team-admins" class="hover:text-theme-color">Core Team Admins</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-theme-color">Examples</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+    </div>
+  </div>
+  
+</div>
+
+    <script defer type="text/javascript" src="/assets/js/clipboard-copy.js"></script>
+  </body>
+</html>
