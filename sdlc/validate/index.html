@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Validate | Flutter Inner Source</title>
+  <title>Validate with GitHub Actions | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -266,7 +266,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -282,8 +282,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -291,6 +291,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -300,20 +310,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -322,8 +322,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -762,7 +782,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -778,8 +798,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -787,6 +807,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -796,20 +826,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -818,8 +838,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -949,14 +989,14 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="validate">Validate</h1>
+    <h1 id="validate-with-github-actions">Validate with GitHub Actions</h1>
 
-<p>A proposed code change is validated by a series of automated checks to provide fast feedback to the contributor.</p>
+<p>Validate a proposed code change with a series of automated checks to provide fast feedback to the contributor.</p>
 
 <ul>
   <li>These checks are triggered as status checks on any pull request. This provides clear UI feedback to both contributor and reviewer. Draft pull requests can be raised for feedback on pre-review work.</li>
-  <li>Most checks will be defined in the repository itself as <a href="https://docs.github.com/en/actions/using-workflows">GitHub Action workflows</a>. This allows them to be updated via the same process as source code changes. A high level of customisation is possible, alongside a extensive library of open source and/or 3rd party actions.</li>
-  <li>Checks that require access to an internal service or environment can use our self-hosted workflow runners that are connected to the inter-divisional network (IDN).</li>
+  <li>Checks are defined in the repository itself as <a href="https://docs.github.com/en/actions/using-workflows">GitHub Action workflows</a>. This allows them to be updated via the same process as source code changes. A high level of customisation is possible, alongside a extensive library of open source and/or 3rd party actions.</li>
+  <li>Checks that require access to an internal service or environment can use self-hosted workflow runners that are connected to the inter-divisional network (IDN).</li>
   <li>In addition to custom workflows, 3rd party tools like <a href="https://sonarcloud.io/">sonarcloud</a> are integrated and available for all organisational members to use.</li>
 </ul>
 
@@ -1017,36 +1057,13 @@ jobs:
 
 <p>Note that at present the base images used for self-hosted runners is different from that provided by GitHub for their managed runners so you will need to adjust your workflows e.g. to install tools like maven. These differences are due to be resolved by June 2022 when the self-hosted runners will use the same image as the Linux GitHub managed runners.</p>
 
-<h2 id="coming-soon-sonarcloud">(COMING SOON) SonarCloud</h2>
-
-<p>A shared instance of <a href="https://sonarcloud.io/">sonarcloud</a> is expected to be available to all users in Q4 2022, details will follow at that point. At present this tool is used via divisional licencing.</p>
-
-<h2 id="other-3rd-party-tools">Other 3rd Party Tools</h2>
-
-<p>One of the advantages of using a managed GitHub platform is the variety of quality 3rd-party tools that can be integrated. If you have a specific need to work with a 3rd party tool that wotks with GitHub please <a href="https://github.com/Flutter-Global/product-inner-source#proposals">raise a proposal</a> to discuss integrating it.</p>
-
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5>Source</h5>
-    <div>
-      <a href="/sdlc/source/"
-        >&larr; Previous</a
-      >
-    </div>
+  <div >
     
   </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">Package</h5>
-    <div class="text-right">
-      <a href="/sdlc/package/"
-        >Next
-        &rarr;</a
-      >
-    </div>
+  <div >
     
   </div>
 </div>
@@ -1055,7 +1072,7 @@ jobs:
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#github-action-workflows" class="hover:text-theme-color">GitHub Action Workflows</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#self-hosted-runners" class="hover:text-theme-color">Self-Hosted Runners</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#enabling-self-hosted-runners" class="hover:text-theme-color">Enabling Self-Hosted Runners</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#using-self-hosted-runners" class="hover:text-theme-color">Using Self-Hosted Runners</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#coming-soon-sonarcloud" class="hover:text-theme-color">(COMING SOON) SonarCloud</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#other-3rd-party-tools" class="hover:text-theme-color">Other 3rd Party Tools</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#github-action-workflows" class="hover:text-theme-color">GitHub Action Workflows</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#self-hosted-runners" class="hover:text-theme-color">Self-Hosted Runners</a><ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#enabling-self-hosted-runners" class="hover:text-theme-color">Enabling Self-Hosted Runners</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#using-self-hosted-runners" class="hover:text-theme-color">Using Self-Hosted Runners</a></li></ul class="pt-1 pl-4 pr-1 list-none"></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   

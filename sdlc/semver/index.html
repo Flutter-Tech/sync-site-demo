@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Source Management | Flutter Inner Source</title>
+  <title>Semantic Versioning | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -266,7 +266,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -282,8 +282,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -291,6 +291,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -300,20 +310,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -322,8 +322,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -762,7 +782,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -778,8 +798,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -787,6 +807,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -796,20 +826,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -818,8 +838,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -949,78 +989,63 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="source-management">Source Management</h1>
+    <h1 id="semantic-versioning">Semantic Versioning</h1>
 
-<p>Your source code is stored in a repository within the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> organisation. This will have:</p>
+<p>Use semantic version git tags on your repository to label and trigger alpha, beta and production builds. Our SemVer conventions are a subset of the <a href="https://semver.org/">SemVer v2.0.0 spec</a>. A semantic version consists of:</p>
 
-<ol>
-  <li>a branching strategy: where is the code initially contributed to and then merged into?</li>
-  <li>an access control strategy: who can access the repository, and with what permissions?</li>
-  <li>branch protections to ensure the combination of (1) and (2) is secure.</li>
-</ol>
+<p><code class="language-plaintext highlighter-rouge">major.minor.patch-team.phase.integration+build</code></p>
 
-<p>Standard patterns for source management are:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">major</code> is the major version number (integer). A major change for inner source projects is not necessarily a breaking change but rather one that is significant or complex enough to always require cross-team consensus and review.</li>
+  <li><code class="language-plaintext highlighter-rouge">minor</code> is the minor version number (integer). A minor change for inner source projects is one that simple or routine enough that is can be released by the local in-team maintainer without cross-team consensus.</li>
+  <li><code class="language-plaintext highlighter-rouge">patch</code> is the patch version number (integer). A patch change is a hotfix usually executed under incident conditions.</li>
+  <li><code class="language-plaintext highlighter-rouge">team</code> is the team code (string). This can be omitted when there is only a single owning team.</li>
+  <li><code class="language-plaintext highlighter-rouge">phase</code> is the release phase (<code class="language-plaintext highlighter-rouge">alpha</code>, <code class="language-plaintext highlighter-rouge">beta</code> or not present for production).</li>
+  <li><code class="language-plaintext highlighter-rouge">integration</code> is an integer that indicates pre-release progression e.g. cumulative number of features, commits or similar.</li>
+  <li><code class="language-plaintext highlighter-rouge">build</code> is an integer that indicates build number (omitted if un-used).</li>
+</ul>
 
-<ol>
-  <li><a href="/sdlc/service/">Service</a></li>
-  <li><a href="/sdlc/multiple-teams/">Multiple Teams</a></li>
-  <li><a href="/sdlc/audited/">Audited</a></li>
-</ol>
+<p>By convention the version number is prefixed by a <code class="language-plaintext highlighter-rouge">v</code>. For example:</p>
 
-<h3 id="multiple-teams"><a href="/sdlc/multiple-teams/">Multiple Teams</a></h3>
+<p><code class="language-plaintext highlighter-rouge">v2.8.1</code> is the production <code class="language-plaintext highlighter-rouge">2.8</code> build after 1 hotfix.</p>
 
-<p>This branching strategy is suitable for production deployed service code repositories where changes MUST be reviewed. Multiple Teams branching is optimised for inner source <a href="/how/multiple-teams/">Maintainers in Multiple Teams</a> services where there are multiple teams working concurrently on the code. It uses a modified GitFlow branching model and SemVer release tagging to support concurrent team development and several different supported versions in production.</p>
+<p><code class="language-plaintext highlighter-rouge">v1.3.0-lds.beta.3</code> is a beta build for the intended <code class="language-plaintext highlighter-rouge">v1.3.0</code> release. It has been created by the <code class="language-plaintext highlighter-rouge">lds</code> team, and has had several bugfixes applied which can be inferred from the <code class="language-plaintext highlighter-rouge">.3</code> integration number suffix.</p>
 
-<h3 id="service"><a href="/sdlc/service/">Service</a></h3>
+<p><code class="language-plaintext highlighter-rouge">v3.0.0-alpha.1</code> is an alpha build for the intended major <code class="language-plaintext highlighter-rouge">v3.0.0</code> release. It has no team element since all tags are created by a single team in this repository. The <code class="language-plaintext highlighter-rouge">.1</code> integration number suffix suggests this is an early build without many features yet.</p>
 
-<p>This branching strategy is suitable for production deployed service code repositories where changes MUST be reviewed. Service branching is optimised for inner source <a href="/how/guest-contributions/">Guest Contribution</a> services where there is a clear owning team. It is based on a simple GitHub Flow branching model which is easy to understand and SemVer release tagging to signal production-ready builds.</p>
+<p>The <a href="/git-flutter/"><code class="language-plaintext highlighter-rouge">git flutter</code> CLI</a> tool has various helper features to help you apply these tags easily and consistently to your repository.</p>
 
-<h3 id="audited"><a href="/sdlc/audited/">Audited</a></h3>
+<div class="not-prose grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
+  <div class="col-span-2">
+    <div style="position: relative; display: block">
+      <div style="padding-top: 56.25%">
+        <iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6316437796112" allowfullscreen="" allow="encrypted-media" style="
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+          "></iframe>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="mt-6 text-gray-500">
+      Recommended branching model patterns explained in under 7 minutes!
+    </p>
+  </div>
+</div>
 
-<p>This branching strategy is suitable for documentation, integration test or other non-production deployed supporting repositories where changes CAN be reviewed. Audit branching ensures previous changes are visible and can be audited at any time, but does not require changes to be reviewed before they are made. It uses a simple GitHub Flow or trunk-based development branching model with more relaxed branch protection rules.</p>
-
-<h2 id="owner-and-maintainers">Owner and Maintainers</h2>
-
-<p>In all patterns each repository has a named owner and team of maintainers. This group have elevated permissions on their repositories. You will use <a href="/docs/cbg/">Codebase Governor</a> to group your repositories into a “capability” and define the capability owner and maintainers. This ensures these users can manage all repositories within a capability effectively.</p>
-
-<h2 id="customise-branch-protection">Customise Branch Protection</h2>
-
-<p>Each pattern documents a default branch protection setup using <a href="/docs/cbg/">Codebase Governor configuration</a>. These protections can be adjusted to your specific needs <a href="/docs/repo-config/#branch-protectionsparameters">using any of the branch protection settings available</a>.</p>
-
-<p>If none of the branching models meet your requirements, <a href="/docs/branch-protection/">further suggestions and protection examples are available to help you define your own custom setup</a>.</p>
-
-<h2 id="customise-contributor-access">Customise Contributor Access</h2>
-
-<p>Each pattern documents a default inner source contributor setup: <code class="language-plaintext highlighter-rouge">Internal</code> repository visibility with all members of <code class="language-plaintext highlighter-rouge">Flutter-Global</code> treated as contributors.</p>
-
-<p>This can be customised to use:</p>
-
-<p><strong>Requested Access</strong> requires you to maintain your own access request process. This can be effective when coupled with an automated team maintenance process or small contributor group. You will use <a href="/docs/cbg/">Codebase Governor</a> to configure contributor access for your custom contributor team instead of the <code class="language-plaintext highlighter-rouge">all-flutter-global</code> team.</p>
-
-<p><strong>Closed Source</strong> requires the repository to be switched to <code class="language-plaintext highlighter-rouge">Private</code> visibility to prevent any default read access. This is for sensitive content only. To change repository visibility you will need to contact the <a href="/community/">Inner Source Team</a>. This access model usually also requires use of your own requested access process.</p>
-
+<p>Using git tags helps to decouple your CI from your branching model, allowing you to adjust that more easily as your requirements change over time.</p>
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5>Standard SDLCs</h5>
-    <div>
-      <a href="/sdlc/"
-        >&larr; Previous</a
-      >
-    </div>
+  <div >
     
   </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">Validate</h5>
-    <div class="text-right">
-      <a href="/sdlc/validate/"
-        >Next
-        &rarr;</a
-      >
-    </div>
+  <div >
     
   </div>
 </div>
@@ -1029,7 +1054,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-teams" class="hover:text-theme-color"><a href="/sdlc/multiple-teams/">Multiple Teams</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#service" class="hover:text-theme-color"><a href="/sdlc/service/">Service</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#audited" class="hover:text-theme-color"><a href="/sdlc/audited/">Audited</a></a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      
     </div>
   </div>
   

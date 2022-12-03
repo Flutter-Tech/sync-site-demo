@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Semantic Versioning | Flutter Inner Source</title>
+  <title>Publish | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -266,7 +266,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -282,8 +282,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -291,6 +291,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -300,20 +310,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -322,8 +322,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -762,7 +782,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -778,8 +798,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -787,6 +807,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -796,20 +826,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -818,8 +838,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -949,41 +989,15 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="package--publish">Package &amp; Publish</h1>
+    <h1 id="publish-to-registry">Publish to Registry</h1>
 
 <p>Once a code change is validated the updated version can be <strong>packaged</strong> as a deployable artefact. Depending on your application this might be a Docker image, a compiled binary, an rpm or jar file, or simply a bundled and minified source file. This package must then be <strong>published</strong> to a location from which it can be deployed to relevant environments.</p>
 
 <ul>
-  <li>Use <a href="#semver-tags">semantic version git tags</a> on your repository to label and trigger alpha, beta and production builds.</li>
+  <li>Use <a href="/sdlc/semver/">semantic version git tags</a> on your repository to label and trigger alpha, beta and production builds.</li>
   <li>Build artifacts (and Change Log) can be attached to a repository via a <a href="#github-releases">GitHub Release</a>.</li>
   <li>Releases can be published to various systems as required: external services (e.g. AWS ECR), GitHub Packages, Artifactory and so on. These choices depend on the requirements of the intended deployments.</li>
 </ul>
-
-<h2 id="semver-tags">SemVer Tags</h2>
-
-<p>Use semantic version git tags on your repository to label and trigger alpha, beta and production builds. Our SemVer conventions are a subset of the <a href="https://semver.org/">SemVer v2.0.0 spec</a>. A semantic version consists of:</p>
-
-<p><code class="language-plaintext highlighter-rouge">major.minor.patch-team.phase.integration+build</code></p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">major</code> is the major version number (integer). A major change for inner source projects is not necessarily a breaking change but rather one that is significant or complex enough to always require cross-team consensus and review.</li>
-  <li><code class="language-plaintext highlighter-rouge">minor</code> is the minor version number (integer). A minor change for inner source projects is one that simple or routine enough that is can be released by the local in-team maintainer without cross-team consensus.</li>
-  <li><code class="language-plaintext highlighter-rouge">patch</code> is the patch version number (integer). A patch change is a hotfix usually executed under incident conditions.</li>
-  <li><code class="language-plaintext highlighter-rouge">team</code> is the team code (string). This can be omitted when there is only a single owning team.</li>
-  <li><code class="language-plaintext highlighter-rouge">phase</code> is the release phase (<code class="language-plaintext highlighter-rouge">alpha</code>, <code class="language-plaintext highlighter-rouge">beta</code> or not present for production).</li>
-  <li><code class="language-plaintext highlighter-rouge">integration</code> is an integer that indicates pre-release progression e.g. cumulative number of features, commits or similar.</li>
-  <li><code class="language-plaintext highlighter-rouge">build</code> is an integer that indicates build number (omitted if un-used).</li>
-</ul>
-
-<p>By convention the version number is prefixed by a <code class="language-plaintext highlighter-rouge">v</code>. For example:</p>
-
-<p><code class="language-plaintext highlighter-rouge">v2.8.1</code> is the production <code class="language-plaintext highlighter-rouge">2.8</code> build after 1 hotfix.</p>
-
-<p><code class="language-plaintext highlighter-rouge">v1.3.0-lds.beta.3</code> is a beta build for the intended <code class="language-plaintext highlighter-rouge">v1.3.0</code> release. It has been created by the <code class="language-plaintext highlighter-rouge">lds</code> team, and has had several bugfixes applied which can be inferred from the <code class="language-plaintext highlighter-rouge">.3</code> integration number suffix.</p>
-
-<p><code class="language-plaintext highlighter-rouge">v3.0.0-alpha.1</code> is an alpha build for the intended major <code class="language-plaintext highlighter-rouge">v3.0.0</code> release. It has no team element since all tags are created by a single team in this repository. The <code class="language-plaintext highlighter-rouge">.1</code> integration number suffix suggests this is an early build without many features yet.</p>
-
-<p>The <a href="/git-flutter/"><code class="language-plaintext highlighter-rouge">git flutter</code> CLI</a> tool has various helper features to help you apply these tags easily and consistently to your repository.</p>
 
 <h2 id="github-releases">GitHub Releases</h2>
 
@@ -995,8 +1009,6 @@
   <li>can be both manually created/adjusted and automated via API/workflows.</li>
 </ul>
 
-<p><strong>COMING SOON</strong>: Some examples how teams create GitHub releases from git tags. This is not Flutter specific so you can use Google to find quality information in the meantime.</p>
-
 <h2 id="publish-to-aws">Publish to AWS</h2>
 
 <p>A common choice is to publish release artefacts from a repository into AWS for use within that ecosystem. For example, you might choose to publish a Docker image into the AWS container registry for use in AWS deployments:</p>
@@ -1007,42 +1019,21 @@
   <li><a href="https://github.com/aws-actions/amazon-ecr-login">Login and push image to AWS ECR</a>.</li>
 </ol>
 
-<p><strong>COMING SOON</strong>: Case studies of Flutter teams using this flow.</p>
-
 <h2 id="github-packages">GitHub Packages</h2>
 
 <p><a href="https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages">GitHub Packages</a> is a software package hosting service that allows you to host your software packages privately or publicly and use packages as dependencies in your projects. This is especially useful to publish library packages for re-use across other projects.</p>
-
-<p><strong>COMING SOON</strong>: Case studies of how teams use GH Packages.</p>
 
 <h2 id="artifactory">Artifactory</h2>
 
 <p>An internal Artifactory instance is available if using the <a href="/sdlc/validate/#self-hosted-runners">self-hosted runners</a>. This is not always recommended as it has more awkward access requirements across the wider group, but there are cases where it the best choice.</p>
 
-<p><strong>COMING SOON</strong>: More details about why and when to use Artifactory.</p>
-
 
     
     <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5>Validate</h5>
-    <div>
-      <a href="/sdlc/validate/"
-        >&larr; Previous</a
-      >
-    </div>
+  <div >
     
   </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">Component Tests</h5>
-    <div class="text-right">
-      <a href="/sdlc/test/"
-        >Next
-        &rarr;</a
-      >
-    </div>
+  <div >
     
   </div>
 </div>
@@ -1051,7 +1042,7 @@
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#semver-tags" class="hover:text-theme-color">SemVer Tags</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#github-releases" class="hover:text-theme-color">GitHub Releases</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#publish-to-aws" class="hover:text-theme-color">Publish to AWS</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#github-packages" class="hover:text-theme-color">GitHub Packages</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#artifactory" class="hover:text-theme-color">Artifactory</a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#github-releases" class="hover:text-theme-color">GitHub Releases</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#publish-to-aws" class="hover:text-theme-color">Publish to AWS</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#github-packages" class="hover:text-theme-color">GitHub Packages</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#artifactory" class="hover:text-theme-color">Artifactory</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   

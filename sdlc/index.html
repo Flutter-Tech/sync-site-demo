@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>SDLC | Flutter Inner Source</title>
+  <title>SDLC Patterns | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -266,7 +266,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -282,8 +282,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -291,6 +291,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -300,20 +310,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -322,8 +322,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -762,7 +782,7 @@
   
   
   <li class="nav-parent menu-item-4 ml-3 relative pt-2">
-    <a href="/sdlc/" title="Go to Standard SDLCs" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color">Standard SDLCs</a>
+    <a href="/sdlc/" title="Go to SDLC Patterns" class="text-theme-color font-medium pr-5 no-underline menu-link hover:text-theme-color">SDLC Patterns</a>
     <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.72rem]">
       <img class="w-6 h-6 hover:cursor-pointer" title="Expand menu"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -778,8 +798,8 @@
   <li
     class="menu-item-1 ml-3 pt-2"
   >
-    <a href="/sdlc/source/" title="Go to Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Source</a
+    <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Audited Source</a
     >
   </li>  
   
@@ -787,6 +807,16 @@
   
   <li
     class="menu-item-2 ml-3 pt-2"
+  >
+    <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Reviewed Source</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-3 ml-3 pt-2"
   >
     <a href="/sdlc/multiple-teams/" title="Go to Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
       > Multiple Teams</a
@@ -796,20 +826,10 @@
   
   
   <li
-    class="menu-item-3 ml-3 pt-2"
-  >
-    <a href="/sdlc/validate/" title="Go to Validate" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Validate</a
-    >
-  </li>  
-  
-  
-  
-  <li
     class="menu-item-4 ml-3 pt-2"
   >
-    <a href="/sdlc/package/" title="Go to Package & Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Package & Publish</a
+    <a href="/sdlc/validate/" title="Go to GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > GitHub Actions</a
     >
   </li>  
   
@@ -818,8 +838,28 @@
   <li
     class="menu-item-5 ml-3 pt-2"
   >
-    <a href="/sdlc/test/" title="Go to Test" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
-      > Test</a
+    <a href="/sdlc/semver/" title="Go to SemVer Tags" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > SemVer Tags</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-6 ml-3 pt-2"
+  >
+    <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Component Tests</a
+    >
+  </li>  
+  
+  
+  
+  <li
+    class="menu-item-7 ml-3 pt-2"
+  >
+    <a href="/sdlc/package/" title="Go to Registry Publish" class="text-gray-500 pr-5 no-underline menu-link hover:text-theme-color"
+      > Registry Publish</a
     >
   </li>  
   
@@ -949,89 +989,233 @@
   
   <div class="col-span-12 px-4 py-8 prose lg:col-span-8 md:prose-base lg:prose-base xs:prose-sm max-w-none content">
     
-    <h1 id="development-lifecycle">Development Lifecycle</h1>
+    <h1 id="sdlc-patterns">SDLC Patterns</h1>
 
-<p>The process by which you make and release a change to your application is your <strong>Software Development Lifecycle</strong> or SDLC. Within <code class="language-plaintext highlighter-rouge">Flutter-Global</code> several SDLC patterns are directly supported by tools such as the <a href="/git-flutter/"><code class="language-plaintext highlighter-rouge">git flutter</code> CLI</a>. Using these standard SDLC patterns is recommended unless you have unusual requirements.</p>
+<p>The process by which you make and release a change to your application is your <strong>Software Development Lifecycle</strong> or SDLC. Within <code class="language-plaintext highlighter-rouge">Flutter-Global</code> several SDLC patterns are widely used and directly supported by tools such as the <a href="/git-flutter/"><code class="language-plaintext highlighter-rouge">git flutter</code> CLI</a>. Using these standard SDLC patterns is recommended unless you have unusual requirements.</p>
+
+<h2 id="access--branching">Access &amp; Branching</h2>
+
+<p>Your source code is stored in a repository within the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> organisation. The standard branching patterns are:</p>
+
+<div class="not-prose">
+<div class="mx-auto max-w-7xl">
+  <!-- Tiers -->
+  <div class="mt-12 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
+    <div class="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+      <div class="flex-1">
+        <p class="text-xl font-semibold text-gray-900">Audited Source</p>
+        <p class="mt-6 text-gray-500">Ensures history is immutable and can be audited, but does not require changes to be pre-approved before release.</p>
+        <ul role="list" class="mt-6 space-y-6">
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+Protected History</span></li>
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+Trunk-Based Development</span></li>
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+SemVer Support</span></li>
+        </ul>
+      </div>
+
+      <a href="/sdlc/audited/" class="bg-theme-color text-white hover:underline mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Setup Audited Source</a>
+    </div>
+
+    <div class="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+      <div class="flex-1">
+        <p class="text-xl font-semibold text-gray-900">Reviewed Source</p>
+        <p class="absolute top-0 -translate-y-1/2 transform rounded-full bg-theme-color py-1.5 px-4 text-sm font-semibold text-white">Most popular</p>
+        <p class="mt-6 text-gray-500">Simple pull request based workflow where all changes are reviewed by expert code maintainers before release.</p>
+        <ul role="list" class="mt-6 space-y-6">
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+Protected Code</span></li>
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+Simple "GitHub Flow"</span></li>
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+SemVer Support</span></li>
+        </ul>
+      </div>
+
+      <a href="/sdlc/reviewed/" class="bg-theme-color text-white hover:underline mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Setup Reviewed Source</a>
+    </div>
+
+    <div class="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+      <div class="flex-1">
+        <p class="text-xl font-semibold text-gray-900">Multiple Team Source</p>
+        <p class="mt-6 text-gray-500">A derivative of GitFlow to provide each team with their own develop branch.</p>
+        <ul role="list" class="mt-6 space-y-6">
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+Protected Code</span></li>
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+Flexible GitFlow Releases</span></li>
+
+            
+
+<li class="flex">
+<svg class="h-6 w-6 flex-shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+</svg>
+<span class="ml-3 text-gray-500">
+SemVer Support</span></li>
+        </ul>
+      </div>
+
+      <a href="/sdlc/multiple-teams/" class="bg-theme-color text-white hover:underline mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Setup Multiple Teams</a>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="not-prose grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
+  <div class="col-span-2">
+    <div style="position: relative; display: block">
+      <div style="padding-top: 56.25%">
+        <iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6316437796112" allowfullscreen="" allow="encrypted-media" style="
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+          "></iframe>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="mt-6 text-gray-500">
+      Recommended branching model patterns explained in under 7 minutes!
+    </p>
+  </div>
+</div>
+
+<p>Each pattern documents a default inner source contributor setup: <code class="language-plaintext highlighter-rouge">Internal</code> repository visibility with all members of <code class="language-plaintext highlighter-rouge">Flutter-Global</code> treated as contributors. This can be customised to use:</p>
+
+<p><strong>Requested Access</strong> requires you to maintain your own access request process. This can be effective when coupled with an automated team maintenance process or small contributor group. You will use [Codebase Governor] to configure contributor access for your custom contributor team instead of the <code class="language-plaintext highlighter-rouge">all-flutter-global</code> team.</p>
+
+<p><strong>Closed Source</strong> requires the repository to be switched to <code class="language-plaintext highlighter-rouge">Private</code> visibility to prevent any default read access. This is for sensitive content only. To change repository visibility you will need to contact the <a href="/community/">Inner Source Team</a>. This access model usually also requires use of your own requested access process.</p>
+
+<h2 id="inner-source-ci">Inner Source CI</h2>
+
+<div class="not-prose grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
+  <!-- GH Actions on PR -->
+  <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+    <a href="/sdlc/validate/" class="block">
+      <p class="text-xl font-semibold text-theme-color hover:underline">
+        GitHub Action Workflows
+      </p>
+      <p class="mt-3 text-base text-gray-500">
+        Use GitHub Action Workflows to validate any proposed code change. This
+        provides fast, automated and transparent feedback to the contributor.
+      </p>
+    </a>
+  </div>
+
+  <!-- SemVer -->
+  <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+    <a href="/sdlc/semver/" class="block">
+      <p class="text-xl font-semibold text-theme-color hover:underline">
+        SemVer Git Tags
+      </p>
+      <p class="mt-3 text-base text-gray-500">
+        Use SemVer git tags to trigger the CI pipeline. This is a concise,
+        familar to communicate release and breaking change risk to your users.
+      </p>
+    </a>
+  </div>
+
+  <!-- Registry Publish -->
+  <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+    <a href="/sdlc/package/" class="block">
+      <p class="text-xl font-semibold text-theme-color hover:underline">
+        Registry Publish
+      </p>
+      <p class="mt-3 text-base text-gray-500">
+        Publish the build to a registry close to the required deployment(s).
+        This may be in AWS, Artifactory or in GitHub Packages as required.
+      </p>
+    </a>
+  </div>
+</div>
+
+<p>An inner source application will typically have a single shared codebase and several deployments. A change will follow these steps to production:</p>
 
 <p><img src="./overview.drawio.svg" class="w-full max-w-3xl mx-auto" /></p>
 
-<p>Typically a change will follow these steps to production:</p>
-
 <ol>
-  <li><strong><a href="/sdlc/source/">Source</a></strong>: A code edit is applied to a <code class="language-plaintext highlighter-rouge">Flutter-Global</code> repository with access controls and a branching strategy.</li>
-  <li><strong><a href="/sdlc/validate/">Validate</a></strong>: Check proposed code changes by running a series of tests that must pass.</li>
-  <li><strong><a href="/sdlc/package/">Package</a></strong>: Resolve any external dependencies to build a new version of the desired deployment package(s) e.g. binaries, docker, rpm, jar.</li>
-  <li><strong><a href="/sdlc/test/">Component Tests</a></strong>: Run available tests against the candidate deployment package with other dependent mocked packages.</li>
-  <li><strong><a href="/sdlc/package/">Publish</a></strong>: Publish the tested deployment package to a registry so it is available to all who deploy it.</li>
+  <li><strong>Source</strong>: A code edit is applied to a <code class="language-plaintext highlighter-rouge">Flutter-Global</code> repository with access controls and a branching strategy: <a href="/sdlc/audited/">audited source</a>, <a href="/sdlc/reviewed/">reviewed source</a> or <a href="/sdlc/multiple-teams/">multiple teams source</a>.</li>
+  <li><strong>Validate</strong>: Check proposed code changes by running a series of tests that must pass: <a href="/sdlc/validate/">use GitHub Actions for this</a>.</li>
+  <li><strong>Package</strong>: Resolve any external dependencies to build a new version of the desired deployment package(s) e.g. binaries, docker, rpm, jar. You might need <a href="/sdlc/validate/#self-hosted-runners">self-hosted runners</a> if a build requires internal network access.</li>
+  <li><strong>Component Tests</strong>: Run available tests against the candidate deployment package with other dependent mocked packages: <a href="/sdlc/test/">see this description of test types</a>.</li>
+  <li><strong>Publish</strong>: Publish the tested deployment package <a href="/sdlc/package/">to a registry</a> so it is available to all who deploy it.</li>
   <li><strong>Deploy</strong>: Configure the package and deploy it to a specific topology (e.g. AWS, on-prem VM, k8s).</li>
   <li><strong>Integration Tests</strong>: Run available integration and non-functional checks.</li>
   <li><strong>Release</strong>: Promote the deployment through the required environments to rollout to production traffic.</li>
   <li><strong>Observe</strong>: Observe the release with heightened operational awareness to confirm success, with rollback invoked on suspicion of failure.</li>
 </ol>
 
-<p>The standard SDLCs patterns cover steps (1)-(5), step (6) onwards is regarded as team/division specific and dependent on local requirements.</p>
+<p>The standard SDLCs patterns documented cover steps (1)-(5). For an inner source application step (6) onwards is regarded as team/division specific and dependent on local requirements.</p>
 
-<h2 id="source"><a href="/sdlc/source/">Source</a></h2>
-
-<p>Your source code is stored in a repository within the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> organisation. This will have:</p>
-
-<ol>
-  <li>a branching strategy (where code is contributed to and merged into)</li>
-  <li>an access control strategy (who can access the repository with what permissions)</li>
-  <li>branch protections to ensure the combination of (1) and (2) is secure.</li>
-</ol>
-
-<p>Three source management patterns are available: <a href="/sdlc/multiple-teams/">multiple teams</a>, <a href="/sdlc/service/">service</a> or <a href="/sdlc/audited/">audited</a>.</p>
-
-<p><a href="/sdlc/source/">Read more about source control ➜</a></p>
-
-<h2 id="validate"><a href="/sdlc/validate/">Validate</a></h2>
-
-<p>A proposed code change is validated by a series of checks. Common examples are linters, compile checks, unit tests, and security scans.</p>
-
-<ul>
-  <li>Validation is configured as pull request status checks and defined by GitHub workflow files.</li>
-  <li>Self-hosted GitHub runners are available if internal services/dependencies are required.</li>
-  <li>3rd party tools like SonarCloud are integrated with <code class="language-plaintext highlighter-rouge">Flutter-Global</code> to help.</li>
-</ul>
-
-<p><a href="/sdlc/validate/">Read more about validation ➜</a></p>
-
-<h2 id="package--publish"><a href="/sdlc/package/">Package &amp; Publish</a></h2>
-
-<p>A new version is <strong>packaged</strong> as a deployable artefact (e.g. a container image). This package must then be <strong>published</strong> to a location from which it can be deployed to relevant environments.</p>
-
-<ul>
-  <li>SemVer git tags and GitHub Releases are used to label builds.</li>
-  <li>Releases are published to registries like AWS ECR, GitHub Packages, Artifactory, and so on.</li>
-</ul>
-
-<p><a href="/sdlc/package/">Read more about packaging and publishing ➜</a></p>
-
-
-    
-    <div class="grid grid-cols-2 gap-10 pt-4 mt-4">
-  <div >
-    
-  </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">Source</h5>
-    <div class="text-right">
-      <a href="/sdlc/source/"
-        >Next
-        &rarr;</a
-      >
-    </div>
-    
-  </div>
-</div>
     
   </div>
   <div class="hidden py-8 pl-4 lg:col-span-2 lg:block">
     <div class="sticky z-10 pt-1 pb-2 pl-4 pr-2 mt-2 text-sm border-l border-solid border-theme-color top-36">
       <div class="px-0 py-1 pb-3 pl-4 font-bold uppercase">On this page</div>
-      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#source" class="hover:text-theme-color"><a href="/sdlc/source/">Source</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#validate" class="hover:text-theme-color"><a href="/sdlc/validate/">Validate</a></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#package--publish" class="hover:text-theme-color"><a href="/sdlc/package/">Package &amp; Publish</a></a></li></ul class="pt-1 pl-4 pr-1 list-none">
+      <ul class="pt-1 pl-4 pr-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#access--branching" class="hover:text-theme-color">Access &amp; Branching</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#inner-source-ci" class="hover:text-theme-color">Inner Source CI</a></li></ul class="pt-1 pl-4 pr-1 list-none">
     </div>
   </div>
   
