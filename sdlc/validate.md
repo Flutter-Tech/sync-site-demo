@@ -1,20 +1,16 @@
 ---
 layout: default
-title: Validate
+title: Validate with GitHub Actions
 article_navigation: true
-previous_title: Source
-previous_url: /sdlc/source/
-next_title: Package
-next_url: /sdlc/package/
 ---
 
-# Validate
+# Validate with GitHub Actions
 
-A proposed code change is validated by a series of automated checks to provide fast feedback to the contributor.
+Validate a proposed code change with a series of automated checks to provide fast feedback to the contributor.
 
 - These checks are triggered as status checks on any pull request. This provides clear UI feedback to both contributor and reviewer. Draft pull requests can be raised for feedback on pre-review work.
-- Most checks will be defined in the repository itself as [GitHub Action workflows][workflows]. This allows them to be updated via the same process as source code changes. A high level of customisation is possible, alongside a extensive library of open source and/or 3rd party actions.
-- Checks that require access to an internal service or environment can use our self-hosted workflow runners that are connected to the inter-divisional network (IDN).
+- Checks are defined in the repository itself as [GitHub Action workflows][workflows]. This allows them to be updated via the same process as source code changes. A high level of customisation is possible, alongside a extensive library of open source and/or 3rd party actions.
+- Checks that require access to an internal service or environment can use self-hosted workflow runners that are connected to the inter-divisional network (IDN).
 - In addition to custom workflows, 3rd party tools like [sonarcloud] are integrated and available for all organisational members to use.
 
 ## GitHub Action Workflows
@@ -71,14 +67,6 @@ runs-on: self-hosted
 ```
 
 Note that at present the base images used for self-hosted runners is different from that provided by GitHub for their managed runners so you will need to adjust your workflows e.g. to install tools like maven. These differences are due to be resolved by June 2022 when the self-hosted runners will use the same image as the Linux GitHub managed runners.
-
-## (COMING SOON) SonarCloud
-
-A shared instance of [sonarcloud] is expected to be available to all users in Q4 2022, details will follow at that point. At present this tool is used via divisional licencing.
-
-## Other 3rd Party Tools
-
-One of the advantages of using a managed GitHub platform is the variety of quality 3rd-party tools that can be integrated. If you have a specific need to work with a 3rd party tool that wotks with GitHub please [raise a proposal][propose] to discuss integrating it.
 
 [runners.csv]: https://github.com/Flutter-Global/product-inner-source/edit/master/runners.csv
 [team]: /community/

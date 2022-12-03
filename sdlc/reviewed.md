@@ -1,12 +1,11 @@
 ---
 layout: default
-title: Audited Source
-article_navigation: true
+title: Reviewed Source
 previous_title: SDLC Patterns
 previous_url: /sdlc/
 ---
 
-# Audited Source
+# Reviewed Source
 
 <div
   class="mb-8 p-5 rounded-lg border border-yellow-400 bg-yellow-300 text-yellow-900 flex"
@@ -30,4 +29,4 @@ previous_url: /sdlc/
   This content is IN PROGRESS. That means it is not yet ready, and likely not yet useful.
 </div>
 
-This branching strategy is suitable for documentation, integration test or other non-production deployed supporting repositories where changes CAN be reviewed. Audit branching ensures previous changes are visible and can be audited at any time, but does not require changes to be reviewed before they are made. It uses a simple GitHub Flow or trunk-based development branching model with more relaxed branch protection rules.
+This branching strategy is suitable for production deployed service code repositories where changes MUST be reviewed. Reviewed source is optimised for [Guest Contribution](/how/guest-contributions/) services where there is a clear owning team. It is based on a simple GitHub Flow branching model which is easy to understand and SemVer release tagging to signal production-ready builds.

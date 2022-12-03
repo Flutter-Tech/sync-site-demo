@@ -60,24 +60,30 @@ main:
         title: Work Type Analysis
         identifier: work-types
   - url: /sdlc/
-    title: Standard SDLCs
+    title: SDLC Patterns
     identifier: sdlc
     children:
-      - url: /sdlc/source/
-        title: Source
-        identifier: source
+      - url: /sdlc/audited/
+        title: Audited Source
+        identifier: audited
+      - url: /sdlc/reviewed/
+        title: Reviewed Source
+        identifier: audited
       - url: /sdlc/multiple-teams/
         title: Multiple Teams
         identifier: multiple-teams
       - url: /sdlc/validate/
-        title: Validate
+        title: GitHub Actions
         identifier: validate
-      - url: /sdlc/package/
-        title: Package & Publish
-        identifier: package
+      - url: /sdlc/semver/
+        title: SemVer Tags
+        identifier: semver
       - url: /sdlc/test/
-        title: Test
+        title: Component Tests
         identifier: test
+      - url: /sdlc/package/
+        title: Registry Publish
+        identifier: package
   - url: /catalogue/
     title: Service Catalogue
     identifier: catalogue

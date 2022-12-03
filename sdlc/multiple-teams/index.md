@@ -2,8 +2,8 @@
 layout: default
 title: Multiple Teams SDLC
 article_navigation: true
-previous_title: Source Management
-previous_url: /sdlc/source/
+previous_title: SDLC Patterns
+previous_url: /sdlc/
 next_title: Setup Configuration
 next_url: /sdlc/multiple-teams/setup/
 ---
@@ -118,6 +118,8 @@ Best when several busy teams are working on the same codebase. Branching model i
 
   </div>
 </div>
+
+{% include sdlc/branching-vid.html %}
 
 ## Quick Start
 

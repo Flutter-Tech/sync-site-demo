@@ -16,4 +16,4 @@ For members of the Flutter inner source community this area is where they can re
 
 **You are currently browsing the public inner source site so this information is not available to you.**
 
-If you are a member of the Flutter inner source community you can use the [developers.flutter.com/multiple-teams/examples/](https://developers.flutter.com/multiple-teams/examples/) internal site to access this content (membership of the `Flutter-Global` GitHub org is required for access).
+If you are a member of the Flutter inner source community you can use the [developers.flutter.com/sdlc/multiple-teams/examples/](https://developers.flutter.com/sdlc/multiple-teams/examples/) internal site to access this content (membership of the `Flutter-Global` GitHub org is required for access).

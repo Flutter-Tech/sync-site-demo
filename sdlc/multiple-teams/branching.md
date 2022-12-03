@@ -12,7 +12,9 @@ next_url: /sdlc/multiple-teams/cli/
 
 {% include mt/nav.html %}
 
-The multiple teams branching model is a derivative of [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) with each team having their own `<team>/develop` branch. The complexity of this model is only worthwhile when multiple teams are working on the same service concurrently. The [Service branching model](/sdlc/service/) provides similar features with a simpler branching model if a single primary team exists that just needs to accept external contributions.
+The multiple teams branching model is a derivative of [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) with one or more `<team>/develop` branches.
+
+{% include sdlc/branching-vid.html %}
 
 Alpha, beta or production-ready builds are signalled by git tags which conform to [our semantic versioning conventions](/sdlc/package/). For example:
 
