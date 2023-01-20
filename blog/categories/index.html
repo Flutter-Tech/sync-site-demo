@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Blog Categories | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/vite/assets/index.8e732183.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index.4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+    
+    
+      
+        <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+          <a href="/how/" title="Go to Inner source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Inner source</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/how/choose/" title="Go to Choosing Inner Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Choosing Inner Source</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/how/readable-source/" title="Go to Readable Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Readable Source</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/how/guest-contributions/" title="Go to Guest Contributions" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Guest Contributions</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-4 ml-3 pt-2"
+        >
+          <a href="/how/multiple-teams/" title="Go to Maintainers in Multiple Teams" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Maintainers in Multiple Teams</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-5 ml-3 pt-2"
+        >
+          <a href="/how/owner/" title="Go to Capability Owners" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Capability Owners</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-6 ml-3 pt-2"
+        >
+          <a href="/how/independence/" title="Go to Divisional Independence" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Divisional Independence</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-7 ml-3 pt-2"
+        >
+          <a href="/how/consensus/" title="Go to Strategic Consensus" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Strategic Consensus</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-8 ml-3 pt-2"
+        >
+          <a href="/how/work-types/" title="Go to Work Type Analysis" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Work Type Analysis</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+          <a href="/docs/" title="Go to Docs" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Docs</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li class="nav-parent menu-item-1 ml-3 relative pt-2">
+          <a href="/start/" title="Go to Get Started" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Get Started</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/docs/using-a-repo/" title="Go to Using a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using a Repo</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/docs/create-repo/" title="Go to Create a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Create a Repo</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/docs/maintainer/" title="Go to Maintain a Repo" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Maintain a Repo</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-4 ml-3 pt-2"
+        >
+          <a href="/docs/branch-protection/" title="Go to Branch Protection" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Branch Protection</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li class="nav-parent menu-item-2 ml-3 relative pt-2">
+          <a href="/docs/cbg/" title="Go to Codebase Governor" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Codebase Governor</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/docs/capability-defaults/" title="Go to Capability Defaults" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Capability Defaults</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/docs/repo-config/" title="Go to Repo Config" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Repo Config</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/sdlc/audited/" title="Go to Audited Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Audited Source</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-4 ml-3 pt-2"
+        >
+          <a href="/sdlc/reviewed/" title="Go to Reviewed Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Reviewed Source</a
+          >
+        </li>
+        
+  
+      
+        <li class="nav-parent menu-item-5 ml-3 relative pt-2">
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/sdlc/multiple-teams/setup/" title="Go to Setup" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Setup</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Branching Model</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/sdlc/multiple-teams/cli/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-4 ml-3 pt-2"
+        >
+          <a href="/sdlc/multiple-teams/examples/" title="Go to Examples" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Examples</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-6 ml-3 pt-2"
+        >
+          <a href="/git-flutter/" title="Go to git-flutter CLI" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > git-flutter CLI</a
+          >
+        </li>
+        
+  
+      
+        <li class="nav-parent menu-item-7 ml-3 relative pt-2">
+          <a href="/docs/service-catalogue" title="Go to Service Catalogue" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Service Catalogue</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/docs/community/" title="Go to Community" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Community</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/docs/activity-level/" title="Go to Activity Level" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Activity Level</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/docs/health/" title="Go to PR Health" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > PR Health</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li class="nav-parent menu-item-8 ml-3 relative pt-2">
+          <a href="/security/" title="Go to Security" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Security</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/security/dependabot/" title="Go to Dependabot" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Dependabot</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/security/admin/" title="Go to Repo Admin" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Repo Admin</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Default Branch</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li class="nav-parent menu-item-9 ml-3 relative pt-2">
+          <a href="/docs/actions/" title="Go to CI in GitHub Actions" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">CI in GitHub Actions</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/docs/automated-access/" title="Go to Service Accounts" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Service Accounts</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/docs/secrets/" title="Go to Using Secrets" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Using Secrets</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/docs/cross-repo-workflow/" title="Go to Cross Repo Workflows" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Cross Repo Workflows</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li class="nav-parent menu-item-10 ml-3 relative pt-2">
+          <a href="/docs/releasing/" title="Go to Release From GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Release From GitHub</a>
+          <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-[0.55rem] xl:top-[0.52rem]">
+            <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+           
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 sidebar-nav-sub font-normal hidden pb-1 pl-0 pr-0">
+    
+    
+      
+        <li
+          class="menu-item-1 ml-3 pt-2"
+        >
+          <a href="/sdlc/semver/" title="Go to Semantic Versioning" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Semantic Versioning</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-2 ml-3 pt-2"
+        >
+          <a href="/sdlc/test/" title="Go to Component Tests" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Component Tests</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-11 ml-3 pt-2"
+        >
+          <a href="/docs/pr-boards/" title="Go to Capability PR Boards" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Capability PR Boards</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-12 ml-3 pt-2"
+        >
+          <a href="/community/" title="Go to Help & Support" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Help & Support</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/blog/" title="Go to Blog" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Blog</a
+          >
+        </li>
+        
+  
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="fixed z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+  <div class="h-screen top-[82px] pt-[82px] md:top-[89px] md:pt-[89px]">
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            
+<div class="relative pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Blog Categories
+            </h1>
+            <p class="mt-3 mb-4 text-xs md:text-base text-slate-700 sm:mt-5"></p>
+          </div>
+        </div>
+        
+
+<div class="relative col-span-3"
+  style="background-color: transparent; background-repeat: repeat; background: url(&quot;data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f177c5' fill-opacity='0.5' fill-rule='evenodd'/%3E%3C/svg%3E&quot;);">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+            <!-- TITLE -->
+            <div class="relative min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <div class="mt-8">
+                    <div>
+  
+  <a href="#insight" class="pl-3 font-bold">Insight</a>
+  
+  <a href="#story" class="pl-3 font-bold">Story</a>
+  
+  <a href="#academy" class="pl-3 font-bold">Academy</a>
+  
+</div>
+<hr />
+
+<div>
+  
+  <h2 id="insight">Insight</h2>
+  <ul>
+    
+    <a href="/blog/big-pr-bad-reviews">
+      <li>
+        Big PR, Bad Reviews
+        <small class="text-gray-800">12 Jan 2022</small>
+      </li>
+    </a>
+    
+  </ul>
+  
+  <h2 id="story">Story</h2>
+  <ul>
+    
+    <a href="/blog/capability-coordinator">
+      <li>
+        Capability Coordinator
+        <small class="text-gray-800">14 Jan 2022</small>
+      </li>
+    </a>
+    
+  </ul>
+  
+  <h2 id="academy">Academy</h2>
+  <ul>
+    
+    <a href="/blog/branching-in-7-minutes">
+      <li>
+        Branching Models in 7 Minutes
+        <small class="text-gray-800">15 Dec 2022</small>
+      </li>
+    </a>
+    
+  </ul>
+  
+</div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Big PR, Bad Reviews | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/vite/assets/index.8e732183.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index.4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="fixed z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="h-screen top-[82px] pt-[82px] md:top-[89px] md:pt-[89px]">
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#insight" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Insight</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Big PR, Bad Reviews
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Tiago Almeida
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-01-12-big-prs-bad-reviews.jpg) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <blockquote>
+  <p>10 lines of code = 10 issues.<br />500 lines of code = looks fine.<br />Code reviews.</p>
+</blockquote>
+
+<p>This tweet quote in particular resonated with me while reading “<a href="https://www.swarmia.com/blog/why-small-pull-requests-are-better/">Why small pull requests are better</a>”. I struggle to review big diffs well – whether that’s laziness, limited brain capacity or the concentration span of a fish I’m not sure. I thought I’d use GitHub analytics from 20,000 Flutter pull requests to see if that was normal…</p>
+
+<h2 id="understanding-the-dataset">Understanding the dataset</h2>
+
+<p>I extracted merged pull request and review data from the Flutter-Global organisation since its creation – 80000 pull requests, 3100 repositories and 180000 reviews.</p>
+
+<p>For this blog post, I will only be using pull requests that have been merged and also be using a selection of properties from these three datasets, which are explained in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Repositories</td>
+      <td>Primary Language</td>
+      <td>Primary language used in the repository</td>
+    </tr>
+    <tr>
+      <td>Pull requests</td>
+      <td>Changes</td>
+      <td>Sum of additions and deletions</td>
+    </tr>
+    <tr>
+      <td>Reviews</td>
+      <td>State</td>
+      <td>Review state which can be <strong>Approved</strong>, <strong>Commented</strong>, <strong>Changed Requested</strong> and <strong>Dismissed</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pull-request-size-distribution">Pull request size distribution</h2>
+
+<p>Let’s look at the PR size distribution:</p>
+
+<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-distribution-org.png" alt="Pull request size distribution for Flutter-Global" /></p>
+
+<p>Most pull requests have up to 1000 changes. However, one important note is that pull request size distribution can potentially change depending on the purpose of the repository. For example, 100 changes in an application repository may be considered a <strong>small</strong> pull request, but in a configuration repository 100 changes can actually be considered a significant configuration change.</p>
+
+<p>In order to determine if repository type influences pull request distribution, let’s look at the pull request distribution for <strong>Java*</strong> and <strong>Ruby**</strong> repositories:</p>
+
+<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-distribution-language.png" alt="Pull request size distribution for Java and Ruby" /></p>
+
+<p>The pull request distribution is, indeed, different depending on the repository primary language. Thus, this blog post will focus only on <strong>Java</strong> repositories, in order to avoid reaching too general of a conclusion that would be generally inaccurate.</p>
+
+<p>Having our dataset with only <strong>Java</strong> repositories and their respective pull requests and reviews, I decided to categorise pull requests into three size categories, according to the following rules:</p>
+
+<ul>
+  <li><strong>small</strong> pull requests have up to 100 changes</li>
+  <li><strong>medium</strong> pull requests have between, not including, 100 and 1000 changes</li>
+  <li><strong>large</strong> pull requests have at least 1000 changes</li>
+</ul>
+
+<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-categories-distribution-java.png" alt="Pull request size categories distribution for Java pull requests" /></p>
+
+<p>The vast majority of pull request fall under the small category, which is reassuring.</p>
+
+<p>* Commonly used language for application repositories</p>
+
+<p>** Commonly used language for chef repositories, which are configuration repositories</p>
+
+<h2 id="pull-request-size-impact-on-reviews">Pull request size impact on reviews</h2>
+
+<p>To start, let’s take a look at the review state distribution per pull request size category:</p>
+
+<p><img src="/assets/blog/big-prs-bad-reviews/review-state-java.png" alt="Review State distribution for Java pull requests" /></p>
+
+<p>The first thing to note is that the <strong>CHANGES_REQUESTED</strong> type of review is not widely used, which means most reviewers use the <strong>COMMENTED</strong> type of review to suggest changes.</p>
+
+<p>It’s possible to see that bigger pull requests have more <strong>COMMENTED</strong> type reviews than smaller pull requests, which means the bigger the pull request, the higher the effort to leave it in a <em>ready for approval</em> state. However, it is good to see that as the pull request size gets bigger, the amount of effort also increases.</p>
+
+<p>Although bigger pull requests have more reviews, it doesn’t mean those reviews are as thorough as the ones for smaller pull requests. Let’s take a look at review count distribution per 100 changes:</p>
+
+<p><img src="/assets/blog/big-prs-bad-reviews/review-count-per-100-changes-size-java.png" alt="Review count per 100 changes for Java pull requests" /></p>
+
+<p>It’s possible to see that as the pull request size increases, the number of reviews per 100 changes decreases.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This blog post showed that:</p>
+
+<ul>
+  <li>pull request size distribution depends on the repository type (application, config, etc.)</li>
+  <li>the majority of pull requests of <strong>Java</strong> repositories have up to 100 changes</li>
+  <li>bigger pull requests have more reviews of type <strong>COMMENTED</strong>, which most likely represent suggestions for change</li>
+  <li>as pull request size increases, reviews tend to be less and less thorough</li>
+</ul>
+
+                  <hr/>
+                  <strong>by: </strong>Tiago Almeida<br/>
+                  <strong>in: </strong><time datetime="2022/01/12">12 Jan 2022</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#pull-requests" class="mr-1 inline-block hover:underline lowercase">Pull Requests</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#insight" class="hover:underline lowercase">Insight</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
