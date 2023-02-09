@@ -11,68 +11,6 @@ window.addEventListener("DOMContentLoaded", () => {
     mobileMenu.hidden = !mobileMenu.hidden;
   }
 
-  // Tabs
-  const tabs = document.querySelector('.tabs');
-  let tabButtons = [];
-
-  if (tabs != null) {
-    tabButtons = tabs.querySelectorAll('[role="tab"]');
-    tabButtons.forEach(button => button.addEventListener('click', handleTabClick));
-  }
-
-  function handleTabClick(event) {
-    const tabsPanels = document.querySelectorAll('[role="tabpanel"]');
-    // hide all tab panels
-    tabsPanels.forEach(panel => panel.hidden = true);
-    // mark all tabs as unselected
-    tabButtons.forEach(tab => {
-      // tab.ariaSelected = false;
-      tab.setAttribute('aria-selected', false);
-      tab.setAttribute("class", "block px-6 py-5 text-xs font-medium leading-tight uppercase hover:text-sky-500 nav-link border-x-0 hover:border-transparent hover:bg-gray-200")
-    });
-    // mark the cli cked tab as selected
-    event.currentTarget.setAttribute('aria-selected', true);
-    event.currentTarget.setAttribute("class", "block px-6 py-5 text-xs font-medium leading-tight uppercase bg-white border-b-2 text-sky-500 nav-link border-x-0 hover:border-transparent border-sky-500");
-    // find the associated tabPanel and show it!
-    const { id } = event.currentTarget;
-    const tabPanelArr = Array.from(tabsPanels);
-    const tabPanel = tabPanelArr.find(
-      panel => panel.getAttribute('aria-labelledby') === id
-    );
-    tabPanel.hidden = false;
-
-    const $tabsSelect = document.querySelector("#tabs-select");
-    $tabsSelect.value = id
-  }
-  // Tabs Mobile
-  const tabsSelect = document.getElementById("tabs-select");
-
-  if (tabsSelect != undefined) {
-    tabsSelect.addEventListener("change", (event) => {
-      handleTabSelectChange(event.target);
-    })
-  }
-
-  function handleTabSelectChange(element) {
-    window.location.hash = `#${element.value}`;
-    const tabsPanels = document.querySelectorAll('[role="tabpanel"]');
-    // hide all tab panels
-    tabsPanels.forEach(panel => panel.hidden = true);
-    // mark all tabs as unselected
-    tabButtons.forEach(tab => {
-      // tab.ariaSelected = false;
-      tab.setAttribute('aria-selected', false);
-    });
-    // mark the cli cked tab as selected
-    element.setAttribute('aria-selected', true);
-    // find the associated tabPanel and show it!
-    const tabPanelArr = Array.from(tabsPanels);
-    const tabPanel = tabPanelArr.find(
-      panel => panel.getAttribute('aria-labelledby') === element.value
-    );
-    tabPanel.hidden = false;
-  }
-
   // Tooltips
   const tooltips = document.querySelectorAll('[role="tooltip"]');
 

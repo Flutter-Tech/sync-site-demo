@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Branching Models in 7 Minutes | Flutter Inner Source</title>
+  <title>Deployment Repository | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/vite/assets/index.90f87b50.css" media="screen"/>
@@ -186,13 +186,13 @@
         <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
           <div>
             
-            <a href="/blog/categories#academy" class="block mb-3">
+            <a href="/blog/categories#story" class="block mb-3">
               <span
-                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Academy</span>
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Story</span>
             </a>
             
             <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
-              Branching Models in 7 Minutes
+              Deployment Repository
             </h1>
             <div class="pl-1 pt-2">
               
@@ -202,7 +202,7 @@
           </div>
         </div>
         
-<div class="relative col-span-3" style="background: url(/assets/blog/2022-12-15-branching-in-7-minutes.png) no-repeat center; background-size: cover;"></div>
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-02-06-bernard.png) no-repeat center; background-size: cover;"></div>
 
       </div>
     </div>
@@ -213,53 +213,66 @@
             <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
               <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
                 <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
-                  <div class="not-prose grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
-  <div class="col-span-2">
-    <div style="position: relative; display: block">
-      <div style="padding-top: 56.25%">
-        <iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6316437796112" allowfullscreen="" allow="encrypted-media" style="
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-          "></iframe>
-      </div>
+                  <p>Bernard explains the use of a <strong>deployment repository</strong> to separate shared application code from the infrastructure code for a specific deployment <em>(7 mins)</em>:</p>
+
+<div style="position: relative; display: block;">
+    <div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6319600156112" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
     </div>
-  </div>
-  <div>
-    <p class="mt-6 text-gray-500">
-      Recommended branching model patterns explained in under 7 minutes!
-    </p>
-  </div>
 </div>
 
-<p>I put this short video together covering 3 branching models used in <code class="language-plaintext highlighter-rouge">Flutter-Global</code> to explain the reasoning behind the <a href="/sdlc/multiple-teams/branching/">multiple team branching</a> and recommended use of <a href="/sdlc/semver/">git SemVer tags</a>. This model is proposed for adoption by various gbp services in 2023 to help the teams collaborate more effectively. The disadvantage of this approach vs <a href="/sdlc/reviewed/">reviewed source</a> (“GitHub Flow”) is its complexity and delayed integration between teams. So good training material is required to understand the choices and tradeoffs between team independence vs delayed change integration.</p>
+<h2 id="example">Example</h2>
 
-<p>I created the video animation using <a href="https://www.svgator.com/">SVGator</a>, recorded a voiceover using Quicktime, then used iMovie on my Macbook to weave the 2 together. Easier than I expected, and pleased with the outcome.</p>
+<p>If you are a Flutter staff member and part of <code class="language-plaintext highlighter-rouge">Flutter-Global</code>, you can access <a href="https://developers.flutter.com/blog/deployment-repository#example">examples of this pattern on our internal developers site</a>.</p>
 
-<p>For more information and setup instructions for each branching model:</p>
+<h2 id="why">Why?</h2>
+
+<p>A team responsible for building and running an application will manage 2 types of code:</p>
 
 <ul>
-  <li><a href="/sdlc/audited/">Audited Source</a></li>
-  <li><a href="/sdlc/reviewed/">Reviewed Source</a></li>
-  <li><a href="/sdlc/multiple-teams/">Multiple Team Source</a></li>
+  <li><strong>Application code</strong>: the business logic and implementation of the service (e.g. Java, Javascript, C#).</li>
+  <li><strong>Infrastructure code</strong>: the deployment topology and configuration (e.g. Terraform, Helm charts, AWS CDK).</li>
 </ul>
+
+<p>When a single team manage both (DevOps culture), they will typically keep both in a single repository (<a href="https://aws.amazon.com/blogs/devops/best-practices-for-developing-cloud-applications-with-aws-cdk/">example</a>) because:</p>
+
+<ul>
+  <li>Atomic changes are possible across both application and infrastructure.</li>
+  <li>The same build, test and deploy pipeline is used for both application and infrastructure changes which reduces mistakes.</li>
+</ul>
+
+<p>For an <a href="/how/">inner source application</a> the situation is more complex:</p>
+
+<ul>
+  <li>Multiple deployments of the same shared application code to different topologies, so multiple sets of infrastructure code.</li>
+  <li>Infrastructure code is owned and maintained by the just team responsible for that deployment, a subset of the application code contributors.</li>
+</ul>
+
+<p>These factors often mean that the application code and infrastructure code are kept in separate repositories. We call the infrastructure code repository a <strong>deployment repository</strong>.</p>
+
+<h2 id="how">How?</h2>
+
+<object type="image/svg+xml" data="/assets/blog/deployment-repo/animated.svg"></object>
+
+<ul>
+  <li>The application code is stored in a GitHub repository in the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> organisation where engineers from any division can contribute.</li>
+  <li>Build, test, scan and packaging CI jobs are defined in the application code repository and executed on <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub Action runners. This allows anyone who contributes to fully validate their work.</li>
+  <li>The application code release package(s) are published to <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub Packages and labeled using semantic versions. This allows any division to deploy these release packages.</li>
+  <li>The deployment repository is a GitHub repository in the divisional organisation which is integrated with the divisional deployment infrastructure. It references the desired release version.</li>
+  <li>The divisional CI/CD pipeline is a divisional technology choice and pulls and scans the release packages from <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub Packages. This pipeline then completes the deployment to the divisional infrastructure.</li>
+</ul>
+
+<p>The division treats Flutter-Global application code or packages as a dependency in a similar way it would treat other open source dependencies.</p>
 
                   <hr/>
                   <strong>by: </strong>Rob Tuley<br/>
-                  <strong>in: </strong><time datetime="2022/12/15">15 Dec 2022</time><br/>
+                  <strong>in: </strong><time datetime="2023/02/06">06 Feb 2023</time><br/>
                   <strong>tags: </strong>
-                    
-                    <a href="/blog/tags#video" class="mr-1 inline-block hover:underline lowercase">Video</a>
                     
                     <a href="/blog/tags#branching" class="mr-1 inline-block hover:underline lowercase">Branching</a>
                     
-                    <a href="/blog/tags#pull-requests" class="mr-1 inline-block hover:underline lowercase">Pull Requests</a>
+                    <a href="/blog/tags#video" class="mr-1 inline-block hover:underline lowercase">Video</a>
                     <br/>
-                  <strong>category: </strong><a href="/blog/categories#academy" class="hover:underline lowercase">Academy</a><br/>
+                  <strong>category: </strong><a href="/blog/categories#story" class="hover:underline lowercase">Story</a><br/>
                 </div>
               </div>
             </div>
