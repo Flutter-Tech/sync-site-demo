@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Why are PRs slow? | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/vite/assets/index.90f87b50.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index.4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#insight" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Insight</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Why are PRs slow?
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Tiago Almeida
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/why-are-prs-slow/pr-lead-time-number-maintainers.png) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <p>An important team measurement is cycle time – the time it takes for the development of a new feature from idea to release. Part of the cycle time is <strong>pull request lead time</strong>: the length of time from when a pull request is created to when it is merged. This article examines the relationship between pull request lead time and five different factors: cross-divisional contributions, number of approvals required, number of maintainers, pull request size and repository main language.</p>
+
+<h2 id="understanding-the-dataset">Understanding the dataset</h2>
+
+<p>I extracted pull request data from the Flutter-Global organisation that have been merged in the last six months – 20000 pull requests.</p>
+
+<p>For this blog post, I will only be using pull requests that have been merged and also be using a selection of properties from multiple other datasets, which are explained in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Repositories</td>
+      <td>Primary Language</td>
+      <td>Primary language used in the repository</td>
+    </tr>
+    <tr>
+      <td>Repositories</td>
+      <td>Number of required approvals</td>
+      <td>Number of required approvals set in the branch protections for the pull request’s base branch</td>
+    </tr>
+    <tr>
+      <td>Repositories</td>
+      <td>Number of maintainers</td>
+      <td>Number of maintainers of the repository</td>
+    </tr>
+    <tr>
+      <td>Pull requests</td>
+      <td>Changes</td>
+      <td>Sum of additions and deletions</td>
+    </tr>
+    <tr>
+      <td>Pull requests</td>
+      <td>Lead time</td>
+      <td>Time, in hours, between the pull request’s creation and its merge</td>
+    </tr>
+    <tr>
+      <td>Pull requests</td>
+      <td>Is cross divisional</td>
+      <td>Whether at least two users from different divisions created and/or reviewed the pull request</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="what-variables-influence-pull-request-lead-time">What variables influence pull request lead time?</h2>
+
+<p>In this blog post, I will take a look at the relationship between five different factors and pull request lead time:</p>
+
+<ul>
+  <li><a href="#cross-divisional-vs-divisional-pull-requests">Cross-divisional/divisional contributions</a></li>
+  <li><a href="#number-of-approvals-required">Number of approvals required</a></li>
+  <li><a href="#number-of-maintainers">Number of maintainers</a></li>
+  <li><a href="#pull-request-size">Pull request size, based on the number of changes</a></li>
+  <li><a href="#repository-main-language">Repository main language</a></li>
+</ul>
+
+<p>Note that must plots presented below are <strong>box plots</strong>. Box plots are great to visualize quartiles and the data spread, including outliers. The middle line of the box represents the 2nd quartile (also known as 50% percentile, or median). The left and right borders of the box represent the 1st (25% percentile) and 3rd (75% percentile) quartiles, respectively. The whiskers outside the box usually stretch from the lowest value to the highest, giving us an idea of the spread of the data. Dots on the extreme sides of the whiskers represent outliers. For a more detailed explanation on box plots, you can visit <a href="https://www.scribbr.com/statistics/quartiles-quantiles/">Quartiles &amp; Quantiles</a>.</p>
+
+<p>Additionally, the lead time axis in the chart will be presented with a log10 transformation.</p>
+
+<h2 id="cross-divisional-vs-divisional-pull-requests">Cross-divisional vs divisional pull requests</h2>
+
+<p>Let’s take a look at the relationship between cross-divisional/divisional pull request and lead time:</p>
+
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-cross-divisional.png" alt="Lead time for cross-divisional/non-cross-divisional pull requests" /></p>
+
+<p>Since the lead time is presented in a log10 scale, the difference in the median (50th percentile) is quite significant – around 2 hours for divisional pull requests and around 48 hours for cross-divisional pull requests. This shows a clear relationship between cross-division interaction and lead time. However, further analysis is needed to understand if the lead time for cross-divisional pull requests is not changing due to other reasons, e.g. number of approvals required.</p>
+
+<h2 id="number-of-approvals-required">Number of approvals required</h2>
+
+<p>Let’s take a look at the relationship between number of approvals required and lead time:</p>
+
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-approvals-required.png" alt="Pull request lead time per number of approvals required" /></p>
+
+<p>It’s clear to see that as the number of approvals required increases, the pull request lead time also increases, which is the expected result. It is interesting to see that the median changes significantly between <strong>0</strong> approvals required and <strong>1</strong> approval required, demonstrating that the introduction of required approvals impacts lead time significantly.</p>
+
+<h2 id="number-of-maintainers">Number of maintainers</h2>
+
+<p>Let’s take a look at the relationship between number of maintainers and lead time:</p>
+
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-number-maintainers.png" alt="Pull request lead time per number of maintainers" /></p>
+
+<p>There is no apparent correlation between these two variables. However, this chart does not take into account divisional distribution inside the maintainers groups. Thus, although total number of maintainers, independently of their division, does not seem to impact lead time on its own, it might be interesting to analyse this same correlation by divisional distribution in the future.</p>
+
+<h2 id="pull-request-size">Pull request size</h2>
+
+<p>Let’s take a look at the relationship between pull request size and lead time:</p>
+
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-pr-size.png" alt="Pull request lead time vs pull request size" /></p>
+
+<p>Again, there is no apparent correlation between these two variables. However, it is also important to note that in Flutter-Global, we have many different types of repositories with many different purposes. One hypothesis might be that big pull requests with relatively short lead times are related to documentation repositories. Thus, although pull request size on its own does not seem to influence lead time, it might be interesting to dive deeper into this variable in the future and analyse the same correlation for application or configuration repositories only.</p>
+
+<h2 id="repository-main-language">Repository main language</h2>
+
+<p>And finally, let’s take a look at the relationship between repository primary language and lead time:</p>
+
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-repo-language.png" alt="Pull request lead time per repository primary language" /></p>
+
+<p>I only looked at the top five primary languages based on number of repositories and was not able to draw any meaningful conclusions from this chart regarding the relationship between repository language and lead time.</p>
+
+<p>However, we can see that the only configuration type language we have in this chart is <strong>HCL</strong> and, out of all the languages, <strong>HCL</strong> is the one that presents a more consistent performance regarding pull request lead time (interquartile range is smaller). We can also see that <strong>JavaScript</strong> and <strong>Java</strong> repositories seem to be slower than <strong>TypeScript</strong> and <strong>C#</strong> repositories. It is not possible to assume the reason behind this change in lead time is due to the language, since it might be related to other factors, e.g. <strong>Java</strong> might be a more widely used language for cross-divisional pull requests, while <strong>C#</strong> might be a more widely used language for divisional pull requests.</p>
+
+<h2 id="cross-divisional-vs-number-of-approvals-required">Cross-divisional vs number of approvals required</h2>
+
+<p>Having noticed that both number of approvals required and whether a pull request is cross-divisional or not are variables that influence lead time, it is important to understand if there is a relationship between the two.</p>
+
+<p>Let’s take a look at the relationship between cross-divisional/divisional pull request and lead time coloured by number of approvals required:</p>
+
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-cross-divisional-number-approvals.png" alt="Lead time for cross-divisional/divisional pull request per number of approvals required" /></p>
+
+<p>From this chart, we can see that as the number of approvals required increases, the pull request lead time also increases, independently of whether the pull request is cross-divisional or not. It is also interesting (and reassuring) to see that there are no cross-divisional pull requests that have 0 approvals required.</p>
+
+<p>Let’s take a look at the relationship between number of approvals required and lead time coloured by whether a pull request is cross-divisional or divisional:</p>
+
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-repo-approval-required-cross-divisional.png" alt="Lead time for per number of approvals required coloured by cross-divisional/divisional" /></p>
+
+<p>It is possible to see that being cross-divisional increases the pull request lead time, independently of the number of required approvals.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This blog post showed that:</p>
+
+<ul>
+  <li>cross-divisional pull requests have longer lead times compared to their divisional counterparts</li>
+  <li>as the number of approvals required increases, so does the pull request lead time. Choosing to go from 0 approvals required to 1 or more seems to lead to the most significant increase</li>
+  <li>the total number of maintainers on its own does not seem to influence lead time. However, looking into divisional distribution inside the maintainer groups might lead to different results</li>
+  <li>pull request size on its own does not seem to influence lead time. However, there are repositories with specific purposes, e.g. documentation, that might deter from any meaningful conclusions</li>
+  <li>repository main language didn’t lead to any meaningful conclusions regarding pull request lead time. However, it raised the important question of whether configuration repositories have a more consistent performance compared to application repositories</li>
+</ul>
+
+                  <hr/>
+                  <strong>by: </strong>Tiago Almeida<br/>
+                  <strong>in: </strong><time datetime="2023/02/10">10 Feb 2023</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#pull-requests" class="mr-1 inline-block hover:underline lowercase">Pull Requests</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#insight" class="hover:underline lowercase">Insight</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
