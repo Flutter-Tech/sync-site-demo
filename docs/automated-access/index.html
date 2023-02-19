@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Automated GitHub Access | Flutter Inner Source</title>
+  <title>Service Accounts | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/vite/assets/index.90f87b50.css" media="screen"/>
@@ -548,7 +548,7 @@
           
           <!-- BREADCRUMBS -->
           <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
-            Automated GitHub Access
+            Service Accounts
           </h1>
           <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5"></p>
         </div>
@@ -566,63 +566,127 @@
           
           <!-- TITLE -->
           <!-- CONTENT -->
-          <p>There are many use cases where you will want to automate access or changes on GitHub, this page describes the options available to run that automation and to manage the authentication and authorisation.</p>
+          <p>When automating GitHub processes you will need to use GitHub credentials in your automation. These credentials are usually attached to shared “service accounts”. This page describes the options available to you and recommended best practice for these situations.</p>
 
-<p>The choice of automation mechanism is constrained based on how your automation is intended to be triggered and how integrated it needs to be be with divisional infrastructure</p>
+<h2 id="recommended-options">Recommended Options</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Automation mechanisms</th>
-      <th>Usage notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>GitHub action - hosted in GitHub</strong></td>
-      <td>Can be scheduled or triggered from events within any repository<br />Hosted by GitHub and easy to setup<br />Access to divisional infrastructure is limited<br /> <strong>More info:</strong> <a href="https://docs.github.com/en/actions">GitHub docs</a></td>
-    </tr>
-    <tr>
-      <td><strong>GitHub action - self hosted</strong></td>
-      <td>Can also be scheduled or triggered from events within any repository<br /> Unlike GitHub hosted actions, they run within divisional infrastructure<br /> <strong>More info:</strong> <a href="https://docs.github.com/en/actions/hosting-your-own-runnersr">GitHub docs</a></td>
-    </tr>
-    <tr>
-      <td><strong>Webhook listener</strong></td>
-      <td>Repository level and organisation level activity in GitHub can trigger a call to an external webhook listener <br /> These listeners need to be deployed on divisional infrastructure outside of GitHub<br /> <strong>More info:</strong> <a href="https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhooks">GitHub docs</a></td>
-    </tr>
-    <tr>
-      <td><strong>External processes</strong></td>
-      <td>External processes, including webhook listeners and self hosted GitHub action runners or fully independent external processes, running on divisional infrastructure can run and be triggered by GitHub activities as well as non-GitHub activities</td>
-    </tr>
-  </tbody>
-</table>
+<p>Service account options in order of preference are:</p>
 
-<p>All authorisation / authentication mechanisms are available to all automation mechanisms</p>
+<ol>
+  <li><strong><a href="#deploy-key">Deploy Key</a></strong> – an SSH key that grants read or write access to a single repository.</li>
+  <li><strong><a href="#github-app">GitHub App</a></strong> – an internal GitHub “app” configured with appropriate permissions and repository access.</li>
+  <li><strong><a href="#divisional-machine-user">Divisional Machine User</a></strong> – a GitHub account on-boarded by your division that is designed to be used as a service account. This should be avoided if possible.</li>
+</ol>
 
-<table>
-  <thead>
-    <tr>
-      <th>Authentication / Authorisation mechanisms</th>
-      <th>Usage notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Personal access token</strong></td>
-      <td>Has the same access levels as a user or divisional ‘service account’, and any API calls made will appear to come from that specific user <br /> It is discouraged to use this auth type <br /> It is difficult to constrain the permissions to be the minimum necessary<br />It is associated strongly to a specific user, so is difficult to manage the responsibilities effectively across multiple people<br /> <strong>More info:</strong> <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub docs</a></td>
-    </tr>
-    <tr>
-      <td><strong>GitHub App</strong></td>
-      <td>The <strong>preferred way</strong> to manage automation access across multiple repos in an organization or across multiple organizations<br /> Fine grained control over what the app can do at the repository and organisation level<br /> Application managers can be assigned to ensure it is managed by a team safely and effectively<br /> Activities performed in GitHub will be labeled appropriately as <code class="language-plaintext highlighter-rouge">[bot]</code> activity performed by the named app<br /><strong>More info:</strong> <a href="https://docs.github.com/en/developers/apps/getting-started-with-apps/about-apps">GitHub docs</a></td>
-    </tr>
-    <tr>
-      <td><strong>Deploy key</strong></td>
-      <td>Deploy keys are a public/private key pair, where the public key is attached to a repository in GitHub <br /> This allows automation to read/pull the repository ( by default, although write/push access can be granted ) <br /> Gives git push/pull access and is <strong>not used to make GitHub API calls</strong><br /> Each key needs to be attached to each repository where it’s required<br /> <strong>More info:</strong> <a href="https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys">GitHub docs</a></td>
-    </tr>
-  </tbody>
-</table>
+<p><strong>Deploy key (1) or GitHub app (2) are recommended where possible. This mirrors <a href="https://docs.github.com/en/enterprise-cloud@latest/actions/security-guides/security-hardening-for-github-actions#considering-cross-repository-access">GitHub’s own security hardening advice</a>.</strong></p>
 
-<hr />
+<h2 id="requirements">Requirements</h2>
+
+<p>The provision of service account access must consider:</p>
+
+<ol>
+  <li><strong>Least Privilege</strong>: The credentials should be limited to the minimum GitHub permissions across the minimum number of repositories in Flutter-Global to fulfill the purpose of the automation.</li>
+  <li><strong>Transport &amp; Storage</strong>: The credentials should be stored and transported securely. For in-house automation this means using mechanisms reviewed and approved by your divisional security team. For 3rd party access, this means they have been reviewed and achieved a low risk score through the the 3rd party security assessment process.</li>
+  <li><strong>Ownership</strong>: All service accounts must be owned, with clear accountability for who will support the account and its usage.</li>
+  <li><strong>Access &amp; Rotation</strong>: The credentials should be rotated along with a review of the need for any individuals who have direct access at least once every 6 months.</li>
+  <li><strong>Ease of Use</strong>: Ease of use should be optimised and any support overhead reduced where it makes little practical difference to the risk profile of its use.</li>
+</ol>
+
+<h3 id="example-jenkins">Example (Jenkins)</h3>
+
+<p>A divisionally maintained Jenkins deployment requires access to a subset of the repositories in Flutter-Global for CI/CD:</p>
+
+<ul>
+  <li>Least privilege requires the credentials to have the minimum read-only permissions to only the required content. A GitHub App can be configured to limit the permissions and repository access in this way.</li>
+  <li>The credentials are stored securely in a divisionally approved Hashicorp Vault deployment which is integrated with Jenkins.</li>
+  <li>Named GitHub App Managers are configured who own the GitHub app service account. They are responsible for rotating private keys and reviewing credential access at least every 6 months.</li>
+  <li>To optimise ease of use, the GitHub app is configured with read access to all “Internal” visibility repositories by default. This reduces the overhead of repo access configuration but is low-risk given the “Internal” visibility of these repos already.</li>
+</ul>
+
+<h2 id="deploy-key">Deploy Key</h2>
+
+<p>A deploy key is an SSH key that grants access to a single repository. It is useful when your use-case is limited to read or write access to the content of a single repository. If your use-case is more complex, use a GitHub app instead.</p>
+
+<ul>
+  <li>Keys are <a href="https://docs.github.com/en/enterprise-cloud@latest/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys">created as documented by GitHub here</a>. You can do this yourself if you have admin permissions on your repository.</li>
+  <li>Read-only deploy keys can be used to clone repositories.</li>
+  <li>Optionally, write access can be granted which allows commits to be pushed to the repository. This push is treated as an “admin” commit so can be configured to bypass branch protection.</li>
+</ul>
+
+<p>The deploy key is an SSH key rather than an oAuth token, so it can be used in a GitHub Action workflow like:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Setup SSH agent to use deploy key</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">SSH_AUTH_SOCK</span><span class="pi">:</span> <span class="s">/tmp/ssh_agent.sock</span>
+    <span class="na">SSH_PRIVATE_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.MY_DEPLOY_KEY }}</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="s">ssh-agent -a $SSH_AUTH_SOCK &gt; /dev/null</span>
+    <span class="s">ssh-add - &lt;&lt;&lt; "$SSH_PRIVATE_KEY"</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout the repo using deploy key</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">SSH_AUTH_SOCK</span><span class="pi">:</span> <span class="s">/tmp/ssh_agent.sock</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="s">git clone --depth 1 git@github.com:Flutter-Global/my-repo.git my-repo</span>
+<span class="c1"># ...</span>
+<span class="c1"># make any changes required (if a write use-case)</span>
+<span class="c1"># ...</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Push repo changes using deploy key</span>
+  <span class="na">working-directory</span><span class="pi">:</span> <span class="s">my-repo</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">SSH_AUTH_SOCK</span><span class="pi">:</span> <span class="s">/tmp/ssh_agent.sock</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="s">if [ ! -z "$(git status --porcelain=v1 2&gt;/dev/null)" ]</span>
+    <span class="s">then</span>
+      <span class="s">git config user.name "github-actions"</span>
+      <span class="s">git config user.email github-actions@github.com</span>
+      <span class="s">git pull --no-edit</span>
+      <span class="s">git add -A</span>
+      <span class="s">git commit -m 'my commit message'</span>
+      <span class="s">git push</span>
+    <span class="s">fi</span>
+</code></pre></div></div>
+
+<p>If using Github Action workflows, a deploy key should be <a href="/docs/secrets/">securely stored in secrets as recommended here</a>.</p>
+
+<h2 id="github-app">GitHub App</h2>
+
+<p>GitHub Apps can be installed on selected repositories with granular permissions on the resources within them. For service account access a GitHub App is created internal to Flutter-Global and granted access to the repositories required with the minimum permissions needed. They are suitable for almost all use-cases.</p>
+
+<ul>
+  <li>GitHub apps must be created by org owners, so please <a href="/community/">contact the Inner Source Team</a> to begin this process.</li>
+  <li>Owners of the service account can be configured as “GitHub App Managers” to maintain it directly (e.g. regular key rotation).</li>
+  <li>Configuration is the same as <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token">fine-grained personal access tokens</a> so these can be used to test the suitability and permissions required.</li>
+</ul>
+
+<p>A GitHub App is authenticated via private keys, and short-lived access tokens <a href="https://docs.github.com/en/enterprise-cloud@latest/rest/apps/apps?apiVersion=2022-11-28#create-an-installation-access-token-for-an-app">need to be generated on-demand for most use-cases</a>. For use in GitHub Action workflows, an action helper is provided by <a href="https://github.com/Flutter-Tech/github-app-token">Flutter-Tech/github-app-token</a>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Get access token from GitHub app</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">app</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">Flutter-Tech/github-app-token@v2</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">APP_PEM</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_APP_PEM }}</span>
+    <span class="na">APP_ID</span><span class="pi">:</span> <span class="m">123</span>
+    <span class="na">APP_INSTALLATION_ID</span><span class="pi">:</span> <span class="m">456789</span>
+</code></pre></div></div>
+
+<p>Then use the access token as desired, e.g. to checkout a repository:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Clone a repo using the GitHub app</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">repository</span><span class="pi">:</span> <span class="s">Flutter-Global/your-repo-name</span>
+    <span class="na">token</span><span class="pi">:</span> <span class="s">${{ steps.app.outputs.app_token }}</span>
+</code></pre></div></div>
+
+<p>If using Github Action workflows, the GitHub app private key should be <a href="/docs/secrets/">securely stored in secrets as recommended here</a>.</p>
+
+<h2 id="divisional-machine-user">Divisional Machine User</h2>
+
+<p>You can create a new account on GitHub.com and treat it as a service account that will be used exclusively for automation. This is managed by your division so you would need to discuss this with <a href="/community/">your divisional GitHub owner</a> to onboard such an account and manage ownership. <strong>This option is NOT recommended, you should use a GitHub App instead.</strong></p>
+
+<p>The machine user can be granted access to repositories like any other user. We recommend granting repository access to a GitHub team that contains the machine user rather than directly to the machine account itself. This allows faster incident recovery if the machine account is mistakenly ejected from the org and easier rotation between personal &amp; machine accounts if required.</p>
+
+<p>You will need to generate a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token">fine-grained personal access token</a> for the machine user to use within your automation. You should not use a “classic” personal access token. If using Github Action workflows the token should be <a href="/docs/secrets/">securely stored as recommended here</a>.</p>
+
 
           <!-- CONTENT -->
           <!-- ARTICLE NAVIGATION -->
@@ -641,7 +705,7 @@
           <div class="pb-6 text-md">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc">
-            
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#recommended-options" class="hover:text-secondary">Recommended Options</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requirements" class="hover:text-secondary">Requirements</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#example-jenkins" class="hover:text-secondary">Example (Jenkins)</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#deploy-key" class="hover:text-secondary">Deploy Key</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#github-app" class="hover:text-secondary">GitHub App</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#divisional-machine-user" class="hover:text-secondary">Divisional Machine User</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           
