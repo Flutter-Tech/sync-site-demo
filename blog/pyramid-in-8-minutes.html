@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>The Pyramid in 8 Minutes | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/vite/assets/index.862cee42.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index.4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#academy" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Academy</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              The Pyramid in 8 Minutes
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Rob Tuley
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-03-17-pyramid.png) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <p>In an effort to get across core inner source concepts I’ve created a short video that explains what inner source is and how we use pyramid of different stages to understand the inner source journey <em>(8 mins)</em>:</p>
+
+<div style="position: relative; display: block;">
+    <div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6322674461112" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
+    </div>
+</div>
+
+<p>Inner source describes a range of practices so at Flutter we define 3 named inner source stages in the <strong>Inner Source Pyramid</strong> to help us discuss and agree operating models more precisely:</p>
+
+<p><img src="/how/pyramid/pyramid.png" class="max-w-xl mx-auto" /></p>
+
+<p>These stages are visually represented as a pyramid because:</p>
+
+<ol>
+  <li>Each stage builds upon the foundation of the one below and is not possible without it.</li>
+  <li>It reflects the volume of services at each stage with only a few requiring stage 3 “maintainers in multiple teams”.</li>
+</ol>
+
+<p>Higher stages in the pyramid are more complex, which is only justified if the circumstances require it (e.g. a high volume of contribution and/or teams involved). Each inner source capability therefore has an optimum position in the pyramid, and a higher stage does not mean “better” – it just means “more complex”.</p>
+
+<p><a href="/how/">Read more about inner source and the pyramid in our Academy area &gt;</a></p>
+
+                  <hr/>
+                  <strong>by: </strong>Rob Tuley<br/>
+                  <strong>in: </strong><time datetime="2023/03/17">17 Mar 2023</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#video" class="mr-1 inline-block hover:underline lowercase">Video</a>
+                    
+                    <a href="/blog/tags#wow" class="mr-1 inline-block hover:underline lowercase">WoW</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#academy" class="hover:underline lowercase">Academy</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
