@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Deployment Repository | Flutter Inner Source</title>
+  <title>Automated Labels | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/vite/assets/index.b7510167.css" media="screen"/>
@@ -186,23 +186,23 @@
         <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
           <div>
             
-            <a href="/blog/categories#story" class="block mb-3">
+            <a href="/blog/categories#changelog" class="block mb-3">
               <span
-                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Story</span>
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Changelog</span>
             </a>
             
             <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
-              Deployment Repository
+              Automated Labels
             </h1>
             <div class="pl-1 pt-2">
               
-              <strong>by:</strong> Rob Tuley
+              <strong>by:</strong> Nuno Crisóstomo
               
             </div>
           </div>
         </div>
         
-<div class="relative col-span-3" style="background: url(/assets/blog/2023-02-06-bernard.png) no-repeat center; background-size: cover;"></div>
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-03-22-automated-labels.png) no-repeat center; background-size: cover;"></div>
 
       </div>
     </div>
@@ -213,66 +213,68 @@
             <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
               <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
                 <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
-                  <p>Bernard explains the use of a <strong>deployment repository</strong> to separate shared application code from the infrastructure code for a specific deployment <em>(7 mins)</em>:</p>
+                  <p>Making the flow and status of work visible is important for all engineering teams and inner source is no exception. At Flutter we use GitHub for inner source work: work is captured in pull requests or issues, and can be visualised using GitHub project boards. So far, so normal!</p>
 
-<div style="position: relative; display: block;">
-    <div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6319600156112" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-    </div>
-</div>
-
-<h2 id="example">Example</h2>
-
-<p>If you are a Flutter staff member and part of <code class="language-plaintext highlighter-rouge">Flutter-Global</code>, you can access <a href="https://developers.flutter.com/blog/deployment-repository#example">examples of this pattern on our internal developers site</a>.</p>
-
-<h2 id="why">Why?</h2>
-
-<p>A team responsible for building and running an application will manage 2 types of code:</p>
+<p>But our inner source work uses conventions not natively supported by GitHub:</p>
 
 <ul>
-  <li><strong>Application code</strong>: the business logic and implementation of the service (e.g. Java, Javascript, C#).</li>
-  <li><strong>Infrastructure code</strong>: the deployment topology and configuration (e.g. Terraform, Helm charts, AWS CDK).</li>
+  <li>A <strong>capability</strong> is a group of GitHub repositories.</li>
+  <li>Each capability has a team of expert <strong>maintainers</strong>.</li>
+  <li>Each maintainer is part of a business <strong>division</strong>.</li>
 </ul>
 
-<p>When a single team manage both (DevOps culture), they will typically keep both in a single repository (<a href="https://aws.amazon.com/blogs/devops/best-practices-for-developing-cloud-applications-with-aws-cdk/">example</a>) because:</p>
+<p>GitHub has no knowledge of these concepts as they are <a href="/docs/automated-labels/">configured via codebase governor</a>. GitHub does however provide “labels” as a generic way to associate data with issues or pull requests. GitHub labels are shown alongside issue or PR titles in lists and boards so are a good way to make these concepts visible.</p>
+
+<p>Flutter’s Global Betting Platform (gbp) makes use of labels and boards to increase the visibility of these inner source concepts.</p>
+
+<h2 id="divisional-approval-labels">Divisional Approval Labels</h2>
+
+<p>Pull requests for gbp service repositories require approval from a maintainer from each division that uses the service. Divisional labels are added when a maintainer approves the PR, which allows clear visibility of which PRs still need attention from which divisions.</p>
+
+<p><img src="/assets/blog/automated-labels/board.png" alt="Board with labels" /></p>
+
+<p>This can be <a href="/docs/automated-labels/">configured via codebase governor</a> for any repository in <code class="language-plaintext highlighter-rouge">Flutter-Global</code>. The automation will add a divisional approval label whenever a maintainer approves the PR.</p>
+
+<h2 id="divisional-discussion-labels">Divisional Discussion Labels</h2>
+
+<p>GitHub issues are used within gbp for cross-divisional technical discussion and alignment. Each of these issues is led by a division, and gbp use divisional labels to show which division is driving which topics.</p>
+
+<p><img src="/assets/blog/automated-labels/issue.png" alt="Board with labels" /></p>
+
+<p>This can be <a href="/docs/automated-labels/">configured via codebase governor</a> for any repository in <code class="language-plaintext highlighter-rouge">Flutter-Global</code>. The automation uses the fact that the author of the issue is usually a member of the division leading it. So the issue is labelled based on the author’s division.</p>
+
+<h2 id="type--impact-labels">Type &amp; Impact Labels</h2>
+
+<p>The “impact” or significance of a pull request is also an important visual signal for inner source. <strong>Major</strong> changes require more reviews and attention (usually from maintainers of <strong>all</strong> divisions), vs a <strong>minor</strong> change that is lower risk and typically requires a review from a single maintainer from any division. The type of a pull request is also useful: is this a fix for a bug or a new feature?</p>
+
+<p>This classification cannot be automated – it is a judgement made by the contributor. But humans tend to forget! So a friendly reminder can be configured <a href="/docs/automated-labels/">via codebase governor</a> to nudge the user to add impact and type labels if these appear to have been forgotten.</p>
+
+<p><img src="/docs/cbg/pr-size-reminder-example.png" alt="pr-size-reminder comment example" /></p>
+
+<h2 id="automated-labels">Automated Labels</h2>
+
+<p>Some simple usage of GitHub labels to show divisional collaboration and work size and type can provide helpful visual signals when looking at the activity in a capability or product.</p>
+
+<p>The PRs and Issues labelling automation helps you by:</p>
 
 <ul>
-  <li>Atomic changes are possible across both application and infrastructure.</li>
-  <li>The same build, test and deploy pipeline is used for both application and infrastructure changes which reduces mistakes.</li>
+  <li>Automatically adding the division label of a maintainer approval to a pull-request;</li>
+  <li>Warning a pull-request author whenever work size and type labels have not been applied;</li>
+  <li>Automatically adding the division label of an issue author.</li>
 </ul>
 
-<p>For an <a href="/how/">inner source application</a> the situation is more complex:</p>
-
-<ul>
-  <li>Multiple deployments of the same shared application code to different topologies, so multiple sets of infrastructure code.</li>
-  <li>Infrastructure code is owned and maintained by the just team responsible for that deployment, a subset of the application code contributors.</li>
-</ul>
-
-<p>These factors often mean that the application code and infrastructure code are kept in separate repositories. We call the infrastructure code repository a <strong>deployment repository</strong>.</p>
-
-<h2 id="how">How?</h2>
-
-<object type="image/svg+xml" data="/assets/blog/deployment-repo/animated.svg"></object>
-
-<ul>
-  <li>The application code is stored in a GitHub repository in the <code class="language-plaintext highlighter-rouge">Flutter-Global</code> organisation where engineers from any division can contribute.</li>
-  <li>Build, test, scan and packaging CI jobs are defined in the application code repository and executed on <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub Action runners. This allows anyone who contributes to fully validate their work.</li>
-  <li>The application code release package(s) are published to <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub Packages and labeled using semantic versions. This allows any division to deploy these release packages.</li>
-  <li>The deployment repository is a GitHub repository in the divisional organisation which is integrated with the divisional deployment infrastructure. It references the desired release version.</li>
-  <li>The divisional CI/CD pipeline is a divisional technology choice and pulls and scans the release packages from <code class="language-plaintext highlighter-rouge">Flutter-Global</code> GitHub Packages. This pipeline then completes the deployment to the divisional infrastructure.</li>
-</ul>
-
-<p>The division treats Flutter-Global application code or packages as a dependency in a similar way it would treat other open source dependencies.</p>
+<p><a href="/docs/automated-labels/">Read more about how to enable and configure the PR and Issue in the Docs &gt;</a></p>
 
                   <hr/>
-                  <strong>by: </strong>Rob Tuley<br/>
-                  <strong>in: </strong><time datetime="2023/02/06">06 Feb 2023</time><br/>
+                  <strong>by: </strong>Nuno Crisóstomo<br/>
+                  <strong>in: </strong><time datetime="2023/03/20">20 Mar 2023</time><br/>
                   <strong>tags: </strong>
                     
-                    <a href="/blog/tags#branching" class="mr-1 inline-block hover:underline lowercase">Branching</a>
+                    <a href="/blog/tags#wow" class="mr-1 inline-block hover:underline lowercase">WoW</a>
                     
-                    <a href="/blog/tags#video" class="mr-1 inline-block hover:underline lowercase">Video</a>
+                    <a href="/blog/tags#pull-requests" class="mr-1 inline-block hover:underline lowercase">Pull Requests</a>
                     <br/>
-                  <strong>category: </strong><a href="/blog/categories#story" class="hover:underline lowercase">Story</a><br/>
+                  <strong>category: </strong><a href="/blog/categories#changelog" class="hover:underline lowercase">Changelog</a><br/>
                 </div>
               </div>
             </div>

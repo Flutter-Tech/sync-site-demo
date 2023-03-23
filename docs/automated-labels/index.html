@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Default Branch Write Access | Flutter Inner Source</title>
+  <title>Automated Labels | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/vite/assets/index.b7510167.css" media="screen"/>
@@ -213,7 +213,7 @@
         <li
           class="menu-item-3 ml-3 pt-2"
         >
-          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
           >
         </li>
@@ -409,7 +409,7 @@
         <li
           class="menu-item-3 ml-3 pt-2"
         >
-          <a href="/security/default-branch/" title="Go to Default Branch" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Default Branch</a
           >
         </li>
@@ -558,7 +558,7 @@
           
           <!-- BREADCRUMBS -->
           <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
-            Default Branch Write Access
+            Automated Labels
           </h1>
           <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5"></p>
         </div>
@@ -576,69 +576,100 @@
           
           <!-- TITLE -->
           <!-- CONTENT -->
-          <p>The default branch of a repository (<code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code>) is typically more important than other temporary branches. It usually contains the code that will be used in production. Write access to the default branch should be protected to reduce the risk of mistakes or subversive contribution.</p>
+          <p>The PR and Issue labelling automation applies division labels to pull requests and issues.</p>
 
-<h2 id="risk-severity">Risk Severity</h2>
+<p>This automation helps the user by:</p>
 
-<p>The risk severity of direct write access to a repository is determined by the number of users that can perform this action.</p>
+<ul>
+  <li>Automatically adding the division label of an approver, that is a maintainer, to a pull-request;</li>
+  <li>Automatically adding the division label of an issue creator;</li>
+  <li>Warning a pull-request creator whenever the labels <code class="language-plaintext highlighter-rouge">major</code>, <code class="language-plaintext highlighter-rouge">minor</code> and <code class="language-plaintext highlighter-rouge">documentation</code>, <code class="language-plaintext highlighter-rouge">enhancement</code>, <code class="language-plaintext highlighter-rouge">bug</code> have not been applied and a comment will be added to the PR to remind the creator.</li>
+</ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Number of Admins</th>
-      <th>Severity</th>
-      <th>Why</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>&lt;200</td>
-      <td>None</td>
-      <td>There are many workflow setups where direct write to the default branch for a group of editors is normal.</td>
-    </tr>
-    <tr>
-      <td>200+</td>
-      <td>High</td>
-      <td>Over 200 contributors with direct write access to the default branch is usually a setup mistake and is typically high risk.</td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="enabling-and-configuring-the-labelling-automation">Enabling and configuring the labelling automation</h3>
 
-<p>This risk is reported for your repository or capability in the <a href="/catalogue/">service catalogue</a>.</p>
+<p>The labelling automation is enabled in the <a href="https://github.com/Flutter-Global/org-config">org-config</a> capability/repository configuration files and follows the <a href="/docs/cbg/">Codebase Governor</a> rules and definition structure:</p>
 
-<h2 id="default-branch-protection">Default Branch Protection</h2>
+<ul>
+  <li>Capability defaults are defined in a <code class="language-plaintext highlighter-rouge">_defaults.yml</code> file <a href="/docs/capability-defaults/">in this YAML format</a>.</li>
+  <li><a href="/docs/capability-defaults/">Capability defaults</a> will be applied to the repository if they are defined. Any capability default can be overridden if required in the repository config;</li>
+  <li>The repository config file is located at <code class="language-plaintext highlighter-rouge">codebases/&lt;capability name&gt;/&lt;repository name&gt;.yml</code>. If non existent you can create a new repository configuration file.</li>
+</ul>
 
-<p>GitHub branch protection rules (<a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches">GitHub docs</a>) can restrict the default branch to mitigate this risk. How you use them will depend on your workflow and branching strategy.</p>
+<p>Configuration is slightly different between capability and repository config file.</p>
 
-<p>If you use a capability <code class="language-plaintext highlighter-rouge">codebases.json</code> to manage your repository then you can use that <a href="/docs/branch-protection/#configuring-branch-protection">to configure your desired branch protection for the repositories</a> within that capability.</p>
+<p>In a <strong>capability</strong> you can define the defaults to be applied to the repositories like:</p>
 
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="na">labels</span><span class="pi">:</span> 
+    <span class="na">pr-reviewer-division</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">issue-author-division</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">pr-size-reminder</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>In a <strong>repository</strong> you don’t need the <code class="language-plaintext highlighter-rouge">defaults</code> key:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">labels</span><span class="pi">:</span> 
+  <span class="na">pr-reviewer-division</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">issue-author-division</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">pr-size-reminder</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h2 id="labels-section-keys">Labels section keys</h2>
+
+<h3 id="labels"><code class="language-plaintext highlighter-rouge">labels</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">labels</code> section enables and specifies the automatic labelling behaviour for PRs and Issues.</p>
+
+<h3 id="labelspr-reviewer-division"><code class="language-plaintext highlighter-rouge">labels.pr-reviewer-division</code></h3>
+
+<p>Add the pull request reviewer division when opening a new pull request.</p>
+
+<h3 id="labelsissue-author-division"><code class="language-plaintext highlighter-rouge">labels.issue-author-division</code></h3>
+
+<p>Add the issue creator division when opening a issue.</p>
+
+<h3 id="labelspr-size-reminder"><code class="language-plaintext highlighter-rouge">labels.pr-size-reminder</code></h3>
+
+<p>Warn the user whenever the labels <code class="language-plaintext highlighter-rouge">major</code>, <code class="language-plaintext highlighter-rouge">minor</code> and <code class="language-plaintext highlighter-rouge">documentation</code>, <code class="language-plaintext highlighter-rouge">enhancement</code>, <code class="language-plaintext highlighter-rouge">bug</code> have not been applied, via a comment in the pull request.</p>
+
+<p><img src="/docs/cbg/pr-size-reminder-example.png" alt="pr-size-reminder comment example" /></p>
+
+<h2 id="capability-and-repository-full-examples">Capability and Repository full examples</h2>
+
+<h3 id="capability-configuration">Capability configuration</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;</span>
+  <span class="s">Inner Source documentation.</span>
+<span class="na">owner</span><span class="pi">:</span> <span class="s">owner-1</span>
+<span class="na">maintainers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">maintainer-1</span>
+  <span class="pi">-</span> <span class="s">maintainer-3</span>
+  <span class="pi">-</span> <span class="s">maintainer-3</span>
+  <span class="pi">-</span> <span class="s">maintainer-4</span>
+
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="na">contributors</span><span class="pi">:</span>
+    <span class="na">teams</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">all-users</span> <span class="pi">]</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">pr-reviewer-division</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">issue-author-division</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">pr-size-reminder</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h3 id="repository-configuration">Repository configuration</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;</span>
+  <span class="s">Internal inner source site and service.</span>
+<span class="na">labels</span><span class="pi">:</span>
+  <span class="na">pr-author-division</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">pr-size-reminder</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Feel free to reach out to the <a href="/community/">inner source team</a> for any assistance.</p>
 
           <!-- CONTENT -->
           <!-- ARTICLE NAVIGATION -->
-          
-          <div class="grid grid-cols-2 gap-10 pt-4 mt-4 mb-8">
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5>Repo Admin</h5>
-    <div>
-      <a href="/docs/security/admin/"
-        >&larr; Previous</a
-      >
-    </div>
-    
-  </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">Overview</h5>
-    <div class="text-right">
-      <a href="/docs/security/"
-        >Next
-        &rarr;</a
-      >
-    </div>
-    
-  </div>
-</div>
           
           <!-- ARTICLE NAVIGATION -->
         </div>
@@ -654,7 +685,7 @@
           <div class="pb-6 text-md">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#risk-severity" class="hover:text-secondary">Risk Severity</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#default-branch-protection" class="hover:text-secondary">Default Branch Protection</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#enabling-and-configuring-the-labelling-automation" class="hover:text-secondary">Enabling and configuring the labelling automation</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#labels" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">labels</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#labelspr-reviewer-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">labels.pr-reviewer-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#labelsissue-author-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">labels.issue-author-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#labelspr-size-reminder" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">labels.pr-size-reminder</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#capability-configuration" class="hover:text-secondary">Capability configuration</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#repository-configuration" class="hover:text-secondary">Repository configuration</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           
@@ -833,7 +864,7 @@
         <li
           class="menu-item-3 ml-3 pt-2"
         >
-          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
             > Automated Labels</a
           >
         </li>
@@ -1029,7 +1060,7 @@
         <li
           class="menu-item-3 ml-3 pt-2"
         >
-          <a href="/security/default-branch/" title="Go to Default Branch" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/security/default-branch/" title="Go to Default Branch" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Default Branch</a
           >
         </li>

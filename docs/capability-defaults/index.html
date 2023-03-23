@@ -8,7 +8,7 @@
   <title>Capability Defaults | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/vite/assets/index.862cee42.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index.b7510167.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -205,6 +205,16 @@
         >
           <a href="/docs/repo-config/" title="Go to Repo Config" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Repo Config</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Automated Labels</a
           >
         </li>
         
@@ -912,6 +922,26 @@
     <span class="pi">-</span> <span class="s">example-user-2</span>
 </code></pre></div></div>
 
+<h2 id="defaultslabels"><code class="language-plaintext highlighter-rouge">defaults.labels</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">defaults.labels</code> section enables and specifies the automatic labelling behaviour for PRs and Issues.</p>
+
+<h2 id="defaultslabelspr-reviewer-division"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-reviewer-division</code></h2>
+
+<p>Add the pull request reviewer division when opening a new pull request.</p>
+
+<h2 id="defaultslabelsissue-author-division"><code class="language-plaintext highlighter-rouge">defaults.labels.issue-author-division</code></h2>
+
+<p>Add the issue creator division when opening a issue.</p>
+
+<h2 id="defaultslabelspr-size-reminder"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-size-reminder</code></h2>
+
+<p>Warn the user whenever the labels <code class="language-plaintext highlighter-rouge">major</code>, <code class="language-plaintext highlighter-rouge">minor</code> and <code class="language-plaintext highlighter-rouge">documentation</code>, <code class="language-plaintext highlighter-rouge">enhancement</code>, <code class="language-plaintext highlighter-rouge">bug</code> have not been applied, via a comment in the pull request.</p>
+
+<p><img src="/docs/pr-size-reminder-example.png" alt="pr-size-reminder comment example" /></p>
+
+<p>Examples of the PR and Issue labelling automation can be viewed <a href="/docs/pr-issue-automatic-labelling/">here</a>.</p>
+
 <h2 id="examples">Examples</h2>
 
 <p>Examples can be viewed in the <a href="https://github.com/Flutter-Global/org-config">org-config</a> repository.</p>
@@ -938,7 +968,7 @@
           <div class="pb-6 text-md">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#owner" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">owner</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#maintainers" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">maintainers</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaults" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsbranch-protections" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.branch-protections</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#audit-sdlc" class="hover:text-secondary">Audit SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#service-sdlc" class="hover:text-secondary">Service SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-teams-sdlc" class="hover:text-secondary">Multiple Teams SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionspatterns" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].patterns</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionsparameters" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters</code></a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultscontributors" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.contributors</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#inner-source-access" class="hover:text-secondary">Inner Source Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-access" class="hover:text-secondary">Requested Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#no-write-access" class="hover:text-secondary">No Write Access</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsadmins" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.admins</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#no-admin-access" class="hover:text-secondary">No Admin Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#core-team-admins" class="hover:text-secondary">Core Team Admins</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#owner" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">owner</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#maintainers" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">maintainers</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#description" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">description</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaults" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsbranch-protections" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.branch-protections</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#audit-sdlc" class="hover:text-secondary">Audit SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#service-sdlc" class="hover:text-secondary">Service SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#multiple-teams-sdlc" class="hover:text-secondary">Multiple Teams SDLC</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionspatterns" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].patterns</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#branch-protectionsparameters" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters</code></a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultscontributors" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.contributors</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#inner-source-access" class="hover:text-secondary">Inner Source Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#requested-access" class="hover:text-secondary">Requested Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#no-write-access" class="hover:text-secondary">No Write Access</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultsadmins" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.admins</code></a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#no-admin-access" class="hover:text-secondary">No Admin Access</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#core-team-admins" class="hover:text-secondary">Core Team Admins</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabels" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelspr-reviewer-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-reviewer-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelsissue-author-division" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.issue-author-division</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#defaultslabelspr-size-reminder" class="hover:text-secondary"><code class="language-plaintext highlighter-rouge">defaults.labels.pr-size-reminder</code></a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           
@@ -1109,6 +1139,16 @@
         >
           <a href="/docs/repo-config/" title="Go to Repo Config" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Repo Config</a
+          >
+        </li>
+        
+  
+      
+        <li
+          class="menu-item-3 ml-3 pt-2"
+        >
+          <a href="/docs/automated-labels/" title="Go to Automated Labels" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+            > Automated Labels</a
           >
         </li>
         
