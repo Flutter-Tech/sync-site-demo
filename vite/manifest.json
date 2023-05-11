@@ -1,11 +1,11 @@
 {
   "entrypoints/index.css": {
-    "file": "assets/index.b7510167.css",
+    "file": "assets/index-26870079.css",
     "isEntry": true,
     "src": "entrypoints/index.css"
   },
   "entrypoints/index.tsx": {
-    "file": "assets/index.4ed993c7.js",
+    "file": "assets/index-4ed993c7.js",
     "isEntry": true,
     "src": "entrypoints/index.tsx"
   }

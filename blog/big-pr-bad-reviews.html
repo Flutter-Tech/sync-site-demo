@@ -8,7 +8,7 @@
   <title>Big PR, Bad Reviews | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/vite/assets/index.b7510167.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-26870079.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -26,7 +26,7 @@
 
   
   
-  <script src="/vite/assets/index.4ed993c7.js" crossorigin="anonymous" type="module"></script>
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
 
 
 </head>
@@ -266,13 +266,13 @@
 
 <p>Let’s look at the PR size distribution:</p>
 
-<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-distribution-org.png" alt="Pull request size distribution for Flutter-Global" /></p>
+<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-distribution-org.jpg" alt="Pull request size distribution for Flutter-Global" /></p>
 
 <p>Most pull requests have up to 1000 changes. However, one important note is that pull request size distribution can potentially change depending on the purpose of the repository. For example, 100 changes in an application repository may be considered a <strong>small</strong> pull request, but in a configuration repository 100 changes can actually be considered a significant configuration change.</p>
 
 <p>In order to determine if repository type influences pull request distribution, let’s look at the pull request distribution for <strong>Java*</strong> and <strong>Ruby**</strong> repositories:</p>
 
-<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-distribution-language.png" alt="Pull request size distribution for Java and Ruby" /></p>
+<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-distribution-language.jpg" alt="Pull request size distribution for Java and Ruby" /></p>
 
 <p>The pull request distribution is, indeed, different depending on the repository primary language. Thus, this blog post will focus only on <strong>Java</strong> repositories, in order to avoid reaching too general of a conclusion that would be generally inaccurate.</p>
 
@@ -284,7 +284,7 @@
   <li><strong>large</strong> pull requests have at least 1000 changes</li>
 </ul>
 
-<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-categories-distribution-java.png" alt="Pull request size categories distribution for Java pull requests" /></p>
+<p><img src="/assets/blog/big-prs-bad-reviews/pr-size-categories-distribution-java.jpg" alt="Pull request size categories distribution for Java pull requests" /></p>
 
 <p>The vast majority of pull request fall under the small category, which is reassuring.</p>
 
@@ -296,7 +296,7 @@
 
 <p>To start, let’s take a look at the review state distribution per pull request size category:</p>
 
-<p><img src="/assets/blog/big-prs-bad-reviews/review-state-java.png" alt="Review State distribution for Java pull requests" /></p>
+<p><img src="/assets/blog/big-prs-bad-reviews/review-state-java.jpg" alt="Review State distribution for Java pull requests" /></p>
 
 <p>The first thing to note is that the <strong>CHANGES_REQUESTED</strong> type of review is not widely used, which means most reviewers use the <strong>COMMENTED</strong> type of review to suggest changes.</p>
 
@@ -304,7 +304,7 @@
 
 <p>Although bigger pull requests have more reviews, it doesn’t mean those reviews are as thorough as the ones for smaller pull requests. Let’s take a look at review count distribution per 100 changes:</p>
 
-<p><img src="/assets/blog/big-prs-bad-reviews/review-count-per-100-changes-size-java.png" alt="Review count per 100 changes for Java pull requests" /></p>
+<p><img src="/assets/blog/big-prs-bad-reviews/review-count-per-100-changes-size-java.jpg" alt="Review count per 100 changes for Java pull requests" /></p>
 
 <p>It’s possible to see that as the pull request size increases, the number of reviews per 100 changes decreases.</p>
 

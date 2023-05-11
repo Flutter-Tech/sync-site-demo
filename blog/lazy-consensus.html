@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Lazy Consensus | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/vite/assets/index-26870079.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#academy" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Academy</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Lazy Consensus
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Rob Tuley
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-05-03-lazy-consensus.png) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <p>Sharing requires consensus. Getting several groups to agree is hard, requires compromise and consumes time and effort. However, making prompt decisions that several teams align with is a critical activity for any inner source community. For example:</p>
+
+<ul>
+  <li>Defining the shared forward technical strategy for a capability.</li>
+  <li>Planning how to execute a complex change, and working together to do so.</li>
+  <li>Deciding who does a piece of unpopular but critical work.</li>
+</ul>
+
+<div class="sm:flex">
+  <div class="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4 not-prose">
+    <img class="max-w-xs" src="/assets/blog/lazy-consensus/timezones.png" />
+  </div>
+  <div>
+    <h2>Now Add Timezones</h2>
+    <p>At Flutter that inner source community spans several timezones. The overlap between a US, European, and Australian working day is a few hours at best. This limits synchronous collaboration, and time is already congested with other activity. This makes reaching consensus even harder.</p>
+  </div>
+</div>
+
+<h2 id="how-to-agree-efficiently">How to Agree Efficiently</h2>
+
+<p>Two key principles to agree efficiently:</p>
+
+<ol>
+  <li>Do it <strong>asynchronously</strong>. This is a fancy word for ‘write it down’.</li>
+  <li>Learn from open source and <strong>be lazy</strong>.</li>
+</ol>
+
+<h3 id="write-it-down">Write it Down</h3>
+
+<p>Good advice already exists about how to optimise for asynchronous work:</p>
+
+<ul>
+  <li><a href="https://blog.dropbox.com/topics/work-culture/-virtual-first-toolkit--how-to-communicate-effectively">Dropbox Remote Toolkit</a></li>
+  <li><a href="https://about.gitlab.com/company/culture/all-remote/asynchronous/">GitLab All Remote Handbook</a></li>
+  <li><a href="https://slack.com/intl/en-gb/blog/collaboration/etiquette-tips-in-slack">“Collaborate with kindness” in Slack</a></li>
+</ul>
+
+<p>The key points are:</p>
+
+<ul>
+  <li>Communicate by writing or recording video clips.</li>
+  <li>Use paragraphs not sentences: an asynchronous conversation is slow if you treat it like a normal conversation.</li>
+  <li>Don’t be asynchronous for urgent jobs like incident response.</li>
+  <li>Ensure all participants are doing several things in parallel: asynchronous communication requires you to wait, so participants need to be able to pick up other work while they do so.</li>
+  <li>Still use synchronous time – but save it to prepare for next asynchronous period, discuss sensitive issues or make complex decisions.</li>
+</ul>
+
+<p>A benefit of asynchronous communication is a written record of technical decisions similar to <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html">ADRs</a>. This means you can ‘catch up’ with a discussion you join half-way through – a key enabler for a large community – and they form a valuable reference for the future.</p>
+
+<h3 id="be-lazy">Be Lazy</h3>
+
+<blockquote>
+  <p>Lazy consensus means that when you think you know what the community would like to see happen, you can assume that you have consensus in favor of the proposed work and get on with it. You don’t have to insist people discuss and/or approve your plan, and you certainly don’t need to call a vote to get approval.</p>
+
+  <p><small>Source: <a href="https://community.apache.org/committers/lazyConsensus.html">Apache Community Lazy Consensus Doc</a></small></p>
+</blockquote>
+
+<p>Lazy consensus attempts to avoid unnecessary discussion or wasted time by using the following process for agreement:</p>
+
+<ol>
+  <li>Publish a written proposal to an appropriate audience with a deadline for feedback/objections.</li>
+  <li>Assume silence is agreement.</li>
+  <li>Discuss any concerns raised; encourage alternative solution proposals alongside any concern.</li>
+  <li>Assume approval after once you have addressed all concerns and the feedback deadline has passed.</li>
+</ol>
+
+<p>This approval process is both asynchronous friendly and time efficient. It does however require an engaged audience: missed proposals and late objections cause disruption and upset. A skilled proposer judges the engagement level and reduces this risk by leaving a longer consultation time, or socialises the proposal more explicitly with key stakeholders.</p>
+
+<p>Assuming silence is agreement is efficient, but it has the disadvantage of ambiguity:</p>
+
+<blockquote>
+  <p>The problem with no response is that there are five possible interpretations:</p>
+
+  <ol>
+    <li>The post is correct, well-written information that needs no
+follow-up commentary.  There’s nothing more to say except “Yeah, what
+he said.”</li>
+    <li>The post is complete and utter nonsense, and no one wants to waste
+the energy or bandwidth to even point this out.</li>
+    <li>No one read the post, for whatever reason.</li>
+    <li>No one understood the post, but won’t ask for clarification, for
+whatever reason.</li>
+    <li>No one cares about the post, for whatever reason.</li>
+  </ol>
+
+  <p><small>Source: <a href="https://en.wikipedia.org/wiki/Warnock%27s_dilemma">Bryan Warnock</a></small></p>
+</blockquote>
+
+<p>The key to lazy consensus is to avoid ambiguity by ensuring the right people see the proposal, and that they have the opportunity to object. You can reduce ambiguity by:</p>
+
+<ul>
+  <li>Publish proposals in a standard place &amp; format. Document this for your community.</li>
+  <li>Notify the right people so they know about new proposals. This may be an email, a slack channel, a meeting. For example, defining <a href="https://developers.flutter.com/how/roles/maintainer/">capability maintainers</a> helps guide who the “right people” are.</li>
+  <li>Publish proposals at the right time. Don’t expect engagement on a non-urgent proposal in the middle of a rush to reach a hard sporting deadline.</li>
+</ul>
+
+<h2 id="is-lazy-not-good-enough">Is Lazy Not Good Enough?</h2>
+
+<p>Lazy consensus is an efficient starting point, but has limitations. Some aspects of change require explicit buy-in from certain stakeholders, who must explicitly approve the proposal.</p>
+
+<p>For example:</p>
+
+<ul>
+  <li>When a change introduces a new 3rd party dependency the security, data protection and legal teams must have time to review this usage. Such teams typically require you to wait for an explicit approval before proceeding.</li>
+  <li>When a change is both significant and non-reversible, such as a breaking change to a core API, you may need to explicitly seek approval from a wider group of stakeholders.</li>
+</ul>
+
+<p>In these cases you can use lazy consensus to reach a draft proposal, then seek explicit approval from the relevant groups. This hybrid approach combines the efficiency of lazy consensus with the explicit approval required for some changes. Clearly agree (and document) with your stakeholders who you can use lazy consensus with, and who requires you to wait for explicit approval.</p>
+
+<h2 id="example-significant-change">Example: Significant Change</h2>
+
+<p>A simple but effective convention is for the proposer to raise a GitHub issue on the capability repository describing the change, why they need it, and any alternatives they considered. An asynchronous written discussion can then follow. To ensure the required engagement for lazy consensus, you can highlight the proposal in a community slack channel. GitHub issues allow ‘+1’ type reactions, and the same is available on any Slack message. The proposer can judge the level of engagement based on reactions and comments and re-advertise if necessary.</p>
+
+<p>A more formal approach that has the benefit of producing an edited summary for future reference is to define a request for comment (RFC) process. The proposer raises a pull request against a capability repository to add a markdown proposal document, usually with a standard template and naming convention. Advertise this in the same way as a GitHub issue to encourage written discussion. However PR review semantics and notifications are also available, with the final result an edited proposal document for future reference. The proposal has a clear end point: a merge (accepted), or closed (rejected).</p>
+
+<p>For example:</p>
+
+<ul>
+  <li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html">Amazon ADR Guidance</a> : guidance on architectural decision record process from Amazon.</li>
+  <li><a href="https://github.com/rust-lang/rfcs">Rust RFC repository</a> : a simple but effective RFC process.</li>
+  <li><a href="https://github.com/golang/proposal">Golang Proposals</a> : interesting use of ‘likely accept’ and ‘likely decline’ statuses to prompt the community for final feedback.</li>
+</ul>
+
+<h2 id="example-strategy-planning">Example: Strategy Planning</h2>
+
+<p>You <em>can</em> treat strategy planning exactly like significant change, but as strategy is more complex and expansive it usually deserves a different treatment.</p>
+
+<ul>
+  <li>Goal alignment and ideation sessions are worth spending some of your limited available synchronous time on. In this case allowing asynchronous preparation (e.g. submitting ideas via a Miro board shared in advance) helps to focus the workshop time and is more inclusive for those who can’t attend. For large communities, running multiple sessions in different timezone-friendly slots encourages more engagement.</li>
+  <li>The result of such synchronous sessions is often obvious consensus in some areas, and clear contention in others: if this is the case a natural next step is to use your normal process for significant change to reach consensus in each area (e.g. via RFC or written discussion).</li>
+  <li>Strategy planning needs a clear leader (e.g. the <a href="/how/roles/owner/">capability owner</a>) who uses their judgement to determine which topics to agree via a normal asynchronous process; and which are too complex or too politically sensitive and require direct synchronous engagement.</li>
+</ul>
+
+<h2 id="example-unpopular-work-assignment">Example: Unpopular Work Assignment</h2>
+
+<p>In this example a challenging priority call exists that affects several divisions. Each division has their own prioritisation mechanism, but all require quantified benefits, teams impacted, and effort/cost to make a decision. While the priority decision itself is likely made synchronously, you can create the document that informs that decision asynchronously.</p>
+
+<ul>
+  <li>You can use a RFC-like process to create a document to submit into a division’s prioritisation process, e.g. a lean canvas. Use a master document (e.g. GitHub markdown) with the required information which is then re-formatted (e.g. lean canvas slides) for different priority processes.</li>
+  <li>Submit the agreed document for prioritisation into the most appropriate (or several) divisions.</li>
+</ul>
+
+                  <hr/>
+                  <strong>by: </strong>Rob Tuley<br/>
+                  <strong>in: </strong><time datetime="2023/05/03">03 May 2023</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#wow" class="mr-1 inline-block hover:underline lowercase">WoW</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#academy" class="hover:underline lowercase">Academy</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

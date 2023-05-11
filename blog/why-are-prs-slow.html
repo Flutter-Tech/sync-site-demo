@@ -8,7 +8,7 @@
   <title>Why are PRs slow? | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/vite/assets/index.b7510167.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/index-26870079.css" media="screen"/>
   <script defer type="text/javascript" src="/assets/js/main.js"></script>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
@@ -26,7 +26,7 @@
 
   
   
-  <script src="/vite/assets/index.4ed993c7.js" crossorigin="anonymous" type="module"></script>
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
 
 
 </head>
@@ -202,7 +202,7 @@
           </div>
         </div>
         
-<div class="relative col-span-3" style="background: url(/assets/blog/why-are-prs-slow/pr-lead-time-number-maintainers.png) no-repeat center; background-size: cover;"></div>
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-02-10-why-are-prs-slow.jpg) no-repeat center; background-size: cover;"></div>
 
       </div>
     </div>
@@ -283,7 +283,7 @@
 
 <p>Let’s take a look at the relationship between cross-divisional/divisional pull request and lead time:</p>
 
-<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-cross-divisional.png" alt="Lead time for cross-divisional/non-cross-divisional pull requests" /></p>
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-cross-divisional.jpg" alt="Lead time for cross-divisional/non-cross-divisional pull requests" /></p>
 
 <p>Since the lead time is presented in a log10 scale, the difference in the median (50th percentile) is quite significant – around 2 hours for divisional pull requests and around 48 hours for cross-divisional pull requests. This shows a clear relationship between cross-division interaction and lead time. However, further analysis is needed to understand if the lead time for cross-divisional pull requests is not changing due to other reasons, e.g. number of approvals required.</p>
 
@@ -291,7 +291,7 @@
 
 <p>Let’s take a look at the relationship between number of approvals required and lead time:</p>
 
-<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-approvals-required.png" alt="Pull request lead time per number of approvals required" /></p>
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-approvals-required.jpg" alt="Pull request lead time per number of approvals required" /></p>
 
 <p>It’s clear to see that as the number of approvals required increases, the pull request lead time also increases, which is the expected result. It is interesting to see that the median changes significantly between <strong>0</strong> approvals required and <strong>1</strong> approval required, demonstrating that the introduction of required approvals impacts lead time significantly.</p>
 
@@ -299,7 +299,7 @@
 
 <p>Let’s take a look at the relationship between number of maintainers and lead time:</p>
 
-<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-number-maintainers.png" alt="Pull request lead time per number of maintainers" /></p>
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-number-maintainers.jpg" alt="Pull request lead time per number of maintainers" /></p>
 
 <p>There is no apparent correlation between these two variables. However, this chart does not take into account divisional distribution inside the maintainers groups. Thus, although total number of maintainers, independently of their division, does not seem to impact lead time on its own, it might be interesting to analyse this same correlation by divisional distribution in the future.</p>
 
@@ -307,7 +307,7 @@
 
 <p>Let’s take a look at the relationship between pull request size and lead time:</p>
 
-<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-pr-size.png" alt="Pull request lead time vs pull request size" /></p>
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-pr-size.jpg" alt="Pull request lead time vs pull request size" /></p>
 
 <p>Again, there is no apparent correlation between these two variables. However, it is also important to note that in Flutter-Global, we have many different types of repositories with many different purposes. One hypothesis might be that big pull requests with relatively short lead times are related to documentation repositories. Thus, although pull request size on its own does not seem to influence lead time, it might be interesting to dive deeper into this variable in the future and analyse the same correlation for application or configuration repositories only.</p>
 
@@ -315,7 +315,7 @@
 
 <p>And finally, let’s take a look at the relationship between repository primary language and lead time:</p>
 
-<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-repo-language.png" alt="Pull request lead time per repository primary language" /></p>
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-repo-language.jpg" alt="Pull request lead time per repository primary language" /></p>
 
 <p>I only looked at the top five primary languages based on number of repositories and was not able to draw any meaningful conclusions from this chart regarding the relationship between repository language and lead time.</p>
 
@@ -327,13 +327,13 @@
 
 <p>Let’s take a look at the relationship between cross-divisional/divisional pull request and lead time coloured by number of approvals required:</p>
 
-<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-cross-divisional-number-approvals.png" alt="Lead time for cross-divisional/divisional pull request per number of approvals required" /></p>
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-cross-divisional-number-approvals.jpg" alt="Lead time for cross-divisional/divisional pull request per number of approvals required" /></p>
 
 <p>From this chart, we can see that as the number of approvals required increases, the pull request lead time also increases, independently of whether the pull request is cross-divisional or not. It is also interesting (and reassuring) to see that there are no cross-divisional pull requests that have 0 approvals required.</p>
 
 <p>Let’s take a look at the relationship between number of approvals required and lead time coloured by whether a pull request is cross-divisional or divisional:</p>
 
-<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-repo-approval-required-cross-divisional.png" alt="Lead time for per number of approvals required coloured by cross-divisional/divisional" /></p>
+<p><img src="/assets/blog/why-are-prs-slow/pr-lead-time-repo-approval-required-cross-divisional.jpg" alt="Lead time for per number of approvals required coloured by cross-divisional/divisional" /></p>
 
 <p>It is possible to see that being cross-divisional increases the pull request lead time, independently of the number of required approvals.</p>
 
