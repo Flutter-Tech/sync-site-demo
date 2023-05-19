@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Major vs Minor | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/vite/assets/index-4f2473c9.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#academy" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Academy</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Major vs Minor
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Rob Tuley
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-05-11-major-vs-minor.jpg) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <p><img class="hidden sm:block sm:max-w-xs sm:float-right sm:m-5" src="/assets/blog/major-vs-minor/rob-and-orla.jpg" /></p>
+
+<p>I’m a dad to 3 kids, and lucky to share my life with a wife I love. We share a joint bank account for family expenses, as well as retaining our own accounts for personal spending. I spend from my account as I please, and so does she. We both spend from our shared joint account – this is where we collaborate together. I don’t need to ask her permission to buy the kids an ice-cream. But I wouldn’t book a holiday or buy a car without up-front discussion, planning, and agreement. Other spending is significant – but routine – like the electricity and water bill.</p>
+
+<p>Perhaps you are a engineer who works on an inner source product. You share a <del>joint bank account</del>  code repository with other teams, as well as retaining your own <a href="/blog/deployment-repository">deployment repository</a> to configure your own infrastructure. You change your deployment repository as you please, as other teams do theirs. All teams change the shared code repository – this is where you collaborate together. You don’t need to ask permission to – well, to what? What’s the same as buying an ice-cream? What’s the same as booking a holiday? What about the electricity bill?</p>
+
+<h2 id="treating-all-changes-the-same">Treating All Changes the Same</h2>
+
+<p>If we ignore our instinct that buying an ice-cream is different to booking a holiday, we can choose to treat all changes the same. “Buying anything from the joint account Rob? Ask me first!” says my wife. Changing anything in the shared code repository? Here’s the required steps. “The” steps? Yes – the same steps and approvals for all changes.</p>
+
+<div class="bg-repeat-x h-40" style="background-image: url('/assets/blog/major-vs-minor/ice-creams-in-a-row.jpg')">
+</div>
+
+<p>The result is either:</p>
+
+<ol>
+  <li>It works brilliantly. Turns out that all your changes are similar enough to benefit from treating them all the same. And having 1 process is simpler than having 2 or 3 so there is less confusion. <strong>OR:</strong></li>
+  <li>Small, simple or routine changes are slow and users complain about the effort and bureaucracy required. You are treating all changes as significant and complex. Such changes require more upfront effort, planning, and agreement. You apply that diligence to every change – unnecessary for many of them. A backlog of changes is building up behind a planning or approval bottleneck. <strong>OR:</strong></li>
+  <li>Large, complex or risky changes are chaotic and encounter unexpected delays or operational failures. Your stakeholders complain about poor visibility and control. You are treating all changes as being small and simple. The lack of planning and agreement for complex change is causing delivery problems.</li>
+</ol>
+
+<p>If you are at outcome 1 – fantastic, stop reading. However, the rest of us need to find a way to tell the difference between an ice-cream and a holiday.</p>
+
+<h2 id="the-triage-process">The Triage Process</h2>
+
+<p>Lets stop treating all changes the same. Instead, we categorise changes into different types, and apply different processes to each type. But what categories? And how do we decide which category a change belongs to?</p>
+
+<blockquote>
+  <p>Triage (verb) : conduct a preliminary assessment of (patients or casualties) in order to determine the urgency of their need for treatment and the nature of treatment required.</p>
+</blockquote>
+
+<p><strong>Triage</strong> is a term often used to describe the process of categorising a change. The term comes from the medical profession, where a doctor must quickly assess the urgency and nature of a patient’s need for treatment. The doctor must do this quickly, and with limited information. The doctor must also be able to change their assessment as more information becomes available.</p>
+
+<p>Note how it:</p>
+
+<ul>
+  <li>requires expert judgement.</li>
+  <li>is quick.</li>
+  <li>adjusts over time as more becomes known.</li>
+</ul>
+
+<p>I limit triage of a spend from our joint account to trusted experts – either my wife or I, <em>not</em> the kids. We both use a quick judgement call to decide if we need to discuss the spend. We reflect on our spending habits and adjust over time. “Rob, it looks like you are buying the kids an ice-cream <em>every day</em>. That’s too much – let’s make it once a week.”</p>
+
+<p><img src="/assets/blog/major-vs-minor/triage-process.png" class="max-w-xl mx-auto" /></p>
+
+<p>For an inner source product, the experts are the <a href="/how/roles/maintainer/">maintainers</a> – they’re the parents in this analogy. Start discussing with them the best categories of change, and how to quickly triage new changes into a category.</p>
+
+<h2 id="major-vs-minor">Major vs Minor</h2>
+
+<p>What categories of change do you need? The first step forward from treating all changes the same is to have 2 types:</p>
+
+<ul>
+  <li><strong>Major</strong> changes are significant, complex or risky.</li>
+  <li><strong>Minor</strong> changes are small or simple.</li>
+</ul>
+
+<p>This simple categorisation is enough to make a big difference. For example:</p>
+
+<p><img src="/assets/blog/major-vs-minor/major-minor-process.png" class="max-w-3xl mx-auto" /></p>
+
+<ul>
+  <li>Triage assigns a change as major, minor, or rejected. Rejected simply means the change is unsuitable.</li>
+  <li>Minor changes get submitted as a pull request and require one maintainer approval (e.g. the maintainer in the implementing team).</li>
+  <li>Major changes require at least one maintainer in each division agree with a written design proposal. Implementation pull requests also require at least one maintainer approval in each division.</li>
+</ul>
+
+<p>This example shows how the process for major and minor changes can be different. The goal is to deliver simple changes efficiently and focus the cross-divisional collaboration effort where it’s most valuable.</p>
+
+<h2 id="routine-changes">Routine Changes</h2>
+
+<p>Teams often build forward from a simple major/minor separation by examining their routine changes. A change that you do regularly is faster if you create a new change category and streamlined process for it. For regular changes, this is often worth the effort to do so.</p>
+
+<p>For example, a common routine change is updating code library dependencies either pro-actively or to resolve a recently discovered security vulnerability. You might automate this using <a href="/security/dependabot/">dependabot</a>, and agree a lightweight process for reviewing and merging the automated pull requests.</p>
+
+<p>My wife and I look after routine spend from our joint account via sponsorship. I’m responsible for the electricity &amp; insurance bills. My wife is responsible for the water &amp; council tax bills. We set up special processes for these bills – using pre-agreed direct debits. We only discuss these bills when they change significantly or are likely to cause a problem. We each review the bills we sponsor periodically to check we’re getting the best deal.</p>
+
+<h2 id="emergency-changes">Emergency Changes</h2>
+
+<p>Emergency change to resolve an operational incident is another area that often requires a separate change category and process. These are rare, but when required are urgent, executed under pressure and outside normal working hours without the availability of the normal stakeholders.</p>
+
+<p>The usual setup is to pre-agree an emergency process which allows the on-call team to make changes without the normal prior approvals. However, the on-call team must notify the normal stakeholders as soon as possible, and work with them to retrospectively review, adjust, and approve the change once they’re available.</p>
+
+<p><img class="hidden sm:block sm:max-w-xs sm:float-right sm:m-5" src="/assets/blog/major-vs-minor/bike-accident.jpg" /></p>
+
+<p>I remember some uncomfortably large taxi and hotel bills when my wife ended up in hospital after a nasty accident on a cycle touring holiday together. I had to make emergency changes to our plans, and my wife was in no position to discuss them as usual. I made the best decisions I could, and let my wife know later once she was well enough.</p>
+
+<p>Some teams use a “change freeze” process to reduce operational risk during a significant sporting event by avoiding making changes during an agreed period. For an inner source product, different teams may require this at different times. You can either agree a shared calendar which all teams respect, or apply the change freeze just to the team’s <a href="/blog/deployment-repository">deployment repository</a>. For example, if you use an open source product like MySQL, the MySQL community won’t respect your change freeze. But this isn’t a problem because you can choose not to deploy any MySQL updates until the end of your change freeze. You can treat an inner source product in the same way. The only difference is you need to consider how to deploy an emergency fix without pulling in changes that other teams have made during your change freeze.</p>
+
+<h2 id="your-categories-your-process">Your Categories, Your Process</h2>
+
+<p>The change categories you need, and the processes you use for each, depends on your product, teams, and context. But if small, simple changes are slow – or large, complex changes are chaotic – you may need to find a way to separate them, and treat each type differently.</p>
+
+                  <hr/>
+                  <strong>by: </strong>Rob Tuley<br/>
+                  <strong>in: </strong><time datetime="2023/05/11">11 May 2023</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#wow" class="mr-1 inline-block hover:underline lowercase">WoW</a>
+                    
+                    <a href="/blog/tags#pull-requests" class="mr-1 inline-block hover:underline lowercase">Pull Requests</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#academy" class="hover:underline lowercase">Academy</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
