@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Quadtrees | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/vite/assets/index-d8343868.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#story" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Story</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Quadtrees
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Damien Raymond
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-05-19-quadtrees.png) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <style>
+.legend {
+  /* font-variant: small-caps; */
+  color:grey;
+  text-align:center;
+  margin-bottom: 40px;
+}
+</style>
+
+<p>In this article, I discuss approaches to implement collision detection and indexes for spatial queries using a simple example to illustrate.</p>
+
+<p>Within Flutter, most systems are streaming applications. We use Backstage as a software catalogue. Backstage is great, but I find the graph showing the relation between the components not very helpful. I wanted to create a plugin that shows the message flow between applications better for streaming applications.</p>
+
+<p>This plugin is a 2D tool that plots geometrical shapes on a canvas. To simplify, let us consider only points (x,y coordinates). As the mouse moves over the plan, we want to find the point the closest to the cursor and show its label. This happens in the real time so the operation must be fast. Out of curiosity, I wanted to look at approaches to implement such logic.</p>
+
+<h3 id="options-for-finding-points">Options for Finding Points</h3>
+
+<p>One approach is to do a lineal search on the points. This iterates through the list of points to find the hovered point using Pythagoras Theorem. The major drawback is the performance: linear complexity (O(n)). For a real-time application, it’s not good enough.</p>
+
+<p>Another approach is to use a HashMap with the coordinates as a key and the point as a value (e.g., <code class="language-plaintext highlighter-rouge">Map[(Int, Int), Point]</code>). The complexity would then be O(1) which would be ideal. A significant limitation though is that the mouse cursor needs to be at the same coordinates as the point itself. In practice, that would not work well and provide a poor user experience.</p>
+
+<p>A special type of data structure exists for this problem: a quadtree. A quadtree is like a binary tree, but in two dimensions. It divides the range of data by 4 rather than 2. It is expressed as a Tree ADT where a Node contains the four quadrants that are themselves Trees; the leaf containing the data; and an empty leaf.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enum</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Node</span><span class="o">(</span>
+      <span class="n">topLeft</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+      <span class="n">topRight</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+      <span class="n">bottomRight</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+      <span class="n">bottomLeft</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+  <span class="o">)</span> <span class="k">extends</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+  <span class="k">case</span> <span class="nc">Leaf</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+  <span class="k">case</span> <span class="nc">EmptyLeaf</span> <span class="k">extends</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p class="legend">Scala 3 tree ADT definition</p>
+
+<h3 id="quadtree-building">Quadtree Building</h3>
+
+<p>Building a quadtree is analogous to building a binary tree. Adding a new element depends on the number of points in the quadrant: (1) if the quadrant is empty (empty leaf), it is replaced by a leaf containing the new element; (2) if the quadrant contains one leaf (leaf object), the leaf object gets replaced by a node object, the existing leaf gets moved to the relevant sub-quadrant, the new point is itself added to its relevant sub-quadrant; (3) if the current tree is a Node, then, the algorithm zooms in the relevant quadrant.</p>
+
+<script async="" src="//jsfiddle.net/v4d8upak/1/embed/result/"></script>
+
+<p>Now let us see how we can find a point in our tree.</p>
+
+<h3 id="finding-points-in-a-quadtree">Finding Points in a Quadtree</h3>
+
+<p>The naïve approach would be to apply a binary tree search: recursively zoom into the tree to find either the point or an empty tree. It finds a point fast (as the range get divided by four at each level) but there is no guarantee that this point is the closest to the mouse cursor.</p>
+
+<script async="" src="//jsfiddle.net/dj9ruq5c/embed/result/"></script>
+
+<p class="legend">Even if the cursor is near a point, if the square contains no point, it fails to select any point.</p>
+
+<p>Fortunately, an algorithm exists for this use case: the nearest neighbour algorithm. The way this algorithm works is like Dijkstra’s algorithm (in a way). It involves traversing the tree in a Breadth-First search fashion (level by level). At each step, keeping the closest point and returning the point at the end.</p>
+
+<p>The algorithm starts with the four largest squares, let us call them current squares. Collect the points for each current square (leaf trees) and find the closest point. Then, find, within the current squares, the sub-quadrants closer than the closest point. Start again till the last level of the tree is reached and return the closest point.</p>
+
+<script async="" src="//jsfiddle.net/dj9ruq5c/2/embed/result/"></script>
+
+<p class="legend">Click to show the steps</p>
+
+<h3 id="optimisation-of-the-quadtree-nearest-neighbour-search">Optimisation of the Quadtree Nearest Neighbour Search</h3>
+
+<p>There is a problem with this algorithm. Given the tree structure that we use (values stored in the leaves the tree), the complexity for the worse case (when the tree forms a perfect triangle) is linear (O(n)). It is not possible to eliminate any quadrant before the last level resulting in having to scan through each point.</p>
+
+<p>A minor change can drastically improve the performance. It consists of adding a “representative point” at each node of the tree. It can be any child point; it does not matter. Now, for each level of the tree, there is a best point for this level. It means that any quadrant further away from the current best point can be eliminated significantly reducing the number of nodes to explore. The complexity is now closer to O(n log n) according to the paper [1].</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enum</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Node</span><span class="o">(</span>
+      <span class="n">topLeft</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+      <span class="n">topRight</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+      <span class="n">bottomRight</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+      <span class="n">bottomLeft</span><span class="k">:</span> <span class="kt">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+      <span class="n">representativePoint</span><span class="k">:</span> <span class="kt">T</span> <span class="c1">// &lt;--- here</span>
+  <span class="o">)</span> <span class="k">extends</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+  <span class="k">case</span> <span class="nc">Leaf</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+  <span class="k">case</span> <span class="nc">EmptyLeaf</span> <span class="k">extends</span> <span class="nc">QuadtreeStructure</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<script async="" src="//jsfiddle.net/dj9ruq5c/1/embed/result/"></script>
+
+<p class="legend">Click to show the steps</p>
+
+<h3 id="other-quadtree-applications-optimisations-and-going-further">Other Quadtree Applications, Optimisations and Going Further</h3>
+
+<p>Quadtrees have a plethora of application. Image compression: it allows to eliminate similar contiguous pixels from an image by replacing them with a single colour. Spatial indexing [8]: to improve the performance of database special queries. Hidden-surface determination [7]: used in video games to determine objects not visible to the camera (objects to not render). Collision detection: if two objects end up in the same spatial sub-quadrant, then they need to be checked for intersection [6].</p>
+
+<p>With this wide field of applications and heavy usage in real time applications, many optimisations exist to suit different use cases [5]. For instance: reducing the memory footprint of the quadtree data structure using compression [4]. If the tree is sparse, it is possible to remove many empty nodes, then apply a total order on the element and store them in a sorted set. Some research paper also demonstrates implementations of the nearest neighbour algorithm in constant time [3]. It consists in representing the tree using binary numbers. Then an algorithm leveraging binary operations (shift, OR, AND, etc.) finds the neighbours.</p>
+
+<p>Quadtrees were also generalised in multiple dimensions: octrees (3D) and kd-trees (in k dimensions). Kd-trees are built in a different way: alternating the dimensions for each level of the tree. Where the quadtree would split the space in 4 squares, the kd-tree would split horizontally, then vertically, then horizontally again and so on. The principle stays the same: split the space in sub-sections to divide and conquer [2].</p>
+
+<p>The initial problem was to find the point the closest to the mouse cursor. The solution needed to be real-time suitable. Out of the 3 approaches that we mentioned (List, HashMap, and Quadtree), the quadtree offers the best of both worlds. Reasonable performance: the finding operation had a complexity of O(n log n) for the average case and perfect accuracy: finding the closest point is guaranteed. Both points ensure a great user experience.</p>
+
+<p>References:</p>
+
+<ul>
+  <li>[1] All Nearest Neighbours via Quadtrees: <a href="http://homepage.divms.uiowa.edu/~kvaradar/sp2012/daa/ann.pdf">http://homepage.divms.uiowa.edu/~kvaradar/sp2012/daa/ann.pdf</a></li>
+  <li>[2] K-D Trees and Quad Trees: <a href="https://courses.cs.washington.edu/courses/cse326/07au/lectures/lect12.pdf">https://courses.cs.washington.edu/courses/cse326/07au/lectures/lect12.pdf</a></li>
+  <li>[3] Constant Time Neighbor Finding in Quadtrees: <a href="http://www.lcad.icmc.usp.br/~jbatista/procimg/quadtree_neighbours.pdf">http://www.lcad.icmc.usp.br/~jbatista/procimg/quadtree_neighbours.pdf</a></li>
+  <li>[4] Compressed quadtrees: <a href="https://en.wikipedia.org/wiki/Quadtree#Compressed_quadtrees">https://en.wikipedia.org/wiki/Quadtree#Compressed_quadtrees</a></li>
+  <li>[5] StackOverflow post about quadtree optimisation: <a href="https://stackoverflow.com/a/48330314">https://stackoverflow.com/a/48330314</a></li>
+  <li>[6] Collision detection: <a href="https://en.wikipedia.org/wiki/Collision_detection">https://en.wikipedia.org/wiki/Collision_detection</a></li>
+  <li>[7] Hidden surface determination: <a href="https://en.wikipedia.org/wiki/Hidden-surface_determination#Viewing_frustum_culling">https://en.wikipedia.org/wiki/Hidden-surface_determination#Viewing_frustum_culling</a></li>
+  <li>[8] Spatial index: <a href="https://en.wikipedia.org/wiki/Spatial_database#Spatial_index">https://en.wikipedia.org/wiki/Spatial_database#Spatial_index</a></li>
+</ul>
+
+
+                  <hr/>
+                  <strong>by: </strong>Damien Raymond<br/>
+                  <strong>in: </strong><time datetime="2023/05/12">12 May 2023</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#flutter-global-tech" class="mr-1 inline-block hover:underline lowercase">Flutter Global Tech</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#story" class="hover:underline lowercase">Story</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
