@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wheel of Fortune</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
+    <script src="https://cdn.jsdelivr.net/gh/jonobr1/two.js@8641196c7fb029b48ba0f3b1f13bc5c84ff56907/build/two.js"></script>
+    <link rel="stylesheet" href="wheel.css">
+</head>
+<body>
+
+<div class="mount js-mount"></div>
+<br />
+<div class="row">
+    <div class="column small-12">
+        <button class="button expanded js-spin">Spin!</button>
+    </div>
+</div>
+
+<textarea class="js-words" name="words" rows="30">
+Event 1
+Event 2
+Events 3
+Event 4</textarea>
+
+<script>
+function ready() {
+    var tag = document.createElement("script");
+    tag.src = "wheel.js";
+    document.getElementsByTagName("head")[0].appendChild(tag);
+}
+document.addEventListener("DOMContentLoaded", ready);
+</script>
+</body>
+</html>
