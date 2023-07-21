@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Multiple Team Branching | Flutter Inner Source</title>
+  <title>Slack with GitHub | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/vite/assets/index-ec6ca094.css" media="screen"/>
@@ -281,7 +281,7 @@
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
-          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Branching Model</a
           >
         </li>
@@ -415,7 +415,7 @@
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
-          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
             > Slack with GitHub</a
           >
         </li>
@@ -572,9 +572,9 @@
           
           <!-- BREADCRUMBS -->
           <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
-            Multiple Team Branching
+            Slack with GitHub
           </h1>
-          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">A description of the branching model for multiple team source. This model uses a derivative of GitFlow to provide each team their own develop branch.</p>
+          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">How to notify users via Slack when something happens on GitHub.</p>
         </div>
       </div>
       
@@ -590,129 +590,115 @@
           
           <!-- TITLE -->
           <!-- CONTENT -->
-          <p>The multiple team branching model is a derivative of <a href="https://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a> with one or more <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branches.</p>
+          <p>All divisions in Flutter use Slack. Integrating GitHub and Slack together for notifications can improve your development workflows. There are 2 recommended approaches:</p>
 
-<div class="not-prose grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
-  <div class="col-span-2">
-    <div style="position: relative; display: block">
-      <div style="padding-top: 56.25%">
-        <iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6316437796112" allowfullscreen="" allow="encrypted-media" style="
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-          "></iframe>
+<ol>
+  <li><strong>Slack GitHub App</strong> – for quick and easy notifications, but you can’t customise the message.</li>
+  <li><strong>GitHub Action triggers a Slack Workflow</strong> – for flexible notification logic and message format, but harder to setup.</li>
+</ol>
+
+<h2 id="slack-github-app">Slack GitHub App</h2>
+
+<p>The <a href="https://github.com/integrations/slack">Slack GitHub App</a> allows you to receive notifications from GitHub in Slack. It’s simple to set up and recommended if you’re happy with the message format it creates.</p>
+
+<ul>
+  <li>The app is already installed in your divisional Slack workspace and a member of all public channels. For private channels, you need to invite the app by using the <code class="language-plaintext highlighter-rouge">/invite @github</code> Slack command.</li>
+  <li>To enable the app, you need to authenticate it with GitHub within your channel. Do this by running the Slack command <code class="language-plaintext highlighter-rouge">/github signin</code>.</li>
+  <li>Once you have authenticated the app, use the <code class="language-plaintext highlighter-rouge">/github subscribe &lt;github_organization&gt;/&lt;github_repository_name&gt;</code> command to subscribe to notifications from a repository. You can unsubscribe at any time using <code class="language-plaintext highlighter-rouge">/github unsubscribe &lt;github_organization&gt;/&lt;github_repository_name&gt;</code>.</li>
+</ul>
+
+<p>You can configure which notifications the channel receives by subscribing to specific features like pull requests, workflows, or labels. <a href="https://github.com/integrations/slack#features">The GitHub Slack Integration guide documents a variety of options</a>.</p>
+
+<h2 id="github-action-triggers-a-slack-workflow">GitHub Action Triggers a Slack Workflow</h2>
+
+<p>If you need to customise the message format or notification logic, you can use a GitHub Action to trigger a Slack Workflow that posts a custom message.</p>
+
+<p><img src="/docs/slack/workflow.jpg" class="max-w-3xl mx-auto" /></p>
+
+<h3 id="1-create-a-slack-workflow">1. Create a Slack Workflow</h3>
+
+<p>Create a Slack Workflow that runs <a href="https://slack.com/help/articles/360041352714-Create-more-advanced-workflows-using-webhooks">when a custom webhook sends a web request to Slack</a> from another app or service.</p>
+
+<p>To create a new Slack Workflow:</p>
+
+<ol>
+  <li>Click your workspace name in the top left and then select <strong>Tools</strong> &gt; <strong>Workflow Builder</strong> which opens a new window.</li>
+  <li>Then click <strong>Create</strong> in the top right and choose your workflow name, click <strong>Next</strong>, and select <strong>Webhook</strong> as the way to start the workflow.</li>
+  <li>Setup the “variables” – this is the data fields you intend to send to your workflow from GitHub. Then add the steps you want your workflow to do, and finally get the webhook URL. <a href="https://slack.com/help/articles/360041352714-Create-more-advanced-workflows-using-webhooks#workflow-setup">Refer to the Slack docs for more detail</a>.</li>
+</ol>
+
+<h3 id="2-create-the-github-action-workflow">2. Create the GitHub Action Workflow</h3>
+
+<p>Now you can trigger the Slack workflow from GitHub. First, add the Slack webhook URL as a <a href="/docs/secrets/">secret in your repo settings</a> named <code class="language-plaintext highlighter-rouge">SLACK_WEBHOOK_URL</code>.</p>
+
+<p>Now you need to simply add an extra step to a new or existing GitHub Action workflow that triggers the Slack workflow with the correct data. You can use the <a href="https://github.com/slackapi/slack-github-action"><code class="language-plaintext highlighter-rouge">slack-github-action</code></a> action to send data to Slack.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Trigger Slack Workflow</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">slackapi/slack-github-action@d419a1666387fff2f2205a3aa17cb432f3613051</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="c1"># This data can be anything from a previous step in the workflow.</span>
+    <span class="c1"># Use the toJSON() function and env vars to escape the data correctly.</span>
+    <span class="na">payload</span><span class="pi">:</span> <span class="pi">|</span>
+      <span class="s">{</span>
+        <span class="s">"my_variable": ${{ toJSON(env.MY_VARIABLE) }},</span>
+        <span class="s">"foo": ${{ toJSON(env.BAR) }}</span>
+      <span class="s">}</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">SLACK_WEBHOOK_URL</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_WEBHOOK_URL }}</span>
+</code></pre></div></div>
+
+<p><a href="[`slack-github-action`](https://github.com/slackapi/slack-github-action)">See the action README</a> for more usage examples.</p>
+
+<h2 id="slack-bot">Slack Bot?</h2>
+
+<p>If a Slack workflow isn’t flexible enough, you can <a href="https://api.slack.com/start/overview">create a Slack bot</a>. You can call a Slack bot via webhook from GitHub Actions in the same way you would a Slack workflow. In most cases however, there is no need to create a Slack bot – a simpler Slack workflow is all you need.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>See <a href="/blog/">our blog</a> for stories and examples of slack usage in Flutter-Global.</p>
+
+<div class="grid max-w-lg gap-5 mx-auto mt-8 lg:max-w-none lg:grid-cols-3 not-prose">
+    
+    
+    
+    
+    
+    <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+      <div class="flex-shrink-0 no-prose">        
+      
+        <div class="h-48 m-0 rounded-t-lg relative" style="background: url(/assets/blog/2023-07-19-github-slack-integration_th.png) no-repeat center; background-size: cover;">
+          <div class="absolute left-2 top-2">
+            <a href="/blog/categories#" class="inline-block">
+              <span class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-lg text-sm font-medium text-white">Story</span>
+            </a>
+          </div>
+        </div>
+      
+      </div>
+      <div class="flex flex-col justify-between flex-1 p-6 bg-white">
+        <div class="flex-1">
+          <p class="text-xs font-medium">
+            <time datetime="2023/07/19">19 Jul 2023</time>
+          </p>
+          <a href="/blog/slack-examples" class="block mt-2 hover:text-secondary">
+            <p class="text-xl font-semibold text-gray-900 hover:text-secondary">GitHub ❤️ Slack</p>
+            <p class="mt-3 text-base text-gray-500">Examples of using GitHub and Slack together to notify your stakeholders about changes or deployments.</p>
+          </a>
+        </div>
+        <div class="flex items-center mt-6">
+        
+          <div>
+            <p class="text-sm font-medium text-gray-900"><strong>by:</strong> Nuno Crisóstomo</p>
+          </div>
+        
+        </div>
       </div>
     </div>
+    
   </div>
-  <div>
-    <p class="mt-6 text-gray-500">
-      Recommended branching model patterns explained in under 7 minutes!
-    </p>
-  </div>
-</div>
-
-<p>Alpha, beta or production-ready builds are signalled by git tags which conform to <a href="/sdlc/package/">our semantic versioning conventions</a>. For example:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">v1.3.3</code> is the latest production release. The last team feature release was <code class="language-plaintext highlighter-rouge">v1.3.0</code> since which there have been 3 hotfixes.</li>
-  <li><code class="language-plaintext highlighter-rouge">v1.4.0-opo.beta.2</code> is the next release driven by the <code class="language-plaintext highlighter-rouge">opo</code> team. Since the initial release build there have probably been 2 minor bugfixes.</li>
-  <li><code class="language-plaintext highlighter-rouge">v1.5.0-lds.alpha.3</code> is the alpha version in the <code class="language-plaintext highlighter-rouge">lds/develop</code> branch that is deployed to one of the Leeds team QA environments with 3 unreleased changes.</li>
-</ul>
-
-<h2 id="development">Development</h2>
-
-<p>The key concept in this branching model is that each team with its own deployment has its own <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branch. The team follows its own development process around their <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branch, typically using short-lived feature branches like <code class="language-plaintext highlighter-rouge">&lt;team&gt;/feature/xxx</code> for each change.</p>
-
-<p><img src="/sdlc/multiple-teams/dev.drawio.svg" class="w-full max-w-3xl mx-auto" /></p>
-
-<ul>
-  <li>Changes are triaged by each team’s local <a href="/how/multiple-teams/#who-are-maintainers">maintainer(s)</a>). A <strong>minor</strong> change typically would not require cross-team review. A <strong>major</strong> change into a develop branch will require cross-team review to ensure all-team consensus.</li>
-  <li>Each team can tag and build their own <code class="language-plaintext highlighter-rouge">alpha</code> releases from their <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branch for their local QA environment(s). In this way they can treat their <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branch like an environment branch.</li>
-  <li>Each team will integrate <strong>all</strong> changes from every team via <strong>releases</strong>. But between releases each team can conceptually treat other teams <code class="language-plaintext highlighter-rouge">develop</code> branches similar to their own feature branches: a set of changes that need awareness and timely review but don’t yet directly impact.</li>
-  <li>If there are 2 teams/deployments in 2 different divisions the team labels might relate to the divisions e.g. <code class="language-plaintext highlighter-rouge">ppb/develop</code> and <code class="language-plaintext highlighter-rouge">fd/develop</code> for PPB and FanDuel teams. But the number of develop branches and the names used for teams depends on your context and do not need to relate to divisions.</li>
-</ul>
-
-<h2 id="releases">Releases</h2>
-
-<p>Work from all the <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branches is integrated into a single production branch (<code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code>) through team major/minor <strong>releases</strong>. Only one major/minor release can be in progress at once, although patch releases (“hotfixes”) can continue in parallel. The release changes are synchronised back into all <code class="language-plaintext highlighter-rouge">&lt;team&gt;/develop</code> branches before the next release.</p>
-
-<p><img src="/sdlc/multiple-teams/release.drawio.svg" class="w-full max-w-3xl mx-auto" /></p>
-
-<p>The diagram shows an example release:</p>
-
-<ol>
-  <li>The Porto (<code class="language-plaintext highlighter-rouge">opo</code>) team starts a release by creating the <code class="language-plaintext highlighter-rouge">opo/release/v1.4</code> branch from their current <code class="language-plaintext highlighter-rouge">opo/develop</code> branch. They tag this branch as <code class="language-plaintext highlighter-rouge">v1.4.0-opo.beta.0</code> which triggers a deployable beta build for QA.</li>
-  <li>Beta testing results in 2 minor bug fixes that are committed to the release branch (or merged from a reviewed PR). After each the release branch is tagged to create an updated beta build.</li>
-  <li>The release branch <code class="language-plaintext highlighter-rouge">opo/release/v1.4</code> is merged into the <code class="language-plaintext highlighter-rouge">main</code> production branch via a PR and tagged as <code class="language-plaintext highlighter-rouge">v1.4.0</code> to denote the final production build.</li>
-  <li>The Leeds team are aware of the Porto release and may be actively involved, but can also continue unaffected in their <code class="language-plaintext highlighter-rouge">lds/develop</code> branch. Because <code class="language-plaintext highlighter-rouge">1.4</code> is now an active beta release, they increment their next alpha tag version to indicate the changes are now targeted at the <code class="language-plaintext highlighter-rouge">1.5</code> release.</li>
-  <li>Once the Porto team have completed the <code class="language-plaintext highlighter-rouge">v1.4.0</code> release by merging the changes into <code class="language-plaintext highlighter-rouge">main</code>, the Leeds team synchronise their develop branch by merging the changes from main back into their own <code class="language-plaintext highlighter-rouge">lds/develop</code> branch.</li>
-  <li>The Porto team also synchronise their develop branch by merging the changes from main back into their own <code class="language-plaintext highlighter-rouge">opo/develop</code> branch.</li>
-</ol>
-
-<h2 id="hotfixing">Hotfixing</h2>
-
-<p>A hotfix is a change correcting a fault that needs to be released as quickly as possible (often under incident conditions). Hotfixes can be applied at any time as patch releases via a <code class="language-plaintext highlighter-rouge">/hotfix/&lt;name&gt;</code> branch which is merged directly into the production branch.</p>
-
-<p><img src="/sdlc/multiple-teams/hotfix.drawio.svg" class="w-full max-w-xl mx-auto" /></p>
-
-<p>This diagram shows an example hotfix. A performance regression is detected on Friday by the Porto team in the latest <code class="language-plaintext highlighter-rouge">v1.4.0</code> release which is expected to cause capacity problems on Saturday. They take the operational decision to fix forward:</p>
-
-<ol>
-  <li>The <code class="language-plaintext highlighter-rouge">/hotfix/sat-capacity</code> hotfix branch is created.</li>
-  <li>A mitigating fix is committed. This is tagged as <code class="language-plaintext highlighter-rouge">v1.4.1-opo.beta.0</code> to allow beta testing and verification.</li>
-  <li>The hotfix is merged (via reviewed PR) back into <code class="language-plaintext highlighter-rouge">main</code> and tagged as a patch release <code class="language-plaintext highlighter-rouge">v1.4.1</code>.</li>
-  <li>Like a major/minor release, the Porto team will synchronise their <code class="language-plaintext highlighter-rouge">opo/develop</code> branch with <code class="language-plaintext highlighter-rouge">main</code> to integrate the hotfix.</li>
-  <li>The Leeds team will also synchronise their <code class="language-plaintext highlighter-rouge">lds/develop</code> branch to integrate the hotfix. They may not do this immediately but must do this before starting their next release.</li>
-</ol>
-
-<p>Hotfixes can be applied during a major/minor release. In such cases the relevant release branch must also be synchronised with <code class="language-plaintext highlighter-rouge">main</code> to ensure the hotfix is included during beta testing.</p>
-
-<h2 id="support">Support</h2>
-
-<p>This SDLC expects each team to own and manage their own deployment(s). The deployment process itself will vary by team based on their tools, infrastructure and desired topology. This SDLC simply promotes the use of <a href="/sdlc/package/">semver tags</a> to signal that a build should be created and made available for all teams for deployment if desired.</p>
-
-<p>Not all teams will have the same version deployed. Older versions should not be the target of new features, but must be supported until a team has migrated to the latest release. To support older versions hotfixes can be applied to any previous version on a <code class="language-plaintext highlighter-rouge">/support/&lt;version&gt;</code> branch.</p>
-
-<p><img src="/sdlc/multiple-teams/support.drawio.svg" class="w-full max-w-xl mx-auto" /></p>
-
-<p>This diagram shows an example support hotfix. The Leeds team realises that the performance regression detected by the Porto team is also present in their currently deployed <code class="language-plaintext highlighter-rouge">v1.2.2</code> service. As a precaution they decide to also apply the fix but are not yet ready to upgrade to the latest <code class="language-plaintext highlighter-rouge">v1.4.1</code> version that includes it. So they apply a support hotfix:</p>
-
-<ol>
-  <li>A <code class="language-plaintext highlighter-rouge">support/v1.2</code> branch is created from the latest <code class="language-plaintext highlighter-rouge">v1.2.x</code> release tag (<code class="language-plaintext highlighter-rouge">v1.2.2</code>). This is the long-running support branch and will be used for all further <code class="language-plaintext highlighter-rouge">v1.2.x</code> releases.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">/hotfix/sat-capacity-backport</code> hotfix branch is created, and the mitigating commit is applied. This is tagged as <code class="language-plaintext highlighter-rouge">v1.2.3-lds.beta.0</code> to allow beta testing and verification.</li>
-  <li>The hotfix is merged (via reviewed PR) back into <code class="language-plaintext highlighter-rouge">support/v1.2</code> and tagged as a patch release <code class="language-plaintext highlighter-rouge">v1.2.3</code> which the Leeds team can now deploy to update their older version with an isolated fix.</li>
-</ol>
 
           <!-- CONTENT -->
           <!-- ARTICLE NAVIGATION -->
-          
-          <div class="grid grid-cols-2 gap-10 pt-4 mt-4 mb-8">
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5>Setup</h5>
-    <div>
-      <a href="/sdlc/multiple-teams/setup/"
-        >&larr; Previous</a
-      >
-    </div>
-    
-  </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">git flutter CLI Usage</h5>
-    <div class="text-right">
-      <a href="/sdlc/multiple-teams/cli/"
-        >Next
-        &rarr;</a
-      >
-    </div>
-    
-  </div>
-</div>
           
           <!-- ARTICLE NAVIGATION -->
         </div>
@@ -724,17 +710,11 @@
         <div class="sticky px-4 py-8 sm:px-6 lg:px-8 top-24">
           
           
-          <div class="pb-6">
-            <div class="pb-3 font-bold">Branching in 7 mins</div>
-            <iframe src=https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6316437796112
-              allowfullscreen="" allow="encrypted-media" width="100%"></iframe>
-          </div>
-          
           
           <div class="pb-6 text-md">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#development" class="hover:text-secondary">Development</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#releases" class="hover:text-secondary">Releases</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#hotfixing" class="hover:text-secondary">Hotfixing</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#support" class="hover:text-secondary">Support</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#slack-github-app" class="hover:text-secondary">Slack GitHub App</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#github-action-triggers-a-slack-workflow" class="hover:text-secondary">GitHub Action Triggers a Slack Workflow</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#1-create-a-slack-workflow" class="hover:text-secondary">1. Create a Slack Workflow</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#2-create-the-github-action-workflow" class="hover:text-secondary">2. Create the GitHub Action Workflow</a></li></ul class="pt-1 list-none"></li><li class="mb-2 ml-0 text-sm list-none "><a href="#slack-bot" class="hover:text-secondary">Slack Bot?</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#examples" class="hover:text-secondary">Examples</a></li></ul class="pt-1 list-none">
             </div>
           </div>
           
@@ -981,7 +961,7 @@
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
-          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/sdlc/multiple-teams/branching/" title="Go to Branching Model" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Branching Model</a
           >
         </li>
@@ -1115,7 +1095,7 @@
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
-          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/docs/slack/" title="Go to Slack with GitHub" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
             > Slack with GitHub</a
           >
         </li>

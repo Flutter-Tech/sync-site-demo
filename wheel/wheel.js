@@ -294,7 +294,7 @@ const wheelFactory = mountElem => {
   }
 
   function spin(newSpeed) {
-    speed = newSpeed;
+    speed = 2*Math.max(0.3, newSpeed); // ensure a really good spin of the wheel
     two.bind('update', animateWheel);
   }
 
