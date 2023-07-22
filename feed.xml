@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Flutter Inner Source</title>
+        <description>Guides and documentation from the Flutter inner source community.</description>
+        <link>https://innersource.flutter.com/</link>
+        <atom:link href="https://innersource.flutter.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Sat, 22 Jul 2023 19:48:22 +0000</pubDate>
+        <lastBuildDate>Sat, 22 Jul 2023 19:48:22 +0000</lastBuildDate>
+        
+            <item>
+                <title>GitHub ❤️ Slack</title>
+                <dc:creator>Nuno Crisóstomo</dc:creator>
+                <description>Examples of using GitHub and Slack together to notify your stakeholders about changes or deployments.</description>
+                <pubDate>Wed, 19 Jul 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/slack-examples</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/slack-examples</guid>
+                <category>Story</category>
+            </item>
+        
+            <item>
+                <title>Unpopular Work</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>How to manage the assignment of unpopular work in inner source. When several teams could do it, which team should do it?</description>
+                <pubDate>Mon, 22 May 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/unpopular-work</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/unpopular-work</guid>
+                <category>Academy</category>
+            </item>
+        
+            <item>
+                <title>GitHub Influencers</title>
+                <dc:creator>Tiago Almeida, Arun Dani</dc:creator>
+                <description>Who in Flutter-Global can be considered the most influential? Who would be best to spread updates and news?</description>
+                <pubDate>Wed, 17 May 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/github-influencers</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/github-influencers</guid>
+                <category>Insight</category>
+            </item>
+        
+            <item>
+                <title>Quadtrees</title>
+                <dc:creator>Damien Raymond</dc:creator>
+                <description>In this article, we will discuss approaches to implement collision detection and indexes for spatial queries using a simpler example to illustrate.</description>
+                <pubDate>Fri, 12 May 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/quadtrees</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/quadtrees</guid>
+                <category>Story</category>
+            </item>
+        
+            <item>
+                <title>Major vs Minor</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>How separate processes for major and minor change reduces noise and speeds up delivery.</description>
+                <pubDate>Thu, 11 May 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/major-vs-minor</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/major-vs-minor</guid>
+                <category>Academy</category>
+            </item>
+        
+            <item>
+                <title>Lazy Consensus</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>Sharing requires consensus. Getting several groups to agree is hard. Lazy consensus is a solution worth knowing.</description>
+                <pubDate>Wed, 03 May 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/lazy-consensus</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/lazy-consensus</guid>
+                <category>Academy</category>
+            </item>
+        
+            <item>
+                <title>Automated Labels</title>
+                <dc:creator>Nuno Crisóstomo</dc:creator>
+                <description>Codebase Governor now supports adding labels to PRs and Issues automatically to help cross-divisional visibility.</description>
+                <pubDate>Mon, 20 Mar 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/automated-labels</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/automated-labels</guid>
+                <category>Changelog</category>
+            </item>
+        
+            <item>
+                <title>The Pyramid in 8 Minutes</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>A video explanation of what inner source is, and how we use a pyramid as a map to understand the steps needed to do it.</description>
+                <pubDate>Fri, 17 Mar 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/pyramid-in-8-minutes</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/pyramid-in-8-minutes</guid>
+                <category>Academy</category>
+            </item>
+        
+            <item>
+                <title>Inner Source Product Management</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>Phil explains how our inner sourced Global Betting Platform is product managed.</description>
+                <pubDate>Thu, 16 Mar 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/product-management</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/product-management</guid>
+                <category>Story</category>
+            </item>
+        
+            <item>
+                <title>Why are PRs slow?</title>
+                <dc:creator>Tiago Almeida</dc:creator>
+                <description>What are the key factors that make a PR slow? Check using GitHub data from the last 6 months.</description>
+                <pubDate>Fri, 10 Feb 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/why-are-prs-slow</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/why-are-prs-slow</guid>
+                <category>Insight</category>
+            </item>
+        
+            <item>
+                <title>Deployment Repository</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>Bernard explains the use of a deployment repository to separate shared application code from the infrastructure code for a specific deployment.</description>
+                <pubDate>Mon, 06 Feb 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/deployment-repository</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/deployment-repository</guid>
+                <category>Story</category>
+            </item>
+        
+            <item>
+                <title>Capability Coordinator</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>Meeting Rita to understand her Capability Co-ordinator role in gbp.</description>
+                <pubDate>Sat, 14 Jan 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/capability-coordinator</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/capability-coordinator</guid>
+                <category>Story</category>
+            </item>
+        
+            <item>
+                <title>Big PR, Bad Reviews</title>
+                <dc:creator>Tiago Almeida</dc:creator>
+                <description>Do big pull requests get worse reviews than small ones? Check using data from 80,000 Flutter PRs.</description>
+                <pubDate>Thu, 12 Jan 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/big-pr-bad-reviews</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/big-pr-bad-reviews</guid>
+                <category>Insight</category>
+            </item>
+        
+            <item>
+                <title>Branching Models in 7 Minutes</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>A video explanation of 3 common branching models used in Flutter-Global and when you should use them.</description>
+                <pubDate>Thu, 15 Dec 2022 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/branching-in-7-minutes</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/branching-in-7-minutes</guid>
+                <category>Academy</category>
+            </item>
+        
+    </channel>
+</rss>
