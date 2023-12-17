@@ -7,8 +7,18 @@
         <description>Guides and documentation from the Flutter inner source community.</description>
         <link>https://innersource.flutter.com/</link>
         <atom:link href="https://innersource.flutter.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 13 Dec 2023 10:23:09 +0000</pubDate>
-        <lastBuildDate>Wed, 13 Dec 2023 10:23:09 +0000</lastBuildDate>
+        <pubDate>Sun, 17 Dec 2023 19:58:22 +0000</pubDate>
+        <lastBuildDate>Sun, 17 Dec 2023 19:58:22 +0000</lastBuildDate>
+        
+            <item>
+                <title>gRPC</title>
+                <dc:creator>Renato Cardoso</dc:creator>
+                <description>What is gRPC? How does it compare to REST? And when would you use it?</description>
+                <pubDate>Thu, 14 Dec 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/grpc</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/grpc</guid>
+                <category>Story</category>
+            </item>
         
             <item>
                 <title>GitHub ❤️ Slack</title>

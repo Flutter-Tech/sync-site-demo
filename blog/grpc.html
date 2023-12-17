@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>gRPC | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="alternate" type="application/rss+xml" 
+        title="Flutter Inner Source Blog" 
+        href="https://innersource.flutter.com/feed.xml" />
+  <link rel="stylesheet" href="/vite/assets/index-a2bdff7d.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu pb-20">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#story" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Story</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              gRPC
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Renato Cardoso
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-10-31-grpc.svg) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <p>gRPC is a modern, open source Remote Procedure Call (RPC) framework that can run in any environment. It enables client and server applications to communicate transparently, and makes it easier to build connected systems. This blog post explores the key features and benefits of gRPC, compares it with REST, and explains how you can use it in your projects.</p>
+
+<h2 id="before-grpc-lets-explain-rpc">Before gRPC, Let’s Explain RPC!</h2>
+
+<p>RPC extends conventional local procedure calling so that the called procedure doesn’t need to live in the same host/address space as the calling procedure. The two communicating processes might be on the same system or they can live in different systems with a network connection in the between.</p>
+
+<p>In other words it’s like a form of client-server communication that uses a function call rather than an usual HTTP call. It makes use of IDL (interface definition language) as a contract on functions called and data types returned.</p>
+
+<p><img src="/assets/blog/grpc/rpc.png" alt="RPC Architecture" class="max-w-md mx-auto" /></p>
+
+<p>gRPC mirrors this architectural style of client-server communication also using function calls. So, in reality, gRPC isn’t the only fish in the sea, but it adopted this technique and made it better in a way that made it super popular now.</p>
+
+<h2 id="whats-grpc">What’s gRPC?</h2>
+
+<p>gRPC (pronounced <code class="language-plaintext highlighter-rouge">Jee-Arr-Pee-See</code>) doesn’t stand for <code class="language-plaintext highlighter-rouge">Google Remote Procedure Call</code> as many people might think. So what the <code class="language-plaintext highlighter-rouge">g</code> actually stands for?</p>
+
+<p>Google changes its meaning in every version they release. <code class="language-plaintext highlighter-rouge">g</code> actually started meaning <code class="language-plaintext highlighter-rouge">gRPC</code>, and then it evolved to <code class="language-plaintext highlighter-rouge">good</code>, <code class="language-plaintext highlighter-rouge">green</code>, <code class="language-plaintext highlighter-rouge">gentle</code>, and more – to the point that they even wrote a <a href="https://github.com/grpc/grpc/blob/master/doc/g_stands_for.md">README</a> file to list all the meanings.</p>
+
+<p>gRPC is a high-performance, open source RPC framework released by Google in 2015. It’s currently a Cloud Native Computing Foundation project and Google has been using a lot of the underlying technologies and concepts for a long time. Several of Google’s cloud products use the current implementation.</p>
+
+<p><img src="/assets/blog/grpc/grpc-companies.png" alt="gRPC Companies" class="max-w-xl mx-auto" /></p>
+
+<p>Companies such as  Square, Netflix, CoreOS, Docker, CockroachDB, Cisco, Juniper Networks have been also using this technology.</p>
+
+<p>It enables communication between client and server applications using a simple and efficient protocol, making it ideal for building distributed systems and microservices.</p>
+
+<p>gRPC uses <code class="language-plaintext highlighter-rouge">Protocol Buffers</code> (aka <code class="language-plaintext highlighter-rouge">protobuf</code>) as its default serialisation framework and <code class="language-plaintext highlighter-rouge">HTTP/2</code> as its underlying transport protocol, providing high performance and efficiency.</p>
+
+<p><img src="/assets/blog/grpc/grpc-arch.png" alt="gRPC Architecture" class="max-w-xl mx-auto" /></p>
+
+<p>The gRPC architecture entails a client-server model. A client sends the server a request and the server replies back.</p>
+
+<p>The communication between both is responsibility of gRPC application and its corresponding service definitions. These service definitions in <code class="language-plaintext highlighter-rouge">.proto</code> files contain information on the methods, arguments, and return types.</p>
+
+<p>The application and its code is auto-generated and acts as a client-side proxy making remote calls look and behave like local function calls.</p>
+
+<p>The gRPC framework abstracts away the complexity of the communication. You know nothing more than the client calls the service method, and the method runs on the server. The magic that plays out in-between isn’t open to you.</p>
+
+<p>So why is this so popular? Let’s take a look at some key benefits and features.</p>
+
+<h2 id="features-and-benefits">Features and Benefits</h2>
+
+<h3 id="high-performance-transfers">High Performance Transfers</h3>
+
+<p>gRPC makes use of a binary serialization format (<code class="language-plaintext highlighter-rouge">Protocol Buffers</code>) which results in faster serialization and parsing compared to traditional text-based formats like <code class="language-plaintext highlighter-rouge">json</code> or <code class="language-plaintext highlighter-rouge">xml</code> as well as smaller message sizes. This makes the transmission more efficient, with lower resources while still saving bandwidth.</p>
+
+<p><code class="language-plaintext highlighter-rouge">json</code> payload (79 bytes):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "age": 35,
+  "first_name": "Renato",
+  "last_name": "Cardoso"
+}
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">protobuf</code> payload (19 bytes):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>message Person {
+  int32 age = 1;
+  string first_name = 2;
+  string last_name = 3;
+}
+</code></pre></div></div>
+
+<h3 id="multiplexing">Multiplexing</h3>
+
+<p>gRPC makes use of <code class="language-plaintext highlighter-rouge">HTTP/2</code> protocol, which is a big enhancement over <code class="language-plaintext highlighter-rouge">HTTP/1.1</code>. <code class="language-plaintext highlighter-rouge">HTTP/2</code> introduces features such as request and response multiplexing over a single connection, header compression and server push. This results in a reduction on latency and network transfer speeds while improving overall performance.</p>
+
+<h3 id="language-agnostic--code-generation">Language-Agnostic &amp; Code Generation</h3>
+
+<p>gRPC uses Protocol Buffers to define messages and services, which compile into code in a variety of programming languages including <code class="language-plaintext highlighter-rouge">Java</code>, <code class="language-plaintext highlighter-rouge">C++</code> and <code class="language-plaintext highlighter-rouge">Python</code>. This makes communication between services simple and flexible regardless of the language used for development. It also allows developers to compile their code in their preferred language while reducing the amount of boilerplate code needed to write.</p>
+
+<p><img src="/assets/blog/grpc/protobuf.png" alt="Protocol Buffers Workflow" class="max-w-xl mx-auto" /></p>
+
+<p><img src="/assets/blog/grpc/grpc-languages.png" alt="gRPC Supported Languages" class="max-w-xl mx-auto" /></p>
+
+<h3 id="cross-platform">Cross-Platform</h3>
+
+<p>gRPC supports running on multiple platforms, including Linux, Windows, and macOS. This makes it easier to develop and deploy services on a variety of environments.</p>
+
+<h3 id="secure">Secure</h3>
+
+<p>gRPC considers security to be a first class citizen. It supports built-in SSL/TLS encryption for secure transfers and mutual authentication.</p>
+
+<h3 id="streaming-support">Streaming Support</h3>
+
+<p>gRPC provides a number of different types of APIs, including unary, server streaming, client streaming and bidirectional streaming. These APIs allow for a variety of different communication patterns between the client and server.</p>
+
+<p><img src="/assets/blog/grpc/grpc-apis-1.png" alt="gRPC APIs" class="max-w-lg mx-auto" /></p>
+
+<ul>
+  <li>Unary RPC: in this case, the client sends a request message to the server and receives a response - simplest form of RPC.</li>
+  <li>Server streaming RPC: in this case, the client sends a request message to the server and receives a sequence of responses.</li>
+  <li>Client streaming RPC: in this case, the client sends a sequence of messages and receives a single response from the server.</li>
+  <li>Bidirectional streaming RPC: in this case, the client and the server exchange messages in both directions. This one is the most complex because client and server keep sending and receiving multiple messages in parallel and with arbitrary order. It’s  flexible and non-blocking which means both sides don’t need to wait for the response before sending the next messages.</li>
+</ul>
+
+<h3 id="strong-community-support">Strong Community Support</h3>
+
+<p>Because it’s developed by Google and gained a lot of traction by the community, gRPC is being widely adopted and keeps being continuously improved by developers and organisations.</p>
+
+<h2 id="when-to-use-grpc-over-rest">When To Use gRPC Over REST</h2>
+
+<p>gRPC and REST are great for building APIs, and the decision of when to use gRPC over REST really depends on your requirements.</p>
+
+<p>Here are some use cases in which gRPC might be a better choice:</p>
+
+<ol>
+  <li><strong>Performance and efficiency</strong>: If you need low-latency communication with high throughput, gRPC is the way to go. It’s designed for it since it uses <code class="language-plaintext highlighter-rouge">HTTP/2</code> with support for multiplexing and binary serialization making it more efficient in terms of data transfer and latency.</li>
+  <li><strong>Strongly typed contracts</strong>: gRPC relies on protocol buffers for service contracts definition. This allows for strong typed APIs with clear data structures and services, enabling better code generation, type safety and easier evolution.</li>
+  <li><strong>Code generation</strong>: If you want to be fast and decouple the programming language from the protocol, gRPC has your back. It supports automatic code generation for client and server which can save development time and reduce the chances of making errors.</li>
+  <li><strong>Bidirectional streaming</strong>: gRPC supports bidirectional streaming where both the client and server can send multiple messages in parallel. This is useful for use cases like live data streaming, chats or even notifications.</li>
+  <li><strong>Middleware and interceptors</strong>: gRPC provides great support for implementing middleware and interceptors allowing you to add functionality like authentication, logging and monitoring in a consistent way.</li>
+</ol>
+
+<p>Nevertheless, REST might be a better choice in other situations:</p>
+
+<ol>
+  <li><strong>Simplicity and wider adoption</strong>: REST is simpler to set up and can be an excellent choice for small/internal APIs or simple services. It’s currently widely adopted and understood in the industry.</li>
+  <li><strong>Compatibility</strong>: REST is well suited for integration with existing systems, as it’s supported by nearly all programming languages and platforms being one of the best examples the support of all current browsers.</li>
+  <li><strong>Readability</strong>: REST APIs use human-readable formats like <code class="language-plaintext highlighter-rouge">json</code> or <code class="language-plaintext highlighter-rouge">xml</code>, which can be helpful for debugging and manual testing.</li>
+</ol>
+
+<p>Ultimately, the choice between both depends on your project’s requirements. You could as well use a combination of both as long as it makes sense for your particular scenario. If you prioritize performance, efficiency, and strong typing, gRPC may be the better choice. If simplicity and compatibility with existing systems are more critical, REST may be the way to go.</p>
+
+<h2 id="why-we-use-grpc-at-flutter">Why We Use gRPC at Flutter</h2>
+
+<p>Flutter is a global sports betting, gaming, and entertainment provider. We operate some of the world’s most innovative, diverse, and distinctive brands with over 18 million customers worldwide.</p>
+
+<p><img src="/assets/blog/grpc/brands.png" alt="Flutter Brands" class="max-w-xl mx-auto" /></p>
+
+<p>Our customers place billions of bets every year across all brands. Each brand operates individually however Flutter needed to have a centralised place where it could collect every placed bet and process it centrally.</p>
+
+<p>To achieve it, we decided to build an application called GBSC (Global Bet Stream Collector) which has the following architecture. For simplicity let’s look at some brands only.</p>
+
+<p><img src="/assets/blog/grpc/gbsc.png" alt="GBSC Architecture" class="max-w-sm mx-auto" /></p>
+
+<p>The requirements were very clear and well defined. Let’s look at the most important ones:</p>
+
+<ol>
+  <li>Ability to ingest a big amount of bets that may come from various brands operating in distinct parts of the world (countries/continents).</li>
+  <li>Data transmission must have as low latency as possible because there might exist some automated actions right after processing the data.</li>
+  <li>Individual access control for each brand.</li>
+  <li>Same <code class="language-plaintext highlighter-rouge">Bet</code> model used across all brands in order to deal with data in a single format.</li>
+  <li>Possibility of model evolution.</li>
+  <li>Give the possibility for each brand to choose their preference in what concerns the place to deploy their integration application, the language of choice and as well as the operating system.</li>
+  <li>Data encryption in transit.</li>
+</ol>
+
+<p>Looking at these requirements it’s quite easy to understand gRPC ticks pretty much all of them. So relating to the previous requirements gRPC answers to them:</p>
+
+<ol>
+  <li>By using unary or bidirectional streaming calls, it can achieve this with the help of persistent connections in addition to asynchronous API calls.</li>
+  <li>By using <code class="language-plaintext highlighter-rouge">HTTP/2</code> persistent connections, it’s able to perform SSL handshake just once avoiding all the network round trips that normally exist in this process. Using a binary data model also allows to keep message size smaller.</li>
+  <li>By using interceptors, it can easily validate against some HTTP headers (e.g. <code class="language-plaintext highlighter-rouge">Authorisation</code> header with JWT token) in order to authorise the call.</li>
+  <li>By using <code class="language-plaintext highlighter-rouge">protobuf</code>, it can easily build a library in any gRPC supported language and distribute it to the brands, in a way that they can import it on their projects. It’s definitely better approach than distributing the protobuf files themselves.</li>
+  <li>By using <code class="language-plaintext highlighter-rouge">protobuf</code>, it can use its backwards and forwards compatibility. As long as we follow some <a href="https://protobuf.dev/programming-guides/proto3/#updating">simple practices</a> when updating <code class="language-plaintext highlighter-rouge">.proto</code> definitions, old code reads new messages without issues, ignoring any newly added fields. To the old code, deleted fields have their default value, and deleted repeated fields are empty. We currently make use of <a href="https://github.com/salesforce/proto-backwards-compat-maven-plugin">proto-backwards-compat-maven-plugin</a> to help us not make mistakes.</li>
+  <li>By using <code class="language-plaintext highlighter-rouge">protobuf</code>, it can generate code in any language supported by gRPC. This provides great flexibility for each brand to opt by its language of choice and its deployment preference. gRPC is also supported in all big cloud providers.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">HTTP/2</code> protocol and TLS/SSL encrypts data in-transit which helps to mitigate spoofing attacks by robustly encrypting and authenticating transmitted data, preventing interception of traffic and blocking the decryption of sensitive data on the bet payload or authentication tokens.</li>
+</ol>
+
+<h2 id="using-grpc">Using gRPC</h2>
+
+<p>In order to use gRPC in your own project, you need to define your services and messages using a <code class="language-plaintext highlighter-rouge">.proto</code> file. This file defines the methods and parameters for your services, as well as the messages exchanged between the client and server.</p>
+
+<p>Once you’ve defined your <code class="language-plaintext highlighter-rouge">.proto</code> file, you can use the gRPC tools to generate client and server code in your preferred programming language.</p>
+
+<p>To run your gRPC service, you need to start a gRPC server that listens for incoming requests. Then, you can then start your client and make requests to the server.</p>
+
+<p>Let’s look at a service definition in detail:</p>
+
+<p><code class="language-plaintext highlighter-rouge">bet-service.proto</code></p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+
+<span class="kn">package</span> <span class="nn">com</span><span class="o">.</span><span class="n">flutter.gbs</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="s">"bet.proto"</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">BetService</span> <span class="p">{</span>
+  
+  <span class="c1">// Unary call to send a Bet message and receive a BetAck message back</span>
+  <span class="k">rpc</span> <span class="n">sendBet</span><span class="p">(</span><span class="n">Bet</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">BetAck</span><span class="p">);</span>
+  
+  <span class="c1">// Bi-directional stream calls to send multiple Bet messages and receive a stream of BetAck messages back</span>
+  <span class="k">rpc</span> <span class="n">sendBets</span><span class="p">(</span><span class="n">stream</span> <span class="n">Bet</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">BetAck</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This code block shows a RPC service <code class="language-plaintext highlighter-rouge">BetService</code> definition that inside declares 2 methods: <code class="language-plaintext highlighter-rouge">sendBet</code> and <code class="language-plaintext highlighter-rouge">sendBets</code> (notice the <code class="language-plaintext highlighter-rouge">service</code> keyword before declaring each service and <code class="language-plaintext highlighter-rouge">rpc</code> keyword before any method).</p>
+
+<p>Each method has an input argument as well as a response. Besides the name, the big difference between the two is the keyword <code class="language-plaintext highlighter-rouge">stream</code>. This tells you that on the <code class="language-plaintext highlighter-rouge">sendBets</code> method you are making use of bidirectional streaming of request and response messages instead of the traditional unary calls.</p>
+
+<p><code class="language-plaintext highlighter-rouge">bet.proto</code></p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+
+<span class="kn">package</span> <span class="nn">com</span><span class="o">.</span><span class="n">flutter.gbs</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Bet</span> <span class="p">{</span>
+
+    <span class="c1">// Unique ID from brand bet platform used to identify the bet placed</span>
+    <span class="kt">string</span> <span class="na">betId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    
+    <span class="c1">// Timestamp of when the bet was placed</span>
+    <span class="kt">int64</span> <span class="na">betTime</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    
+    <span class="c1">// Amount staked on the bet</span>
+    <span class="kt">double</span> <span class="na">totalStake</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">BetAck</span> <span class="p">{</span>
+
+    <span class="c1">// Status of the response, enum of OK or ERROR</span>
+    <span class="n">Status</span> <span class="na">status</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// Error message if occurred</span>
+    <span class="kt">string</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">enum</span> <span class="n">Status</span> <span class="p">{</span>
+        <span class="na">OK</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="na">ERROR</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here is the definition of the <code class="language-plaintext highlighter-rouge">Bet</code> and <code class="language-plaintext highlighter-rouge">BetAck</code> message types. Each property has its type, which can be primitive, or another custom type, such as <code class="language-plaintext highlighter-rouge">Status</code>.</p>
+
+<p>After compiling this, the server implementation could be as follows. Here you are just building a successful response without any business logic - this is for demonstration purposes.</p>
+
+<p><code class="language-plaintext highlighter-rouge">BetService.java</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.flutter.gbs</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.flutter.gbs.BetOuterClass.Bet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.flutter.gbs.BetOuterClass.BetAck</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.flutter.gbs.BetServiceGrpc</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.grpc.stub.StreamObserver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.extern.slf4j.Slf4j</span><span class="o">;</span>
+
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BetService</span> <span class="kd">extends</span> <span class="nc">BetServiceGrpc</span><span class="o">.</span><span class="na">BetServiceImplBase</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">BetService</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendBet</span><span class="o">(</span><span class="nc">Bet</span> <span class="n">bet</span><span class="o">,</span> <span class="nc">StreamObserver</span><span class="o">&lt;</span><span class="nc">BetAck</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span>
+                <span class="nc">BetAck</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                        <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">BetAck</span><span class="o">.</span><span class="na">Status</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">StreamObserver</span><span class="o">&lt;</span><span class="nc">Bet</span><span class="o">&gt;</span> <span class="nf">sendBets</span><span class="o">(</span><span class="nc">StreamObserver</span><span class="o">&lt;</span><span class="nc">BetAck</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nc">StreamObserver</span><span class="o">&lt;</span><span class="nc">Bet</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNext</span><span class="o">(</span><span class="nc">Bet</span> <span class="n">bet</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span>
+                        <span class="nc">BetAck</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                                <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">BetAck</span><span class="o">.</span><span class="na">Status</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span>
+                                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"Received error from streaming client"</span><span class="o">,</span> <span class="n">t</span><span class="o">);</span>
+                <span class="n">responseObserver</span><span class="o">.</span><span class="na">onError</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCompleted</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Received shutdown from client"</span><span class="o">);</span>
+                <span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>gRPC and protobuf are powerful tools for building efficient and scalable distributed systems. They provide a fast and efficient way to communicate between services, support backward and forward compatibility, and provide a simple and language-agnostic way to define your data structures. If you are building a distributed system, it’s worth considering using gRPC and protobuf to help you achieve your goals.</p>
+
+<p>Regarding using gRPC or REST, both are useful for building distributed systems, but they differ in their approach to communication and data transfer. REST is simpler and more widely supported, making it a good choice for public APIs or web applications. gRPC is more efficient and supports bidirectional streaming, making it a good choice for internal APIs or high-performance applications.</p>
+
+<p>When choosing between gRPC and REST you should take into account the requirements of your project and choose the technology that best meets your needs.</p>
+
+                  <hr/>
+                  <strong>by: </strong>Renato Cardoso<br/>
+                  <strong>in: </strong><time datetime="2023/12/14">14 Dec 2023</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#flutter-global-tech" class="mr-1 inline-block hover:underline lowercase">Flutter Global Tech</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#story" class="hover:underline lowercase">Story</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="bg-gray-200 drop-shadow-2xl z-50 bottom-0">
+  <div class="max-h-50 mx-auto max-w-7xl overflow-hidden py-0 sm:py-12 lg:px-8">
+    
+
+    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/how/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Inner source</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/docs/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Docs</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/blog/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
+            </div>
+          
+        
+      
+      <div class="pb-6">
+        <a href="/community/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Support</a>
+      </div>
+    </nav>
+    <p class="mt-6 text-center text-xs leading-5 text-gray-500">&copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Flutter Entertainment plc</p>
+  </div>
+</footer>
+
+</body>
+
+</html>
