@@ -568,9 +568,10 @@
 <ul>
   <li>A repository is either <code class="language-plaintext highlighter-rouge">Private</code>, <code class="language-plaintext highlighter-rouge">Public</code> or <code class="language-plaintext highlighter-rouge">Internal</code> visibility. In Flutter-Global, all repositories are <code class="language-plaintext highlighter-rouge">Private</code> which means all permissions are explicitly assigned.</li>
   <li>You can assign <code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code> or <code class="language-plaintext highlighter-rouge">admin</code> permissions on a repository to a user or team. These <a href="https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization">GitHub docs explain what that means</a>.</li>
-  <li>GitHub allows you to group users into teams. You can manage your own teams in Flutter-Global, or use existing teams managed for you.</li>
+  <li>GitHub allows you to group users into teams. <a href="/docs/teams/">You can manage your own teams in Flutter-Global, or use existing teams managed for you</a>.</li>
   <li>Flutter-Global org owners manage GitHub Apps that grant access to your repository to 3rd party or internal systems (e.g. SonarCloud or Jenkins).</li>
   <li>GitHub provides a user interface for you to manually configure access. It doesn’t provide any mechanism for you to manage repo access at scale (e.g. 100s of repos). You should use the in-house <a href="/docs/cbg/">Codebase Governor</a> tool to do this.</li>
+  <li>A small group of <a href="#org-roles">those who support you</a> have access to your repository in addition to the permissions you specify.</li>
 </ul>
 
 <h2 id="access-models">Access Models</h2>
@@ -636,6 +637,24 @@
 
 <p><a href="/docs/teams/">Read more about teams in Flutter-Global here</a>.</p>
 
+<h2 id="org-roles">Org Roles</h2>
+
+<p>To support your use of Flutter-Global, we grant 2 teams org roles which allows them access to your repository.</p>
+
+<h3 id="security-managers">Security Managers</h3>
+
+<p>We grant some divisional InfoSec and GitHub support staff <code class="language-plaintext highlighter-rouge">read</code> access to your repository. We use the <a href="https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization">GitHub Security Manager feature</a> to do this. This role also grants them access to edit the security alerts on your repository.</p>
+
+<p>You can see this team in your repository settings:</p>
+
+<p><img src="/docs/access-control/security-managers.png" class="max-w-lg mx-auto" /></p>
+
+<h3 id="org-owners">Org Owners</h3>
+
+<p>The inner source team support the Flutter-Global GitHub org. To perform our role, we’re <a href="https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization">GitHub org owners</a>.</p>
+
+<p>As owners of Flutter-Global, we’ve <code class="language-plaintext highlighter-rouge">admin</code> access to your repository. We take this responsibility very seriously and only use this access when required. If we can redirect a support query or required change to a repository maintainer we do so.</p>
+
 
 
           <!-- ARTICLE NAVIGATION -->
@@ -653,7 +672,7 @@
           <div class="pb-6 text-md">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#how-github-works" class="hover:text-secondary">How GitHub Works</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#access-models" class="hover:text-secondary">Access Models</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#users-teams--apps" class="hover:text-secondary">Users, Teams &amp; Apps</a></li></ul class="pt-1 list-none">
+            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#how-github-works" class="hover:text-secondary">How GitHub Works</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#access-models" class="hover:text-secondary">Access Models</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#users-teams--apps" class="hover:text-secondary">Users, Teams &amp; Apps</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#org-roles" class="hover:text-secondary">Org Roles</a><ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#security-managers" class="hover:text-secondary">Security Managers</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#org-owners" class="hover:text-secondary">Org Owners</a></li></ul class="pt-1 list-none"></li></ul class="pt-1 list-none">
             </div>
           </div>
           

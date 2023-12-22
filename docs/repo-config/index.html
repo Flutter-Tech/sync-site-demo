@@ -586,7 +586,7 @@
 
 <h3 id="audited-source"><a href="/sdlc/audited/">Audited Source</a></h3>
 
-<p>Audited Source ensures changes are preserved for audit, but doesn’t require review before releasing changes.</p>
+<p>Audited Source preserves changes for audit, but doesn’t require review before releasing changes.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">main"</span><span class="pi">]</span>
@@ -632,6 +632,7 @@
       <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-last-pusher-to-approve</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allows-deletions</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
@@ -713,7 +714,10 @@
 <p>Enabling <code class="language-plaintext highlighter-rouge">allow-stale-reviews</code> means a pull request approval remains valid even when you make more changes after the review. This is convenient for you as the pull request author as you act on review feedback to implement minor fixes to the pull request – you don’t need to get the pull request re-reviewed after you have pushed your fixes. However, note how it allows you to include additional <strong>un-reviewed code</strong> to an existing pull request so don’t enable this rule for critical branches where you require strict code review.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">allow-last-pusher-to-approve</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
+
+<p>If enabling stale reviews, you probably also want to enable <code class="language-plaintext highlighter-rouge">allow-last-pusher-to-approve: true</code> which allows a user to self-review their own code in some circumstances, but you have already accepted un-reviewed code can be contributed to this branch.</p>
 
 <h4 id="branch-protectionsparametersallow-admin-bypass"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-admin-bypass</code></h4>
 
@@ -726,12 +730,12 @@
 
 <h4 id="branch-protectionsparametersrequires-status-checks"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.requires-status-checks</code></h4>
 
+<p><strong>Note that this setting is currently confusing as it doesn’t automatically apply to all status checks. For a required status check this setting needs to apply, AND you need to select the status check in the branch protection GitHub UI.</strong></p>
+
 <p>Required status checks require GitHub status tests to pass before merge. GitHub status checks can be GitHub Action workflows or external checks like a divisional Jenkins or SonarCloud.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
-
-<p><strong>Note that this setting is currently confusing as it doesn’t automatically apply to all status checks. For a required status check this setting needs to apply, AND you need to select the status check in the branch protection GitHub UI.</strong></p>
 
 <p>The <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-status-checks-before-merging">GitHub docs provide more information about requiring status checks in pull requests</a>.</p>
 
@@ -757,6 +761,11 @@
       <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
+
+      <span class="c1"># Allows the last person to push to a branch to review their own</span>
+      <span class="c1"># change. Note that if enabled there are cases where a user can </span>
+      <span class="c1"># self-approve their own changes.</span>
+      <span class="na">allow-last-pusher-to-approve</span><span class="pi">:</span> <span class="no">true</span>
 
       <span class="c1"># Requires commits to be signed and verified</span>
       <span class="na">requires-commit-signatures</span><span class="pi">:</span> <span class="no">true</span>

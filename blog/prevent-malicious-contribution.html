@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-UK" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
+  <title>Prevent a Malicious Contribution | Flutter Inner Source</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="alternate" type="application/rss+xml" 
+        title="Flutter Inner Source Blog" 
+        href="https://innersource.flutter.com/feed.xml" />
+  <link rel="stylesheet" href="/vite/assets/index-a2bdff7d.css" media="screen"/>
+  <script defer type="text/javascript" src="/assets/js/main.js"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWJ62K2KJL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-PWJ62K2KJL");
+</script>
+
+  
+  
+
+  
+  
+  <script src="/vite/assets/index-4ed993c7.js" crossorigin="anonymous" type="module"></script>
+
+
+</head>
+
+<body class="theme-pink">
+
+  <div class="relative z-40" hidden role="mobile-menu" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  <div class="fixed inset-0 z-40 flex">
+    <div class="relative flex flex-col flex-1 w-full max-w-xs bg-white focus:outline-none">
+      <div class="absolute top-0 right-0 pt-2 -mr-12">
+        <button type="button" id="close-mobile-menu"
+          class="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex items-center flex-shrink-0 px-4">
+          <img class="w-auto h-8" src="/assets/img/flutter-logo.png" alt="Flutter">
+        </div>
+        <nav aria-label="Sidebar" class="mt-5">
+          <hr class="text-gray-200"/>
+          <div class="flex flex-col px-3 mt-4 mb-4 space-y-2 text-xl">
+            
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+          </div>
+          <hr class="text-gray-200"/>
+          <div class="mt-4">
+            
+
+
+
+
+<ul class="sidebar-nav nav-parent-icon text-sm lg:text-base font-bold relative pt-0 ml-0 root-menu pb-20">
+    
+    
+</ul>
+
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="flex-shrink-0 w-14" aria-hidden="true">
+    </div>
+  </div>
+</div>
+  <header class="sticky top-0 z-20 w-full bg-white shadow">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:justify-start lg:space-x-10">
+    <div>
+      <a href="/" class="flex">
+        <img class="w-auto h-8 pl-3 sm:h-10" src="/assets/img/flutter-logo.svg" alt="">
+      </a>
+    </div>
+    <div class="-my-2 -mr-2 lg:hidden flex-1 text-right">
+      <button type="button" id="open-mobile-menu"
+        class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+        aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex lg:flex-1 lg:items-center lg:justify-between">
+      <nav class="hidden lg:flex space-x-10 h-menu">
+        
+  
+
+  
+
+  
+    
+      <a  href="/how/" 
+        title="Inner source">Inner source</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  href="/docs/" 
+        title="Docs">Docs</a></li>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a  class="selected" href="/blog/" 
+        title="Blog">Blog</a></li>
+    
+  
+
+      </nav>
+      <div class="flex items-center">
+        <div id="root-search"></div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div>
+    <main class="relative z-0">
+      <div class="inset-0 pb-10">
+        <div>
+          <div>
+            <!-- TITLE -->
+            
+            <div class="relative flex-1 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+  <div class="not-prose">
+    <div class="bg-gray-200 fit-content">
+      <div class="grid grid-cols-6">
+        <div class="hidden lg:block"></div>
+        <div class="col-span-3 px-8 py-10 lg:col-span-2 md:text-left">
+          <div>
+            
+            <a href="/blog/categories#academy" class="block mb-3">
+              <span
+                class="hover:underline bg-secondary inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium text-white">Academy</span>
+            </a>
+            
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight md:text-5xl">
+              Prevent a Malicious Contribution
+            </h1>
+            <div class="pl-1 pt-2">
+              
+              <strong>by:</strong> Rob Tuley
+              
+            </div>
+          </div>
+        </div>
+        
+<div class="relative col-span-3" style="background: url(/assets/blog/2023-12-11-malicious-code.jpg) no-repeat center; background-size: cover;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            
+            <!-- TITLE -->
+            <div class="relative flex-1 min-w-0 pb-12 prose max-w-none md:prose-base lg:prose-base xs:prose-sm content">
+              <div class="grid grid-cols-6 gap-0 bg-gradient-to-b from-slate-50ls">
+                <div class="col-span-6 px-8 lg:col-span-4 lg:col-start-2">
+                  <p>Threat modelling improves security by identifying threats so you can prevent them. This post models the threat of a malicious contribution to your repository – the addition of some code with bad intent.</p>
+
+<p>We’ll call the person adding the malicious code the <em>threat actor</em> (TA). We’ll assume they have <em>write</em> access to your repository. Maybe there was an access misconfiguration, or the leak of a unsuspecting user’s access token. How that might happen is the topic of another post!</p>
+
+<p>This post explains how the TA would use that access, and how you can stop them.</p>
+
+<p><img src="/assets/blog/malicious-code/overview.svg" /></p>
+
+<h2 id="branches-that-matter">Branches That Matter</h2>
+
+<p>You use branches to separate code changes from each other while you work on them. You merge branches into each other – often via a pull request – to add changes together and release them.</p>
+
+<p>You can’t stop a threat actor with write access committing to your repository. They can create their own branches and commit whatever they like.</p>
+
+<p>However, <strong>only some of your branches actually matter</strong>. Often it’s only 1 branch that matters – the “default” branch called <code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code>. The branches that matter to you depend on <a href="/docs/branching/">your branching model choices</a>, which branches you release, and what you run in your CI pipeline. It’s these branches you need to protect from the TA.</p>
+
+<p>In this post, we’ll consider the TA to be successful if they manage to commit code to the <code class="language-plaintext highlighter-rouge">main</code> branch.</p>
+
+<h2 id="no-branch-protection">No Branch Protection</h2>
+
+<p>With no branch protection, a TA with write access can simply commit malicious code directly to <code class="language-plaintext highlighter-rouge">main</code>. They might try to hide their actions by <a href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/troubleshooting-commits/why-are-my-commits-linked-to-the-wrong-user">linking their commits to a different user</a>. They might force push and modify previous git history to make it difficult to locate and revert their changes.</p>
+
+<p><img src="/assets/blog/malicious-code/no-bp.svg" /></p>
+
+<p><strong>Use branch protection on all branches that matter.</strong> Even if you don’t require change approvals, you still need branch protection to prevent force push and/or branch deletion (we call this <a href="/sdlc/audited/">Audited Source</a>).</p>
+
+<h2 id="bypass-branch-protection">Bypass Branch Protection</h2>
+
+<p>The threat actor’s access may be able to bypass the branch protection on <code class="language-plaintext highlighter-rouge">main</code>:</p>
+
+<ul>
+  <li>Repository admins can edit branch protection settings via the GitHub UI.</li>
+  <li>Repository admins and write deploy keys can bypass required approvals by default unless specifically prevented.</li>
+  <li>You may have configured some users or apps to bypass your protections as part of your normal workflow.</li>
+</ul>
+
+<p>If the TA is one of those who can bypass your branch protection – they can commit malicious code directly to <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<p><img src="/assets/blog/malicious-code/bypass-bp.svg" /></p>
+
+<p>You should:</p>
+
+<ul>
+  <li>Use config-as-code to define branch protections, so changing them requires approval. In Flutter-Global, this is <a href="/docs/cbg/">Codebase Governor</a>.</li>
+  <li>Apply your protections to everyone. Include repository admins, and avoid workflows that require users or apps to bypass them.</li>
+</ul>
+
+<h2 id="hijack-an-existing-pr">Hijack An Existing PR</h2>
+
+<p>The TA may append malicious changes to an existing pull request raised by another contributor.</p>
+
+<ul>
+  <li>If new commits don’t dismiss existing pull request approvals, the TA appends their changes to an already approved PR. Since the PR remains approved despite these extra changes, the TA can immediately merge the PR into <code class="language-plaintext highlighter-rouge">main</code>.</li>
+  <li>If review of the last push is possible by the person who pushed it, the TA appends changes to an existing PR. They then approve that PR themselves and merge it into <code class="language-plaintext highlighter-rouge">main</code>.</li>
+</ul>
+
+<p><img src="/assets/blog/malicious-code/hijack-pr.svg" /></p>
+
+<p>Prevent hijacking of existing PRs by configuring your branch protection to:</p>
+
+<ul>
+  <li>Dismiss stale pull request approvals when new commits are pushed.</li>
+  <li>Require approval of the most recent reviewable push.</li>
+</ul>
+
+<h2 id="sock-puppet-approval">Sock Puppet Approval</h2>
+
+<p>The TA may have access to more than one account with write access to your repository. If so, they can create a malicious pull request with one account, and approve it with the other account.</p>
+
+<p><img src="/assets/blog/malicious-code/actions-settings.png" class="max-w-lg mx-auto" /></p>
+
+<p>The GitHub Actions user can create and approve PRs by default. Anyone with write access to a repository can author and run a workflow with this user. Unless you change this, the TA can use the GitHub Actions user as their 2nd account. For example they can create a malicious PR via a workflow and then approve and merge it with their normal account.</p>
+
+<p><img src="/assets/blog/malicious-code/abuse-actions.svg" /></p>
+
+<p>You should:</p>
+
+<ul>
+  <li>Disable GitHub Actions creating or approving PRs unless necessary.</li>
+  <li>Use a <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">CODEOWNERS</a> file and require their approval to merge a PR. This limits the impact of PR approval from accounts you don’t normally expect it from.</li>
+</ul>
+
+<h2 id="hide-the-malicious-code">Hide the Malicious Code</h2>
+
+<p>The TA can hide malicious code in an otherwise useful PR, and try to trick one of the repository maintainers to approve it. The TA may:</p>
+
+<ul>
+  <li>Create a PR with a large diff that might not be carefully reviewed – e.g. updating a set of dependencies, mocks or test code.</li>
+  <li><a href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/troubleshooting-commits/why-are-my-commits-linked-to-the-wrong-user">Link their commits to a different user</a> – e.g. they could create a <a href="https://checkmarx.com/blog/surprise-when-dependabot-contributes-malicious-code/">fake dependabot PR</a>.</li>
+  <li>Obscure the malicious code addition itself – e.g. introduce a new dependency that looks OK but hides malicious code or allows adding it later.</li>
+</ul>
+
+<p><img src="/assets/blog/malicious-code/hide-code.svg" /></p>
+
+<p>You should:</p>
+
+<ul>
+  <li>Require <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification">signed commits</a>. This can be awkward for each user to setup, but verifies commits come from those you expect.</li>
+  <li>Easier said than done – but review each and every PR carefully!</li>
+</ul>
+
+<h2 id="at-flutter">At Flutter</h2>
+
+<p>At Flutter we typically use a source control workflow we call <a href="/sdlc/reviewed/">reviewed source</a>. This workflow includes many of the security best practices described to reduce the risk of a malicious code contribution.</p>
+
+<ul>
+  <li>Protect all branches that matter.</li>
+  <li>Use config-as-code to define your branch protection. In Flutter-Global, this is <a href="/docs/cbg/">Codebase Governor</a>.</li>
+  <li>Apply your protections to everyone, including repo admins.</li>
+  <li>Dismiss stale pull request approvals &amp; require approval of the last push.</li>
+  <li>Disable GitHub Actions creating or approving PRs.</li>
+  <li>Use a <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">CODEOWNERS</a> file and require their approval.</li>
+  <li>Require <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification">signed commits</a>.</li>
+  <li>Educate users on the importance of diligent PR review.</li>
+</ul>
+
+
+                  <hr/>
+                  <strong>by: </strong>Rob Tuley<br/>
+                  <strong>in: </strong><time datetime="2023/12/16">16 Dec 2023</time><br/>
+                  <strong>tags: </strong>
+                    
+                    <a href="/blog/tags#branching" class="mr-1 inline-block hover:underline lowercase">Branching</a>
+                    
+                    <a href="/blog/tags#pull-requests" class="mr-1 inline-block hover:underline lowercase">Pull Requests</a>
+                    
+                    <a href="/blog/tags#threat" class="mr-1 inline-block hover:underline lowercase">Threat</a>
+                    <br/>
+                  <strong>category: </strong><a href="/blog/categories#academy" class="hover:underline lowercase">Academy</a><br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="bg-gray-200 drop-shadow-2xl z-50 bottom-0">
+  <div class="max-h-50 mx-auto max-w-7xl overflow-hidden py-0 sm:py-12 lg:px-8">
+    
+
+    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/how/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Inner source</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/docs/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Docs</a>
+            </div>
+          
+        
+      
+        
+
+        
+
+        
+          
+            <div class="pb-6">
+              <a href="/blog/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
+            </div>
+          
+        
+      
+      <div class="pb-6">
+        <a href="/community/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Support</a>
+      </div>
+    </nav>
+    <p class="mt-6 text-center text-xs leading-5 text-gray-500">&copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Flutter Entertainment plc</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

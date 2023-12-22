@@ -7,8 +7,18 @@
         <description>Guides and documentation from the Flutter inner source community.</description>
         <link>https://innersource.flutter.com/</link>
         <atom:link href="https://innersource.flutter.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 17 Dec 2023 19:58:22 +0000</pubDate>
-        <lastBuildDate>Sun, 17 Dec 2023 19:58:22 +0000</lastBuildDate>
+        <pubDate>Fri, 22 Dec 2023 08:56:29 +0000</pubDate>
+        <lastBuildDate>Fri, 22 Dec 2023 08:56:29 +0000</lastBuildDate>
+        
+            <item>
+                <title>Prevent a Malicious Contribution</title>
+                <dc:creator>Rob Tuley</dc:creator>
+                <description>How to secure critical branches in your repository to reduce the risk of malicious contribution.</description>
+                <pubDate>Sat, 16 Dec 2023 00:00:01 +0000</pubDate>
+                <link>https://innersource.flutter.com/blog/prevent-malicious-contribution</link>
+                <guid isPermaLink="true">https://innersource.flutter.com/blog/prevent-malicious-contribution</guid>
+                <category>Academy</category>
+            </item>
         
             <item>
                 <title>gRPC</title>
