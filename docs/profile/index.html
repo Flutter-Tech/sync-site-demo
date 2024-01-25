@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/img/flutter-logo.png/assets/img/flutter-logo.png"/>
-  <title>Multiple Team Source | Flutter Inner Source</title>
+  <title>Your Profile | Flutter Inner Source</title>
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="alternate" type="application/rss+xml" 
@@ -348,7 +348,7 @@
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
-          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Multiple Team Source</a
           >
         </li>
@@ -374,7 +374,7 @@
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
-          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
           <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
             <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
               <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
@@ -535,9 +535,9 @@
           
           <!-- BREADCRUMBS -->
           <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
-            Multiple Team Source
+            Your Profile
           </h1>
-          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">A source code setup for repos with several teams making changes in parallel. Uses a derivative of GitFlow to provide flexible releases with each team managing their own develop branch.</p>
+          <p class="mt-3 text-xs md:text-base text-slate-700 sm:mt-5">How to find and change information about yourself or other users.</p>
         </div>
       </div>
       
@@ -561,153 +561,42 @@
           
 
           <!-- CONTENT -->
-          <p><strong>Multiple Team Source</strong> is best when several busy teams are working on the same codebase or you have a long release process. This branching model is a derivative of GitFlow to provide each team with their own develop branch. Cross-team alignment occurs during regular releases. You can use semver git tags to label releases and trigger alpha, beta and production builds. To support multiple deployments, you can patch previous versions in their dedicated support branches.</p>
+          
 
-<div class="not-prose grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
-  <div class="col-span-2">
-    <div style="position: relative; display: block">
-      <div style="padding-top: 56.25%">
-        <iframe src="https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6316437796112" allowfullscreen="" allow="encrypted-media" style="
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-          "></iframe>
-      </div>
-    </div>
-  </div>
-  <div>
-    <p class="mt-6 text-gray-500">
-      Recommended branching model patterns explained in under 7 minutes!
-    </p>
-  </div>
+<div
+  class="mb-8 p-5 rounded-lg border border-yellow-400 bg-yellow-300 text-yellow-900 flex"
+>
+  <span class="mr-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+      />
+    </svg>
+  </span>
+  This content is restricted to members of the Flutter inner source community. You are currently browsing our public site so this
+  information is not available to you.
 </div>
-
-<h2 id="quick-start">Quick Start</h2>
-
-<p>Create a team develop branch, e.g. for a team named <code class="language-plaintext highlighter-rouge">ppb</code>:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
-git checkout <span class="nt">-b</span> ppb/develop
-git push <span class="nt">-u</span> origin ppb/develop
-</code></pre></div></div>
-
-<p>Start using the branching model through <code class="language-plaintext highlighter-rouge">git flutter</code> shortcuts. Install this helper with:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-o-</span> https://innersource.flutter.com/git-flutter/install.sh | bash
-</code></pre></div></div>
-
-<p>View repository status:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter status
-</code></pre></div></div>
-
-<div class="not-prose">
-  <div class="mx-auto max-w-7xl py-4 lg:flex lg:items-center lg:justify-between">
-    <div>
-      <h4 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
-        Ready to try it?
-      </h4>
-      <p>
-        The
-        <a href="https://github.com/Flutter-Global/sandbox-mt" class="text-secondary">sandbox-mt repository</a>
-        is a sandbox area for you to use.
-      </p>
-    </div>
-    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-      <div class="inline-flex rounded-md shadow">
-        <a href="https://github.com/Flutter-Global/sandbox-mt" class="inline-flex items-center justify-center rounded-md border border-transparent bg-secondary px-5 py-3 text-base font-medium text-white hover:underline">sandbox-mt on GitHub</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>Create a feature:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter feature <span class="s2">"my feature name"</span>
-</code></pre></div></div>
-
-<p>To push your work and open a PR:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter push <span class="nt">-w</span>
-</code></pre></div></div>
-
-<p>Create a release once the feature is merged to develop:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter release <span class="s2">"name or version"</span>
-</code></pre></div></div>
-
-<p>Tag alpha (develop branch), beta (release branch) or production build (main branch):</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git flutter tag
-</code></pre></div></div>
-
-<h2 id="quick-setup">Quick Setup</h2>
-
-<p>Create a team develop branch for each team, e.g. to create a <code class="language-plaintext highlighter-rouge">ppb</code> team branch:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
-git checkout <span class="nt">-b</span> ppb/develop
-git push <span class="nt">-u</span> origin ppb/develop
-</code></pre></div></div>
-
-<p>If you are configuring a completely new repository <a href="/sdlc/multiple-teams/setup/">use the full setup guide</a>. However for most you just need to update your branch protections in your <a href="/docs/cbg/">Codebase Governor</a> config file:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">main"</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">master"</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">support/*"</span>
-    <span class="na">parameters</span><span class="pi">:</span>
-      <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">2</span>
-      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">*/develop"</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">*/release/*"</span>
-    <span class="na">parameters</span><span class="pi">:</span>
-      <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
-      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allows-deletions</span><span class="pi">:</span> <span class="no">true</span>
-</code></pre></div></div>
-
-<p>If you are using tags to trigger builds use the GitHub web interface to add a tag protection rule for the <code class="language-plaintext highlighter-rouge">v*</code> pattern (Settings &gt; Tags &gt; New Rule).</p>
-
-<h2 id="learn-more">Learn More</h2>
 
 <ul>
-  <li>Read a <a href="/sdlc/multiple-teams/setup/">full setup guide</a>.</li>
-  <li>Understand <a href="/sdlc/multiple-teams/branching/">the branching model</a>.</li>
-  <li>Use the <a href="/sdlc/multiple-teams/cli/"><code class="language-plaintext highlighter-rouge">git-flutter</code> CLI to help you</a>.</li>
-  <li>Read about <a href="/sdlc/multiple-teams/examples/">real-life migration and adoption examples</a>.</li>
+  <li>If you are a Flutter staff member you can request access via your divisional service desk (e.g. search JIRA service desk 
+      or your local confluence for "GitHub").</li>
+  <li>If you are already part of the community you can switch to the internal site at
+      <a href=https://developers.flutter.com/docs/profile/>developers.flutter.com</a>.</li>
+  <li>If you're not yet part of Flutter, <a href=https://www.flutter.com/careers>we're likely hiring somewhere near you</a>.</li>
 </ul>
 
 
+
           <!-- ARTICLE NAVIGATION -->
-          
-          <div class="grid grid-cols-2 gap-10 pt-4 mt-4 mb-8">
-  <div >
-    
-  </div>
-  <div class="pt-4 border-t border-gray-500 border-solid">
-    
-    <h5 class="text-right">Setup</h5>
-    <div class="text-right">
-      <a href="/sdlc/multiple-teams/setup/"
-        >Next
-        &rarr;</a
-      >
-    </div>
-    
-  </div>
-</div>
           
         </div>
       </main>
@@ -718,17 +607,11 @@ git push <span class="nt">-u</span> origin ppb/develop
         <div class="sticky px-4 py-8 sm:px-6 lg:px-8 top-24">
           
           
-          <div class="pb-6">
-            <div class="pb-3 font-bold">Branching in 7 mins</div>
-            <iframe src=https://players.brightcove.net/3468649868001/default_default/index.html?videoId=6316437796112
-              allowfullscreen="" allow="encrypted-media" width="100%"></iframe>
-          </div>
-          
           
           <div class="pb-6 text-md">
             <div class="py-2 pt-0 pb-3 font-bold">On this page</div>
             <div class="toc">
-            <ul class="pt-1 list-none"><li class="mb-2 ml-0 text-sm list-none "><a href="#quick-start" class="hover:text-secondary">Quick Start</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#quick-setup" class="hover:text-secondary">Quick Setup</a></li><li class="mb-2 ml-0 text-sm list-none "><a href="#learn-more" class="hover:text-secondary">Learn More</a></li></ul class="pt-1 list-none">
+            
             </div>
           </div>
           
@@ -1039,7 +922,7 @@ git push <span class="nt">-u</span> origin ppb/develop
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2">
-          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary"
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary"
             > Multiple Team Source</a
           >
         </li>
@@ -1065,7 +948,7 @@ git push <span class="nt">-u</span> origin ppb/develop
       
       
         <li class="menu-item-{{ forloop.index }} ml-3 pt-2 nav-parent"><div class="relative">
-          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-secondary font-bold pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
+          <a href="/sdlc/multiple-teams/" title="Go to Multiple Team Source" class="text-gray-500 pr-5 no-underline menu-link hover:text-secondary">Multiple Team Source</a>
           <div class="absolute right-0 w-6 h-6 bg-no-repeat parent-icon top-0">
             <svg class="w-6 h-6 hover:cursor-pointer" title="Expand menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
               <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
