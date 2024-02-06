@@ -631,7 +631,7 @@
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">main"</span><span class="pi">]</span>
 </code></pre></div></div>
 
-<p>The default <code class="language-plaintext highlighter-rouge">allows-force-pushes</code> and <code class="language-plaintext highlighter-rouge">allows-deletions</code> settings ensure that you can’t modify or delete branch history. Since the default values are appropriate, you can simply omit the <code class="language-plaintext highlighter-rouge">parameters</code> key.</p>
+<p>The default <code class="language-plaintext highlighter-rouge">force-push-allowed</code> and <code class="language-plaintext highlighter-rouge">allows-deletions</code> settings ensure that you can’t modify or delete branch history. Since the default values are appropriate, you can simply omit the <code class="language-plaintext highlighter-rouge">parameters</code> key.</p>
 
 <h3 id="reviewed-source"><a href="/sdlc/reviewed">Reviewed Source</a></h3>
 
@@ -779,6 +779,39 @@
           <span class="pi">-</span> <span class="s">team-1</span>
 </code></pre></div></div>
 
+<h4 id="branch-protectionsparametersforce-push-"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.force-push-[*]</code></h4>
+
+<p>There are two, mutually exclusive settings, that control force pushing to protected branches:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">force-push-allowed</code> to allow users with write access to the repository to force push to the protected branch.</li>
+  <li><code class="language-plaintext highlighter-rouge">force-push-restricted-to</code> to specify GitHub users or teams who are allowed to override the default GitHub restriction, and enabling them to force push to protected branches.</li>
+</ul>
+
+<p><strong>NOTE:</strong> If you enable both <code class="language-plaintext highlighter-rouge">force-push-allowed</code> and <code class="language-plaintext highlighter-rouge">force-push-restricted-to</code>, the <code class="language-plaintext highlighter-rouge">force-push-restricted-to</code> setting takes precedence.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">main</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">force-push-allowed</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">main</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">force-push-restricted-to</span><span class="pi">:</span>
+        <span class="na">users</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">user-1</span>
+        <span class="na">teams</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">team-1</span>
+</code></pre></div></div>
+
+<p>See the GitHub Docs for more information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#allow-force-pushes">force push</a>.</p>
+
 <h4 id="branch-protectionsparametersrequired-status-check-jobs"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.required-status-check-jobs[*]</code></h4>
 
 <p>Define status checks that must pass before merge with <code class="language-plaintext highlighter-rouge">required-status-check-jobs</code>. GitHub status checks jobs can be GitHub Action workflows or external checks like a divisional Jenkins pipeline or SonarCloud check.</p>
@@ -834,6 +867,41 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
+<h4 id="branch-protectionsparametersrestrict-push-to"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.restrict-push-to</code></h4>
+
+<p>Restrict who can push to the matching protected branch with <code class="language-plaintext highlighter-rouge">restrict-push-to</code>. When you enable this setting, only users, or teams that have been given permission can push to the protected branch. Also, you can only give push access to a protected branch, or give permission to create a matching branch, to users and teams with the <code class="language-plaintext highlighter-rouge">write</code> permission to the repository.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">main</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">restrict-push-to</span><span class="pi">:</span>
+        <span class="na">users</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">user-1</span>
+        <span class="na">teams</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">team-1</span>
+</code></pre></div></div>
+
+<p>More information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches">restrict who can push to matching branches in the GitHub docs</a></p>
+
+<h4 id="branch-protectionsparametersrestrict-push-exclude-create"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.restrict-push-exclude-create</code></h4>
+
+<p>This setting operates in conjunction with <code class="language-plaintext highlighter-rouge">restrict-push-to</code> (referenced above). When enabled, authorized users or teams can push to the corresponding protected branch. However, they are not permitted to create new branches from this protected branch.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">main</span>
+    <span class="na">parameters</span><span class="pi">:</span>
+      <span class="na">restrict-push-exclude-create</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">restrict-push-to</span><span class="pi">:</span>
+        <span class="na">users</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">user-1</span>
+        <span class="na">teams</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">team-1</span>
+</code></pre></div></div>
+
+<p>More information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches">restrict who can push to matching branches in the GitHub docs</a></p>
+
 <h4 id="advanced-settings">Advanced Settings</h4>
 
 <p><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches">Read more about further branch protection settings in the GitHub docs</a>. A full list:</p>
@@ -864,7 +932,7 @@
 
       <span class="c1"># By default force pushes and branch deletions are prevented but this</span>
       <span class="c1"># can be allowed if desired by switching these settings to 'true':</span>
-      <span class="na">allows-force-pushes</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">force-push-allowed</span><span class="pi">:</span> <span class="no">false</span>
       <span class="na">allows-deletions</span><span class="pi">:</span> <span class="no">false</span>
 
       <span class="c1"># If push restriction is enabled then only users, teams, or apps</span>

@@ -7,8 +7,8 @@
         <description>Guides and documentation from the Flutter inner source community.</description>
         <link>https://innersource.flutter.com/</link>
         <atom:link href="https://innersource.flutter.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 25 Jan 2024 22:40:08 +0000</pubDate>
-        <lastBuildDate>Thu, 25 Jan 2024 22:40:08 +0000</lastBuildDate>
+        <pubDate>Tue, 06 Feb 2024 16:12:40 +0000</pubDate>
+        <lastBuildDate>Tue, 06 Feb 2024 16:12:40 +0000</lastBuildDate>
         
             <item>
                 <title>Prevent a Malicious Contribution</title>
