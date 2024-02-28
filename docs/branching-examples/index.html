@@ -581,13 +581,15 @@
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
       <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">required-status-check-jobs</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">context</span><span class="pi">:</span> <span class="s">validation</span>
+          <span class="na">app</span><span class="pi">:</span> <span class="s">github-actions</span>
 </code></pre></div></div>
 
 <ul>
   <li>Ensure contributors use pull requests with at least 1 approving review (<code class="language-plaintext highlighter-rouge">required-reviews-count: 1</code>).</li>
   <li>Require a <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">Codeowner</a> approval rather than any other user with write permissions (<code class="language-plaintext highlighter-rouge">requires-codeowner-reviews: true</code>).</li>
-  <li>The selected pull request validation checks should pass to merge the PR (<code class="language-plaintext highlighter-rouge">requires-status-checks: true</code>).</li>
+  <li>The selected pull request validation checks should pass to merge the PR (<code class="language-plaintext highlighter-rouge">required-status-check-jobs</code>).</li>
 </ul>
 
 <h2 id="testing-tool">Testing Tool</h2>
@@ -602,7 +604,6 @@
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
       <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
@@ -629,14 +630,12 @@
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">2</span>
       <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">*/develop"</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">*/release/*"</span>
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
       <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>

@@ -794,7 +794,7 @@
 
 <h4 id="branch-protectionsparameterspull-request-bypassers"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.pull-request-bypassers</code></h4>
 
-<p>Use <code class="language-plaintext highlighter-rouge">pull-request-bypassers</code> to define GitHub users or teams that can bypass the branch protection rule and push code to the branch without creating a pull requests.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">pull-request-bypassers</code> to define GitHub users, teams or apps that can bypass the branch protection rule and push code to the branch without creating a pull requests.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
@@ -806,6 +806,8 @@
           <span class="pi">-</span> <span class="s">user-1</span>
         <span class="na">teams</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">team-1</span>
+        <span class="na">apps</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">app-1</span>
 </code></pre></div></div>
 
 <h4 id="branch-protectionsparametersforce-push-"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.force-push-[*]</code></h4>
@@ -814,7 +816,7 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">force-push-allowed</code> to allow users with write access to the repository to force push to the protected branch.</li>
-  <li><code class="language-plaintext highlighter-rouge">force-push-restricted-to</code> to specify GitHub users or teams who are allowed to override the default GitHub restriction, and enabling them to force push to protected branches.</li>
+  <li><code class="language-plaintext highlighter-rouge">force-push-restricted-to</code> to specify GitHub users, teams and apps allowed to override the default GitHub restriction, and enabling them to force push to protected branches.</li>
 </ul>
 
 <p><strong>NOTE:</strong> If you enable both <code class="language-plaintext highlighter-rouge">force-push-allowed</code> and <code class="language-plaintext highlighter-rouge">force-push-restricted-to</code>, the <code class="language-plaintext highlighter-rouge">force-push-restricted-to</code> setting takes precedence.</p>
@@ -837,6 +839,8 @@
           <span class="pi">-</span> <span class="s">user-1</span>
         <span class="na">teams</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">team-1</span>
+        <span class="na">apps</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">app-1</span>
 </code></pre></div></div>
 
 <p>See the GitHub Docs for more information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#allow-force-pushes">force push</a>.</p>
@@ -889,7 +893,7 @@
 
 <h4 id="branch-protectionsparametersallow-stale-branch-merge"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-stale-branch-merge</code></h4>
 
-<p>When requiring status checks (<code class="language-plaintext highlighter-rouge">requires-status-checks</code>) by default the pull request branch must be up-to-date with the base branch. This ensures the status checks have run against the content exactly as it  merges.</p>
+<p>When requiring status checks (<code class="language-plaintext highlighter-rouge">required-status-check-jobs</code>) by default the pull request branch must be up-to-date with the base branch. This ensures the status checks have run against the content exactly as it merges.</p>
 
 <p>Enabling <code class="language-plaintext highlighter-rouge">allow-stale-branch-merge</code> allows the status checks to remain valid and the pull request to merge even when the pull request branch becomes out of date with the base branch.</p>
 
@@ -898,7 +902,7 @@
 
 <h4 id="branch-protectionsparametersrestrict-push-to"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.restrict-push-to</code></h4>
 
-<p>Restrict who can push to the matching protected branch with <code class="language-plaintext highlighter-rouge">restrict-push-to</code>. When you enable this setting, only users, or teams that have been given permission can push to the protected branch. Also, you can only give push access to a protected branch, or give permission to create a matching branch, to users and teams with the <code class="language-plaintext highlighter-rouge">write</code> permission to the repository.</p>
+<p>Restrict who can push to the matching protected branch with <code class="language-plaintext highlighter-rouge">restrict-push-to</code>. When enabled, only users, teams or apps that have been given permission can push to the protected branch. Also, you can only give push access to a protected branch, or give permission to create a matching branch, to users and teams with the <code class="language-plaintext highlighter-rouge">write</code> permission to the repository.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
@@ -909,13 +913,15 @@
           <span class="pi">-</span> <span class="s">user-1</span>
         <span class="na">teams</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">team-1</span>
+        <span class="na">apps</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">app-1</span>
 </code></pre></div></div>
 
 <p>More information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches">restrict who can push to matching branches in the GitHub docs</a></p>
 
 <h4 id="branch-protectionsparametersrestrict-push-exclude-create"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.restrict-push-exclude-create</code></h4>
 
-<p>This setting operates in conjunction with <code class="language-plaintext highlighter-rouge">restrict-push-to</code> (referenced above). When enabled, authorized users or teams can push to the corresponding protected branch. However, they are not permitted to create new branches from this protected branch.</p>
+<p>This setting operates in conjunction with <code class="language-plaintext highlighter-rouge">restrict-push-to</code> (referenced above). When enabled, authorized users, teams or apps can push to the corresponding protected branch. However, they are not permitted to create new branches from this protected branch.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">branch-protections</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
@@ -927,6 +933,8 @@
           <span class="pi">-</span> <span class="s">user-1</span>
         <span class="na">teams</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">team-1</span>
+        <span class="na">apps</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">app-1</span>
 </code></pre></div></div>
 
 <p>More information about <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches">restrict who can push to matching branches in the GitHub docs</a></p>
@@ -940,10 +948,28 @@
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
       <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">requires-status-checks</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
+
+      <span class="c1"># Allows you to specify a list of status checks that must pass before </span>
+      <span class="c1"># anyone can merge a pull request</span>
+      <span class="na">required-status-check-jobs</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">context</span><span class="pi">:</span> <span class="s">build</span>
+          <span class="na">app</span><span class="pi">:</span> <span class="s">github-actions</span>
+
+      <span class="c1"># Restricts who can push to the matching protected branch</span>
+      <span class="na">restrict-push-to</span><span class="pi">:</span>
+        <span class="na">users</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">user-1</span>
+        <span class="na">teams</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">team-1</span>
+        <span class="na">apps</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">app-1</span>
+      <span class="c1"># When enabled, authorized users or teams can push to the corresponding </span>
+      <span class="c1"># protected branch. However, they are not permitted to create new branches </span>
+      <span class="c1"># from this protected branch.</span>
+      <span class="na">restrict-push-exclude-create</span><span class="pi">:</span> <span class="no">true</span>
 
       <span class="c1"># Allows the last person to push to a branch to review their own</span>
       <span class="c1"># change. Note that if enabled there are cases where a user can </span>
