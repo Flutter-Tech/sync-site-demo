@@ -268,6 +268,30 @@ window.addEventListener("DOMContentLoaded", () => {
     return fullUrl;
   }
 
+  const backToTopButton = document.getElementById('back-to-top');
+
+  // Ensure the button is initially hidden
+  if (backToTopButton) {
+    backToTopButton.style.display = 'none';
+  
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      const documentHeight = document.body.scrollHeight;
+  
+      if (scrollPosition > (documentHeight / 6)) {
+        console.log('Showing button');
+        backToTopButton.style.display = 'block';
+      } else {
+        console.log('Hiding button');
+        backToTopButton.style.display = 'none';
+      }
+    });
+  
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // Dark mode manage
   // const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
   // const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
