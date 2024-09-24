@@ -4,8 +4,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const mobileMenuBtn = document.querySelector("#open-mobile-menu");
   const mobileMenuCloseBtn = document.querySelector("#close-mobile-menu");
 
-  mobileMenuBtn.addEventListener("click", handleMobileMenu)
-  mobileMenuCloseBtn.addEventListener("click", handleMobileMenu)
+  mobileMenuBtn.addEventListener("click", handleMobileMenu);
+  mobileMenuCloseBtn.addEventListener("click", handleMobileMenu);
 
   function handleMobileMenu() {
     mobileMenu.hidden = !mobileMenu.hidden;
@@ -15,62 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const tooltips = document.querySelectorAll('[role="tooltip"]');
 
   if (tooltips != undefined) {
-    tooltips.forEach(tooltip => {
-      tooltip.addEventListener("mouseover", handleTooltip)
-      tooltip.addEventListener("mouseout", handleTooltip)
-    })
+    tooltips.forEach((tooltip) => {
+      tooltip.addEventListener("mouseover", handleTooltip);
+      tooltip.addEventListener("mouseout", handleTooltip);
+    });
   }
   function handleTooltip(event) {
-    event.currentTarget.nextElementSibling.hidden = !event.currentTarget.nextElementSibling.hidden;
-  }
-
-  // Lazy load images
-  var lazyloadImages;
-
-  if ("IntersectionObserver" in window) {
-    lazyloadImages = document.querySelectorAll(".lazy");
-    var imageObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var image = entry.target;
-          image.src = image.dataset.src;
-          image.classList.remove("lazy");
-          imageObserver.unobserve(image);
-        }
-      });
-    });
-
-    lazyloadImages.forEach(function (image) {
-      imageObserver.observe(image);
-    });
-  } else {
-    var lazyloadThrottleTimeout;
-    lazyloadImages = document.querySelectorAll(".lazy");
-
-    function lazyload() {
-      if (lazyloadThrottleTimeout) {
-        clearTimeout(lazyloadThrottleTimeout);
-      }
-
-      lazyloadThrottleTimeout = setTimeout(function () {
-        var scrollTop = window.pageYOffset;
-        lazyloadImages.forEach(function (img) {
-          if (img.offsetTop < (window.innerHeight + scrollTop)) {
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-          }
-        });
-        if (lazyloadImages.length == 0) {
-          document.removeEventListener("scroll", lazyload);
-          window.removeEventListener("resize", lazyload);
-          window.removeEventListener("orientationChange", lazyload);
-        }
-      }, 20);
-    }
-
-    document.addEventListener("scroll", lazyload);
-    window.addEventListener("resize", lazyload);
-    window.addEventListener("orientationChange", lazyload);
+    event.currentTarget.nextElementSibling.hidden =
+      !event.currentTarget.nextElementSibling.hidden;
   }
 
   // VERTICAL NAVIGATION
@@ -82,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
       parentEl.getElementsByTagName("UL")[0].classList.toggle("hidden");
     }
     parentEl.getElementsByTagName("DIV")[0].classList.toggle("block");
-  }
+  };
 
   //Marks the menu that points to the current URL
   const markMenu = (menuElements) => {
@@ -92,7 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
         linkMenuParent = linkMenu.parentNode;
       }
     }
-  }
+  };
 
   //Checks if is child menu and opens parents
   const openMenus = (menuElements) => {
@@ -103,13 +55,17 @@ window.addEventListener("DOMContentLoaded", () => {
         if (menuElements[i].classList.contains("nav-parent")) {
           menuElements[i].classList.add("nav-open");
           if (menuElements[i].getElementsByTagName("ul").length > 0) {
-            menuElements[i].getElementsByTagName("ul")[0].classList.toggle("hidden");
+            menuElements[i]
+              .getElementsByTagName("ul")[0]
+              .classList.toggle("hidden");
           }
-          menuElements[i].getElementsByTagName("div")[0].classList.toggle("block");
+          menuElements[i]
+            .getElementsByTagName("div")[0]
+            .classList.toggle("block");
         }
       }
     }
-  }
+  };
 
   // Finds element by class that match URL
   const findElementByClassUrl = (cssclass, url) => {
@@ -117,12 +73,15 @@ window.addEventListener("DOMContentLoaded", () => {
     var found = [];
     for (var i = 0; i < elements.length; i++) {
       // Check if element is the one that points to the passed url
-      if (elements[i].href === url && elements[i].classList.contains(cssclass)) {
+      if (
+        elements[i].href === url &&
+        elements[i].classList.contains(cssclass)
+      ) {
         found.push(elements[i]);
       }
     }
     return found;
-  }
+  };
 
   // Navigation control
   // Adds toggle to parent menus
@@ -140,13 +99,13 @@ window.addEventListener("DOMContentLoaded", () => {
   openMenus(menuElements);
 
   // TOGGLER
-  const togglers = document.querySelectorAll('[data-toggler]')
+  const togglers = document.querySelectorAll("[data-toggler]");
 
   togglers.forEach(function (toggler) {
-    toggler.nextElementSibling.classList.toggle('hidden')
-    toggler.addEventListener('click', function () {
-      toggler.nextElementSibling.classList.toggle('hidden');
-    })
+    toggler.nextElementSibling.classList.toggle("hidden");
+    toggler.addEventListener("click", function () {
+      toggler.nextElementSibling.classList.toggle("hidden");
+    });
   });
 
   // IMAGE LAZY LOAD
@@ -181,9 +140,9 @@ window.addEventListener("DOMContentLoaded", () => {
       lazyloadThrottleTimeout = setTimeout(function () {
         var scrollTop = window.pageYOffset;
         lazyloadImages.forEach(function (img) {
-          if (img.offsetTop < (window.innerHeight + scrollTop)) {
+          if (img.offsetTop < window.innerHeight + scrollTop) {
             img.src = img.dataset.src;
-            img.classList.remove('lazy');
+            img.classList.remove("lazy");
           }
         });
         if (lazyloadImages.length == 0) {
@@ -225,7 +184,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     clipboardBtn.addEventListener("click", () => {
       const elementId = heading.getAttribute("id");
-      copyTextToClipboard(getAnchorUrl(elementId));
+      copyCodeTextToClipboard(getAnchorUrl(elementId));
 
       if (document.getElementById(feedbackId)) {
         const feedback = document.getElementById(feedbackId);
@@ -238,35 +197,115 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Show button on mouseover
-    heading.addEventListener("mouseover", () => {
-      if (document.getElementById(headingId + "-clip-btn")) {
-        clipboardBtn = document.getElementById(headingId + "-clip-btn");
-        clipboardBtn.classList.remove("hidden");
-      }
-
-    }, false);
+    heading.addEventListener(
+      "mouseover",
+      () => {
+        if (document.getElementById(headingId + "-clip-btn")) {
+          clipboardBtn = document.getElementById(headingId + "-clip-btn");
+          clipboardBtn.classList.remove("hidden");
+        }
+      },
+      false
+    );
 
     // Hide button on mouseout
-    heading.addEventListener("mouseout", () => {
-      if (document.getElementById(headingId + "-clip-btn")) {
-        clipboardBtn = document.getElementById(headingId + "-clip-btn");
-        clipboardBtn.classList.add("hidden");
-      }
-    }, false);
-  })
+    heading.addEventListener(
+      "mouseout",
+      () => {
+        if (document.getElementById(headingId + "-clip-btn")) {
+          clipboardBtn = document.getElementById(headingId + "-clip-btn");
+          clipboardBtn.classList.add("hidden");
+        }
+      },
+      false
+    );
+  });
 
   const copyTextToClipboard = async (text) => {
-    await navigator.clipboard.writeText(text)
-  }
+    await navigator.clipboard.writeText(text);
+  };
 
+  // Function to get the full URL with anchor
   const getAnchorUrl = (anchorId) => {
     const currentDomain = document.domain;
     const currentPathname = location.pathname;
     const selectedId = anchorId;
-    const fullUrl = document.domain + currentPathname + "#" + selectedId;
+    const fullUrl = currentDomain + currentPathname + "#" + selectedId;
 
     return fullUrl;
+  };
+
+  // Function to create and attach the copy button
+  function attachCopyButton() {
+    console.log("running attachCopyButton");
+    // Select all target divs
+    const targetDivs = document.querySelectorAll(
+      ".highlighter-rouge div.highlight"
+    );
+
+    targetDivs.forEach((targetDiv) => {
+      const copyButton = createCopyButton();
+      ensureRelativePosition(targetDiv);
+      targetDiv.appendChild(copyButton);
+      addCopyEventListener(copyButton, targetDiv);
+    });
   }
+  
+  function createCopyButton() {
+    const copyButton = document.createElement("button");
+    copyButton.textContent = "copy";
+    copyButton.style.cursor = "pointer";
+    copyButton.style.padding = "1px 8px";
+    copyButton.style.backgroundColor = "#c7c8c6";
+    copyButton.style.borderRadius = "0.375rem";
+    copyButton.style.position = "absolute";
+    copyButton.style.top = "10px";
+    copyButton.style.right = "10px";
+    copyButton.style.zIndex = "10";
+    copyButton.style.fontSize = "0.8em";
+    copyButton.style.fontWeight = "bold";
+    return copyButton;
+  }
+  
+  function ensureRelativePosition(targetDiv) {
+    if (getComputedStyle(targetDiv).position === "static") {
+      targetDiv.style.position = "relative";
+    }
+  }
+
+  function addCopyEventListener(copyButton, targetDiv) {
+    copyButton.addEventListener("click", function () {
+      const textToCopy = getTextToCopy(targetDiv, copyButton);
+      copyCodeTextToClipboard(textToCopy);
+      provideFeedback(copyButton);
+    });
+  }
+
+  function getTextToCopy(targetDiv, copyButton) {
+    return Array.from(targetDiv.childNodes)
+      .filter((node) => node !== copyButton)
+      .map((node) => node.textContent)
+      .join("");
+  }
+
+  function copyCodeTextToClipboard(text) {
+    const tempTextarea = document.createElement("textarea");
+    tempTextarea.value = text;
+    document.body.appendChild(tempTextarea);
+    tempTextarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempTextarea);
+  }
+
+  function provideFeedback(copyButton) {
+    copyButton.textContent = "copied!";
+    setTimeout(() => {
+      copyButton.textContent = "copy";
+    }, 2000);
+  }
+
+  // Call the function to attach copy buttons
+  attachCopyButton();
 
   const backToTopButton = document.getElementById('back-to-top');
 

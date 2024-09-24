@@ -93,6 +93,7 @@
 
       </nav>
       <div class="flex items-center">
+        
         <div id="root-search"></div>
       </div>
     </div>
@@ -598,7 +599,7 @@
 
     <span class="na">steps</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
 
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run unit tests</span>
         <span class="na">run</span><span class="pi">:</span> <span class="s">mvn test</span>
@@ -627,7 +628,7 @@
     <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
     <span class="na">steps</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
 
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Log in to the registry</span>
         <span class="c1"># note how 3rd party provided workflow is pinned to a commit SHA:</span>
@@ -641,7 +642,7 @@
         <span class="na">uses</span><span class="pi">:</span> <span class="s">docker/build-push-action@c56af957549030174b10d6867f20e78cfd7debc5</span>
         <span class="na">with</span><span class="pi">:</span>
           <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
-          <span class="na">push</span><span class="pi">:</span> <span class="no">true</span>
+          <span class="na">push</span><span class="pi">:</span> <span class="kc">true</span>
           <span class="na">tags</span><span class="pi">:</span> <span class="s">user/app:$</span>
 </code></pre></div></div>
 

@@ -93,6 +93,7 @@
 
       </nav>
       <div class="flex items-center">
+        
         <div id="root-search"></div>
       </div>
     </div>
@@ -604,9 +605,9 @@
 </ul>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-pr-merge-options</span><span class="pi">:</span>
-  <span class="na">merge-commit</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="na">squash</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="na">rebase</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">merge-commit</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">squash</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">rebase</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>You can learn more about merging strategies in the <a href="https://docs.github.com/en/github/administering-a-repository/about-merge-methods-on-github">GitHub documentation</a>.</p>
@@ -615,21 +616,21 @@
 
 <p>The <code class="language-plaintext highlighter-rouge">suggest-branch-update-in-pr</code> option defines whether the GitHub UI should suggest updating the pull request branch when it’s out of date with the base branch.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">suggest-branch-update-in-pr</span><span class="pi">:</span> <span class="no">true</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">suggest-branch-update-in-pr</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h2 id="allow-auto-merge"><code class="language-plaintext highlighter-rouge">allow-auto-merge</code></h2>
 
 <p>The <code class="language-plaintext highlighter-rouge">allow-auto-merge</code> option specifies whether to allow auto-merging pull requests.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-auto-merge</span><span class="pi">:</span> <span class="no">true</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-auto-merge</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h2 id="delete-branch-on-merge"><code class="language-plaintext highlighter-rouge">delete-branch-on-merge</code></h2>
 
 <p>The <code class="language-plaintext highlighter-rouge">delete-branch-on-merge</code> option specifies whether you want to delete a branch when you merge it.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">delete-branch-on-merge</span><span class="pi">:</span> <span class="no">true</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">delete-branch-on-merge</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h2 id="branch-protections"><code class="language-plaintext highlighter-rouge">branch-protections</code></h2>
@@ -661,7 +662,7 @@
       <span class="pi">-</span> <span class="s2">"</span><span class="s">main"</span>
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
-      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>The default branch (<code class="language-plaintext highlighter-rouge">main</code> or on older repos <code class="language-plaintext highlighter-rouge">master</code>):</p>
@@ -681,17 +682,17 @@
       <span class="pi">-</span> <span class="s2">"</span><span class="s">support/*"</span>
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">2</span>
-      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">*/develop"</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">*/release/*"</span>
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
-      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allows-deletions</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">allows-deletions</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>The default and previous version support branches require a pull request with a codeowner review:</p>
@@ -759,7 +760,7 @@
 
 <p>You can configure “code owners” <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">using the <code class="language-plaintext highlighter-rouge">CODEOWNERS</code> file</a>. Usually you specify the capability maintainer team as codeowners.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>The default value for this parameter is <code class="language-plaintext highlighter-rouge">false</code>. If enabled by setting it to <code class="language-plaintext highlighter-rouge">true</code>, a pull request requires an approval from the specified code owners before merge. Without this setting enabled, the <code class="language-plaintext highlighter-rouge">required-reviews-count</code> approvals come from any user with write access to the repository.</p>
@@ -770,7 +771,7 @@
 
 <p>Enabling <code class="language-plaintext highlighter-rouge">allow-stale-reviews</code> means a pull request approval remains valid even when you make more changes after the review. This is convenient for you as the pull request author as you act on review feedback to implement minor fixes to the pull request – you don’t need to get the pull request re-reviewed after you have pushed your fixes. However, note how it allows you to include additional <strong>un-reviewed code</strong> to an existing pull request so don’t enable this rule for critical branches where you require strict code review.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h4 id="branch-protectionsparametersallow-admin-bypass"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.allow-admin-bypass</code></h4>
@@ -779,7 +780,7 @@
 
 <p>Enabling <code class="language-plaintext highlighter-rouge">allow-admin-bypass</code> allows repository and organisation admins to override the restrictions of a branch protection rule. For example this would allow maintainers to push directly to a protected branch that required reviews. This is convenient when repository administrators expect to perform maintenance work on the protected branch as they can bypass the constraints to do so.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h4 id="branch-protectionsparameterspull-request-bypassers"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.pull-request-bypassers</code></h4>
@@ -815,7 +816,7 @@
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">main</span>
     <span class="na">parameters</span><span class="pi">:</span>
-      <span class="na">force-push-allowed</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">force-push-allowed</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>OR</p>
@@ -887,7 +888,7 @@
 
 <p>Enabling <code class="language-plaintext highlighter-rouge">allow-stale-branch-merge</code> allows the status checks to remain valid and the pull request to merge even when the pull request branch becomes out of date with the base branch.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h4 id="branch-protectionsparametersrestrict-push-to"><code class="language-plaintext highlighter-rouge">branch-protections[*].parameters.restrict-push-to</code></h4>
@@ -917,7 +918,7 @@
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">main</span>
     <span class="na">parameters</span><span class="pi">:</span>
-      <span class="na">restrict-push-exclude-create</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">restrict-push-exclude-create</span><span class="pi">:</span> <span class="kc">true</span>
       <span class="na">restrict-push-to</span><span class="pi">:</span>
         <span class="na">users</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">user-1</span>
@@ -937,10 +938,10 @@
   <span class="pi">-</span> <span class="na">patterns</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
     <span class="na">parameters</span><span class="pi">:</span>
       <span class="na">required-reviews-count</span><span class="pi">:</span> <span class="m">1</span>
-      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-codeowner-reviews</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">allow-admin-bypass</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">allow-stale-reviews</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">allow-stale-branch-merge</span><span class="pi">:</span> <span class="kc">true</span>
 
       <span class="c1"># Allows you to specify a list of status checks that must pass before </span>
       <span class="c1"># anyone can merge a pull request</span>
@@ -959,26 +960,26 @@
       <span class="c1"># When enabled, authorized users or teams can push to the corresponding </span>
       <span class="c1"># protected branch. However, they are not permitted to create new branches </span>
       <span class="c1"># from this protected branch.</span>
-      <span class="na">restrict-push-exclude-create</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">restrict-push-exclude-create</span><span class="pi">:</span> <span class="kc">true</span>
 
       <span class="c1"># Allows the last person to push to a branch to review their own</span>
       <span class="c1"># change. Note that if enabled there are cases where a user can </span>
       <span class="c1"># self-approve their own changes.</span>
-      <span class="na">allow-last-pusher-to-approve</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">allow-last-pusher-to-approve</span><span class="pi">:</span> <span class="kc">true</span>
 
       <span class="c1"># Requires commits to be signed and verified</span>
-      <span class="na">requires-commit-signatures</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-commit-signatures</span><span class="pi">:</span> <span class="kc">true</span>
 
       <span class="c1"># Requires PR conversations to be marked as resolved</span>
-      <span class="na">requires-conversation-resolution</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-conversation-resolution</span><span class="pi">:</span> <span class="kc">true</span>
 
       <span class="c1"># Prevents merge commits being created on the branch</span>
-      <span class="na">requires-linear-history</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">requires-linear-history</span><span class="pi">:</span> <span class="kc">true</span>
 
       <span class="c1"># By default force pushes and branch deletions are prevented but this</span>
       <span class="c1"># can be allowed if desired by switching these settings to 'true':</span>
-      <span class="na">force-push-allowed</span><span class="pi">:</span> <span class="no">false</span>
-      <span class="na">allows-deletions</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">force-push-allowed</span><span class="pi">:</span> <span class="kc">false</span>
+      <span class="na">allows-deletions</span><span class="pi">:</span> <span class="kc">false</span>
 
       <span class="c1"># If push restriction is enabled then only users, teams, or apps</span>
       <span class="c1"># that have been given permission can push to the protected branch.</span>
@@ -986,7 +987,7 @@
       <span class="c1"># It is not possible for codebase governor to manage the users, teams</span>
       <span class="c1"># and apps specified so these need to be manually set in the GitHub</span>
       <span class="c1"># interface.</span>
-      <span class="na">restricts-pushes</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">restricts-pushes</span><span class="pi">:</span> <span class="kc">false</span>
 
       <span class="c1"># If review dismissal restriction is enabled then only users, teams,</span>
       <span class="c1"># or apps specified can dismiss a blocking review.</span>
@@ -994,7 +995,7 @@
       <span class="c1"># It is not possible for codebase governor to manage the users, teams</span>
       <span class="c1"># and apps specified so these need to be manually set in the GitHub</span>
       <span class="c1"># interface.</span>
-      <span class="na">restricts-review-dismissals</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">restricts-review-dismissals</span><span class="pi">:</span> <span class="kc">false</span>
 </code></pre></div></div>
 
 <p>If you need any advice on using advanced settings, please use <a href="/community/">the available support channels</a>.</p>
